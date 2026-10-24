@@ -20,9 +20,10 @@ interface Props {
 }
 
 const stopNudge: Record<string, { dx: number; dy: number }> = {
-  cookeville: { dx: 8, dy: 12 },
-  topeka: { dx: 8, dy: -10 },
-  wheat_ridge: { dx: 8, dy: 12 },
+  lafayette: { dx: 8, dy: 12 },
+  kerrville: { dx: 8, dy: 12 },
+  las_cruces: { dx: 8, dy: 12 },
+  kingman: { dx: 8, dy: 12 },
 };
 
 function markPoint(lng: number, lat: number, place: string): { x: number; y: number } {
@@ -233,8 +234,8 @@ function MapPanelBody({
       <>
         <h3>Click a pin or a corridor</h3>
         <p>
-          Gainesville is the house Tanya Chappell at Secure Investments Realty is managing. Cookeville, Topeka, and
-          Wheat Ridge are the Hilton nights. E17 is the signed lease in Kimball Junction.
+          Gainesville is the house Tanya Chappell at Secure Investments Realty is managing. Lafayette, Kerrville, Las
+          Cruces, and Kingman are the Hilton nights. E17 is the signed lease in Kimball Junction.
         </p>
       </>
     );

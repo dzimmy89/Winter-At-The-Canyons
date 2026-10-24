@@ -47,7 +47,7 @@ export const towns: Town[] = [
     utilitiesBand: "Signed rent is $3,600/month. Confirm whether that includes utilities, internet, garage, and pets.",
     groceryNote: "Kimball Junction / Newpark is a few minutes away. Main Street is about 15 minutes.",
     winterNotes:
-      "Sunday uses I-25 and I-80 over Sherman Summit, which stays lower than Eisenhower and Vail. Those Colorado passes are the backup only when Wyoming has snow and they are bare. If both have snow, stay in Wheat Ridge. The pin is Apartment E17, not the town centroid.",
+      "The southern route stays under 5,000 feet until Sunday. Sunday climbs I-15 to its 6,600-foot summit north of Beaver, then Provo Canyon instead of Parleys. If I-15 north of Cedar City has snow, stay in St. George. The pin is Apartment E17, not the town centroid.",
   },
 ];
 

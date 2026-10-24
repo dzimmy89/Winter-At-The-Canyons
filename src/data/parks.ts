@@ -17,32 +17,17 @@ export interface ParkStop {
 
 export const parkStops: ParkStop[] = [
   {
-    stopId: "pigeon_forge",
-    name: "Great Smoky Mountains National Park",
-    visit:
-      "Off the Thursday November 12 clock. The drive stays on I-75 and I-40 to Cookeville.",
+    stopId: "kingman",
+    name: "Zion National Park · Kolob Canyons",
+    visit: "Sunday morning, about 4 hours north of Kingman at I-15 exit 40. It is the Zion district right on the interstate.",
     activities: [
-      "Open in November: Cades Cove Loop Road from the car, picnic areas, and park roads.",
-      "Newfound Gap Road is usually open and closes when it ices. Check the park road status that morning.",
-      "Leashed pets are allowed on the Gatlinburg Trail and the Oconaluftee River Trail only.",
-      "Closed to cats: every other trail and the backcountry. Do not leave them in the car.",
+      "Open year-round: the 5-mile Kolob Canyons Road to the Timber Creek overlook at about 6,200 feet, seen from the car and the pullouts.",
+      "Snow can close the upper road for a few hours. If it is closed, the view from the visitor center lot is still the canyon walls.",
+      "One adult stays with the cats if the other walks to an overlook rail.",
+      "Closed to cats: every trail, including the Timber Creek Overlook Trail.",
     ],
-    pets: "NPS: leashed pets on roads, campgrounds, picnic areas, the Gatlinburg Trail, and the Oconaluftee River Trail. Most trails are closed to pets.",
-    url: "https://www.nps.gov/grsm/planyourvisit/pets.htm",
-    image: null,
-  },
-  {
-    stopId: "grand_junction",
-    name: "Colorado National Monument",
-    visit: "Off the Sunday clock. Rim Rock Drive is not a stop on the way to E17.",
-    activities: [
-      "Open when the road is open: Rim Rock Drive and the overlooks, seen from the car or a parking area.",
-      "Snow and ice close Rim Rock Drive. If it is closed, the visit is the visitor center area only.",
-      "Pets are not allowed on monument trails. One adult stays with the cats if the other steps to an overlook.",
-      "Closed to cats: every trail, including Serpents Trail.",
-    ],
-    pets: "Pets are not allowed on monument trails. Parking areas and the scenic drive are the visit.",
-    url: "https://www.nps.gov/colm/planyourvisit/pets.htm",
+    pets: "NPS: pets are allowed on roads, in parking areas, and in the car. They are not allowed on trails or in the wilderness.",
+    url: "https://www.nps.gov/zion/planyourvisit/pets.htm",
     image: null,
   },
 ];

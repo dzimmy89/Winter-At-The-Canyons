@@ -15,7 +15,7 @@ The shipped site is a static SPA. Hunt, Drive, and Florida read bundled JSON. Ch
 
 - `#map` — click Gainesville, a park Hilton, a corridor segment, or E17
 - `#hunt` — signed Park City lease (prior PCLodge page is background only)
-- `#drive` — Leave Thu Nov 12, 2026. Cookeville, Topeka, Wheat Ridge. Sunday uses I-25 and I-80, not Eisenhower or Vail, unless Wyoming has snow. Arrive E17 Sun Nov 15. 13-hour cap. Hilton Honors + 150,000 points.
+- `#drive` — Leave Wed Nov 11, 2026. Southern route around the snow: I-10 to Lafayette, Kerrville, and Las Cruces, then US-93 to Kingman, and I-15 up Utah with Provo Canyon on Sun Nov 15. A stop every 3 to 4 hours. Only Sunday reaches snow country, with a St. George hold. Hilton Honors + 150,000 points.
 - `#florida` — Secure Investments Realty is hired. Tanya Chappell is the contact. Written lease Nov 15, 2026 – May 16, 2027 so the Florida tax exemption holds.
 
 ## Hosting

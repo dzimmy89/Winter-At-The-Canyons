@@ -6,6 +6,7 @@ import {
   isStayHotel,
   leaveGainesville,
   longestDriveHours,
+  routeOptions,
   type DrivePlan,
   type TripBudget,
 } from "../lib/drive";
@@ -31,10 +32,12 @@ interface Props {
 
 const tripChecklist = [
   { id: "trip-c1", label: "Call every Hilton desk, say two cats, and confirm the stay is an award/points night" },
-  { id: "trip-c2", label: "M+S or 3PMSF tires are on the car before Thursday" },
+  { id: "trip-c2", label: "M+S or 3PMSF tires are on the car before Wednesday" },
   { id: "trip-c3", label: "Read the snow gate the night before each day, and again before the key turns" },
   { id: "trip-c4", label: "Litter, pads, carriers, and a hotel towel kit packed" },
-  { id: "trip-c5", label: "Sunday: I-80 if Wyoming is bare or wet. I-70 only if Wyoming has snow and the Colorado passes are bare. Wheat Ridge if both have snow" },
+  { id: "trip-c5", label: "Sunday: Provo Canyon if I-15 and US-189 are bare or wet. Parleys if only Provo Canyon is bad. St. George if I-15 north of Cedar City has snow" },
+  { id: "trip-c7", label: "Buy the Balmorhea day pass online Thursday night, and bring the America the Beautiful pass if you have one for Zion" },
+  { id: "trip-c8", label: "Fill the tank in Junction or Ozona on Friday, and in Wickenburg on Saturday" },
   { id: "trip-c6", label: "Cats do not stay in a closed car" },
 ];
 
@@ -44,16 +47,20 @@ const tripRisks = [
     body: "A Hilton “pets welcome” line is not enough. The stay is only a property whose page quotes cats and two pets. Call the desk, say two cats, and confirm the night is on Hilton Honors points.",
   },
   {
-    title: "Friday is the cap",
-    body: "Cookeville to Topeka is 13.0 hours of driving. Depart at 3:00 AM EST. Nashville and Kansas City are pass-throughs.",
+    title: "Wednesday is the long day",
+    body: "Gainesville to Lafayette is 640 miles and about 9.7 hours of driving. Every other day is under 9 hours, so each one has time for three real stops and arrives before dark.",
   },
   {
-    title: "Snow is the high country",
-    body: "The planned Sunday road is I-25 and I-80, under Sherman Summit at 8,640 feet. Eisenhower and Vail stay off the clock unless Wyoming has snow and those passes are bare. Falling snow, snow-packed pavement, a chain law, or a closure is a no-go on either road. If both have snow, stay at Wheat Ridge. That second night is cash.",
+    title: "Snow is only a Sunday question",
+    body: "Wednesday through Saturday stay under 5,000 feet across the Gulf Coast and the desert. Sunday climbs I-15 to 6,600 feet north of Beaver and ends near 6,500 feet at E17. Falling snow, snow-packed pavement, a traction law, or a closure is a no-go. Then stay in St. George at 2,800 feet and finish Monday morning.",
+  },
+  {
+    title: "Dust, deer, and gas",
+    body: "West Texas and southern New Mexico trade snow for other hazards. Deer at dawn west of Kerrville, blowing dust near Lordsburg, and 100-mile gaps between stations. Start after first light, pull fully off with lights off in a dust storm, and never drop below half a tank.",
   },
   {
     title: "150,000 points and the ceilings",
-    body: "Three Hampton nights. Cookeville and Topeka use a 30,000-point ceiling. Wheat Ridge uses a 60,000-point Denver ceiling. The bank pays them in order. A hold night after that is cash.",
+    body: "Four Hilton nights at a 30,000-point ceiling each uses 120,000. The St. George hold night, if Sunday needs it, takes the last 30,000. Pet fees are still cash.",
   },
 ];
 
@@ -61,11 +68,11 @@ function dayRole(day: DriveDay): string {
   if (!day.hotel) {
     return "Arrive on the clear corridor";
   }
-  if (day.toLabel.includes("Wheat Ridge")) {
-    return "East of Eisenhower";
+  if (day.toLabel.includes("Lafayette")) {
+    return "Longest day";
   }
-  if (day.toLabel.includes("Topeka")) {
-    return "13 h cap";
+  if (day.toLabel.includes("Kingman")) {
+    return "Last night below the snow";
   }
   return "Sleep";
 }
@@ -75,22 +82,24 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
   return (
     <section id="drive" className="section">
       <p className="eyebrow">Drive</p>
-      <h2>Thursday to Sunday. E17 on November 15.</h2>
+      <h2>Wednesday to Sunday. E17 on November 15.</h2>
       <p className="lede">
-        Leave Gainesville {leaveGainesville}. Arrive {destination.label} {arriveParkCity}. Sleep in Cookeville, Topeka,
-        and Wheat Ridge. Sunday goes north on I-25 and west on I-80, and stays off Eisenhower and Vail unless Wyoming has snow. Overnight only at Hilton Honors hotels
-        whose pages quote cats and two pets.
+        Leave Gainesville {leaveGainesville}. Arrive {destination.label} {arriveParkCity}. Sleep in Lafayette, Kerrville,
+        Las Cruces, and Kingman. The route goes the long way around the snow: I-10 across the Gulf Coast and the
+        desert, US-93 past Hoover Dam, and I-15 up Utah on the last day only. A stop every 3 to 4 hours. Overnight only at
+        Hilton Honors hotels whose listings quote cats and two pets.
       </p>
       <p className="points-line">
         {formatPoints(row.budget.pointsUsed)} of {formatPoints(row.budget.pointsStart)} points used.{" "}
         {formatPoints(row.budget.pointsRemaining)} left.
         {row.budget.cashLodgingNights > 0
           ? ` ${row.budget.cashLodgingNights} cash nights on their own line.`
-          : " Ceiling ledger: 3 award nights."}
+          : ` Ceiling ledger: ${row.budget.awardNightsPaid} award nights.`}
       </p>
       <p className="disclaimer">
         Cap {row.plan.cap} h. Longest day {longest.toFixed(1)} h.
       </p>
+      <RouteComparison />
       {map}
       <ol className="day-cards">
         {row.plan.days.map((day) => (
@@ -115,9 +124,8 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
         ))}
       </ol>
       <p className="disclaimer">
-        Miles and hours are a planning estimate from the public road network on October 22, 2026. They are not a Mapbox
-        run. Nashville, Kansas City, and the Gateway Arch are pass-throughs. Newfound Gap and Rim Rock Drive are off
-        this clock.
+        Miles, hours, and elevations are a planning estimate from the public road network on October 24, 2026. They are
+        not a Mapbox run. New Orleans, Houston, San Antonio, Phoenix, and Las Vegas are pass-throughs.
       </p>
 
       <div className="control-row">
@@ -184,7 +192,7 @@ function FocusedDrive({ row }: { row: DriveTownRow }) {
           { label: "Hilton lodging (cash)", amount: row.budget.lodging, note: lodgingNote(row) },
           { label: "Lodging tax", amount: row.budget.lodgingTax, note: "Cash room shortfall plus pet fees only" },
           { label: "Pet fees", amount: row.budget.petFees, note: "Still cash on an award stay unless the page says otherwise" },
-          { label: "Parking", amount: row.budget.parking, note: "Complimentary at Cookeville, Topeka, and Wheat Ridge" },
+          { label: "Parking", amount: row.budget.parking, note: "Free at all four hotels" },
           { label: "Food", amount: row.budget.food, note: "Meal stops, scaled with the budget tier" },
           { label: "Cat supplies", amount: row.budget.catSupplies, note: "Litter, pads, not NPS" },
           { label: "Tolls", amount: row.budget.tolls },
@@ -195,6 +203,44 @@ function FocusedDrive({ row }: { row: DriveTownRow }) {
       <DayItinerary days={row.plan.days} caption={`${leaveGainesville} to ${dest}`} />
       <HotelEvidence days={row.plan.days} />
     </>
+  );
+}
+
+function RouteComparison() {
+  return (
+    <div className="table-wrap">
+      <table>
+        <caption>Why this route · snow exposure, not miles</caption>
+        <thead>
+          <tr>
+            <th scope="col">Route</th>
+            <th scope="col">Miles</th>
+            <th scope="col">Nights</th>
+            <th scope="col">Highest point</th>
+            <th scope="col">Miles above 6,000 ft</th>
+            <th scope="col">Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          {routeOptions.map((option) => (
+            <tr key={option.id}>
+              <td>
+                <strong>{option.label}</strong>
+                <div className="muted tight">{option.chosen ? "The plan" : "Retired"}</div>
+              </td>
+              <td className="num">{option.miles.toLocaleString("en-US")}</td>
+              <td className="num">{option.nights}</td>
+              <td>
+                {option.highestFt.toLocaleString("en-US")} ft
+                <div className="muted tight">{option.highestWhere}</div>
+              </td>
+              <td className="num">About {option.milesAbove6000}</td>
+              <td>{option.verdict}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
@@ -275,7 +321,7 @@ function HotelEvidence({ days }: { days: DriveDay[] }) {
                 <td className="num">{!stay || h.petFeeUsd == null ? "—" : formatUsd(h.petFeeUsd)}</td>
                 <td>
                   <a href={h.sourceUrl} target="_blank" rel="noreferrer">
-                    hilton.com
+                    Listing
                   </a>
                 </td>
               </tr>

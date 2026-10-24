@@ -1,4 +1,4 @@
-import type { DriveDay, SundayCorridor } from "../data/types";
+import type { DriveDay, DriveLeg, SnowRisk, SundayCorridor } from "../data/types";
 import { isStayHotel } from "../lib/drive";
 import { formatPoints, formatUsd } from "../lib/money";
 import { assertNever } from "../lib/money";
@@ -54,6 +54,17 @@ export function DayItinerary({ days, caption = "Daily driving plan" }: Props) {
             </tr>
             <tr>
               <td colSpan={7}>
+                <p className="muted tight">
+                  <strong>Road, leg by leg</strong>
+                </p>
+                <ul className="stop-list">
+                  {d.legs.map((leg) => (
+                    <li key={leg.id}>{legLine(leg)}</li>
+                  ))}
+                </ul>
+                <p className="muted tight">
+                  <strong>Stops</strong>
+                </p>
                 <ul className="stop-list">
                   {d.stops.map((stop) => (
                     <li key={stop.id}>
@@ -87,11 +98,28 @@ export function DayItinerary({ days, caption = "Daily driving plan" }: Props) {
   );
 }
 
+function snowRiskLabel(risk: SnowRisk): string {
+  switch (risk) {
+    case "none":
+      return "No snow risk";
+    case "low":
+      return "Low snow risk";
+    case "watch":
+      return "Snow check";
+    default:
+      return assertNever(risk);
+  }
+}
+
+function legLine(leg: DriveLeg): string {
+  return `${leg.road} · ${leg.from} → ${leg.to}. ${leg.miles} mi, tops out near ${leg.topElevationFt.toLocaleString("en-US")} ft. ${snowRiskLabel(leg.snowRisk)}. ${leg.note}`;
+}
+
 function corridorLine(corridor: SundayCorridor): string {
   switch (corridor.id) {
-    case "i80":
+    case "provo_canyon":
       return `Default · ${corridor.label}. ${corridor.miles ?? "—"} mi · ${corridor.driveHours?.toFixed(1) ?? "—"} h. ${corridor.when}`;
-    case "i70":
+    case "parleys":
       return `Backup · ${corridor.label}. ${corridor.miles ?? "—"} mi · ${corridor.driveHours?.toFixed(1) ?? "—"} h. ${corridor.when}`;
     case "hold":
       return `Hold · ${corridor.label}. ${corridor.when}`;
