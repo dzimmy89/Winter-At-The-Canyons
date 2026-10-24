@@ -1,0 +1,37 @@
+{
+  "retrievedAt": "2026-10-23T21:00:00.000Z",
+  "query": "official winter road conditions chain laws and pass status for the Thursday November 12 Gainesville to Kimball Junction drive",
+  "requestId": "hand-filed-2026-10-23",
+  "results": [
+    {
+      "url": "https://www.codot.gov/travel/winter-driving/tractionlaw",
+      "title": "CDOT passenger vehicle traction and chain laws",
+      "description": "Read 2026-10-22. I-70 Morrison to Dotsero, September 1 through May 31, can require 3/16 inch M+S or winter tires, or chains. A passenger chain law means every vehicle needs chains or an approved device. A chain law is a no-go on this drive.",
+      "relevance": "high"
+    },
+    {
+      "url": "https://www.cotrip.org",
+      "title": "COtrip",
+      "description": "Saturday check for I-70 from Salina through Denver. Sunday backup only: Morrison through Vail, and only when Wyoming already has snow.",
+      "relevance": "high"
+    },
+    {
+      "url": "https://connect.udot.utah.gov/public/snow-tire-and-chain-up-requirements/",
+      "title": "UDOT snow tire, chain, and traction device requirements",
+      "description": "Read 2026-10-22. Utah Administrative Code R920-6. When the sign is up, AWD or 4WD needs M+S or 3PMSF tires, or devices on two drive tires. The planned arrival uses I-80 into Kimball Junction. Check Parleys before the last miles, and Soldier Summit only if the day has switched to I-70.",
+      "relevance": "high"
+    },
+    {
+      "url": "https://www.wyoroad.info",
+      "title": "WYDOT traveler information",
+      "description": "Sunday’s planned road. I-25 north and I-80 west over Sherman Summit at 8,640 feet, which stays lower than Eisenhower and Vail. Leave only when these cameras show bare or wet pavement. Elk Mountain can be a ground blizzard.",
+      "relevance": "high"
+    },
+    {
+      "url": "https://www.weather.gov",
+      "title": "National Weather Service",
+      "description": "Thursday and Friday gate. If a winter storm warning covers the next interstate segment, wait until it is bare or wet, or use a parallel road that still reaches the same Hampton.",
+      "relevance": "high"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+---
+description: Context.dev server-side conventions for the winter expedition
+alwaysApply: true
+---
+
+# Context.dev
+
+Server-side web data for the Gainesville → Park City winter expedition. One key, one wrapper.
+
+- Env var: `CONTEXT_DEV_API_KEY` in `.env` (gitignored). The SDK reads it. Never hardcode the key, log it, prefix it with `VITE_`, or import the wrapper from `src/`.
+- Wrapper: `scripts/lib/contextDev.ts`. Every Context.dev call goes through this module.
+- Corridor brief: `npm run research:corridor` runs one `POST /web/search` and writes `src/data/generated/corridor-brief.json`. The Drive section reads that file. It does not call the API.
+- Tests stay off the live API. Mock `searchWeb`. A real call spends credits.
+
+## Endpoints
+
+- **Search Web** — `POST /web/search` — `searchWeb`. Used to find official winter road, chain-law, and pass sources for the Florida → Park City drive when the URL is not already known. Ten results, US locale, markdown scraping left off. Docs: https://docs.context.dev/api-reference/web-scraping/search
+
+The SDK client uses `maxRetries: 2`. It honors `Retry-After` on HTTP 429 and retries HTTP 408 and 5xx with bounded backoff. It does not retry HTTP 400 validation errors.
+
+Search has no top-level `maxAgeMs`. If a later call adds `POST /web/scrape`, pass `maxAgeMs` explicitly when the page must be fresh. Docs: https://docs.context.dev/api-reference/web-scraping/scrape

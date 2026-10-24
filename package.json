@@ -1,0 +1,31 @@
+{
+  "name": "winter-season-expedition",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 3003 --strictPort",
+    "start": "vite build && vite preview --host 127.0.0.1 --port 3003 --strictPort",
+    "seed": "tsx scripts/seed-listings.ts && tsx scripts/seed-hotels.ts && tsx scripts/seed-routes.ts && tsx scripts/seed-status.ts",
+    "refresh:hotels": "tsx scripts/refresh-hotels.ts",
+    "refresh:routes": "tsx scripts/refresh-routes.ts",
+    "research:corridor": "tsx scripts/research-corridor.ts"
+  },
+  "dependencies": {
+    "context.dev": "^3.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "dotenv": "^16.5.0",
+    "tsx": "^4.19.4",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  }
+}
