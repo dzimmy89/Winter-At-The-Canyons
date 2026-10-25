@@ -10,7 +10,7 @@ const rows = [
     href: "#drive",
     kicker: "Drive",
     title: `Leave ${leaveGainesville}. Arrive E17 ${arriveParkCity}.`,
-    body: "Sleep in Lafayette, Kerrville, Las Cruces, and Kingman. I-10 across the south, then I-15 up Utah on Sunday. A stop every 3 to 4 hours.",
+    body: "Sleep in Covington, Kerrville, Deming, and Kingman, all smaller towns. I-10 across the south, then I-15 up Utah on Sunday. A stop every 3 to 4 hours.",
   },
   {
     href: "#drive",

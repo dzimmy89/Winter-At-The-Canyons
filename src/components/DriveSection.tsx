@@ -47,8 +47,12 @@ const tripRisks = [
     body: "A Hilton “pets welcome” line is not enough. The stay is only a property whose page quotes cats and two pets. Call the desk, say two cats, and confirm the night is on Hilton Honors points.",
   },
   {
-    title: "Wednesday is the long day",
-    body: "Gainesville to Lafayette is 640 miles and about 9.7 hours of driving. Every other day is under 9 hours, so each one has time for three real stops and arrives before dark.",
+    title: "Small towns, not big cities",
+    body: "Every night is in a smaller town: Covington, Kerrville, Deming, and Kingman. Every stop is a park, a small town, or a rest area. Baton Rouge, Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are daylight drive-throughs on the interstate with no exits.",
+  },
+  {
+    title: "Thursday is the long day",
+    body: "Covington to Kerrville is 605 miles and about 9.1 hours of driving, with three stops and arrival before sunset. Every other day is under 8.5 hours.",
   },
   {
     title: "Snow is only a Sunday question",
@@ -68,7 +72,7 @@ function dayRole(day: DriveDay): string {
   if (!day.hotel) {
     return "Arrive on the clear corridor";
   }
-  if (day.toLabel.includes("Lafayette")) {
+  if (day.toLabel.includes("Kerrville")) {
     return "Longest day";
   }
   if (day.toLabel.includes("Kingman")) {
@@ -84,8 +88,8 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
       <p className="eyebrow">Drive</p>
       <h2>Wednesday to Sunday. E17 on November 15.</h2>
       <p className="lede">
-        Leave Gainesville {leaveGainesville}. Arrive {destination.label} {arriveParkCity}. Sleep in Lafayette, Kerrville,
-        Las Cruces, and Kingman. The route goes the long way around the snow: I-10 across the Gulf Coast and the
+        Leave Gainesville {leaveGainesville}. Arrive {destination.label} {arriveParkCity}. Sleep in Covington, Kerrville,
+        Deming, and Kingman, all smaller towns. The route goes the long way around the snow: I-10 across the Gulf Coast and the
         desert, US-93 past Hoover Dam, and I-15 up Utah on the last day only. A stop every 3 to 4 hours. Overnight only at
         Hilton Honors hotels whose listings quote cats and two pets.
       </p>
@@ -125,7 +129,7 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
       </ol>
       <p className="disclaimer">
         Miles, hours, and elevations are a planning estimate from the public road network on October 24, 2026. They are
-        not a Mapbox run. New Orleans, Houston, San Antonio, Phoenix, and Las Vegas are pass-throughs.
+        not a Mapbox run. Baton Rouge, Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are pass-throughs with no stops.
       </p>
 
       <div className="control-row">

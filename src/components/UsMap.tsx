@@ -20,9 +20,9 @@ interface Props {
 }
 
 const stopNudge: Record<string, { dx: number; dy: number }> = {
-  lafayette: { dx: 8, dy: 12 },
+  covington: { dx: 8, dy: 12 },
   kerrville: { dx: 8, dy: 12 },
-  las_cruces: { dx: 8, dy: 12 },
+  deming: { dx: 8, dy: 12 },
   kingman: { dx: 8, dy: 12 },
 };
 
@@ -234,8 +234,8 @@ function MapPanelBody({
       <>
         <h3>Click a pin or a corridor</h3>
         <p>
-          Gainesville is the house Tanya Chappell at Secure Investments Realty is managing. Lafayette, Kerrville, Las
-          Cruces, and Kingman are the Hilton nights. E17 is the signed lease in Kimball Junction.
+          Gainesville is the house Tanya Chappell at Secure Investments Realty is managing. Covington, Kerrville,
+          Deming, and Kingman are the Hilton nights, all smaller towns. E17 is the signed lease in Kimball Junction.
         </p>
       </>
     );

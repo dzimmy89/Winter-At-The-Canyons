@@ -1,7 +1,7 @@
 import type { HotelNight } from "../src/data/types.ts";
 import { writeGenerated } from "./lib/io.ts";
 
-const retrievedAt = "2026-10-24T14:00:00.000Z";
+const retrievedAt = "2026-10-25T10:30:00.000Z";
 
 const hamptonSecondaryAward =
   "Award Travel Finder, verified June 7, 2026: observed Hampton sweet spot 15,000–30,000 points/night. Hilton publishes no chart. This is the ceiling, not a live quote for this night.";
@@ -10,20 +10,20 @@ const home2Award =
 
 const properties: HotelNight[] = [
   {
-    id: "lafayette",
+    id: "covington",
     brand: "Hampton",
-    propertyName: "Hampton Inn & Suites Lafayette",
-    city: "Lafayette",
+    propertyName: "Hampton Inn Covington",
+    city: "Covington",
     state: "LA",
     nights: 1,
     petPolicyQuote:
-      "Hotels.com listing, retrieved 2026-10-24: Pets allowed, dogs and cats only, 2 total. 1910 S College Rd. No fee published, so ask the desk.",
+      "Romingo listing, retrieved 2026-10-25: Both dogs and cats are welcome, 2 per reservation, 75 lbs max. $75 per stay, credit card at check-in. 68700 Hwy 190 Service Rd, I-12 exit 63.",
     catsAllowed: true,
     maxPets: 2,
-    petFeeUsd: null,
-    petFeeRefundable: "unknown",
-    weightLimitLbs: null,
-    sourceUrl: "https://hotels.com/ho218126/hampton-inn-suites-lafayette-lafayette-united-states-of-america",
+    petFeeUsd: 75,
+    petFeeRefundable: false,
+    weightLimitLbs: 75,
+    sourceUrl: "https://www.romingo.com/pet-friendly-hotel/louisiana/covington/hampton-inn-covington",
     retrievedAt,
     callToConfirmTwoCats: true,
     awardPointsPerNight: 30000,
@@ -52,20 +52,20 @@ const properties: HotelNight[] = [
     parkingUsd: 0,
   },
   {
-    id: "las_cruces",
+    id: "deming",
     brand: "Hampton",
-    propertyName: "Hampton Inn & Suites Las Cruces I-10",
-    city: "Las Cruces",
+    propertyName: "Hampton Inn Deming",
+    city: "Deming",
     state: "NM",
     nights: 1,
     petPolicyQuote:
-      "Travelocity listing, retrieved 2026-10-24: Dogs and cats only, 2 max, 75 lbs each. USD 50 per accommodation. Pet rooms are limited, so request one. 1641 Hickory Loop.",
+      "Expedia listing, retrieved 2026-10-25: Cats and dogs allowed, 2 total, 11 kg (about 24 lbs) each. USD 50 per accommodation, per stay. 3751 E Cedar St.",
     catsAllowed: true,
     maxPets: 2,
     petFeeUsd: 50,
     petFeeRefundable: false,
-    weightLimitLbs: 75,
-    sourceUrl: "https://www.travelocity.com/Las-Cruces-Hotels-Hampton-Inn-Suites-Las-Cruces-I-10.h12817768.Hotel-Information",
+    weightLimitLbs: 24,
+    sourceUrl: "https://www.hilton.com/en/hotels/lrudmhx-hampton-deming-nm/",
     retrievedAt,
     callToConfirmTwoCats: true,
     awardPointsPerNight: 30000,
