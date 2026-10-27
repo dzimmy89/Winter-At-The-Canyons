@@ -13,6 +13,8 @@ The shipped site is a static SPA. Hunt, Drive, and Florida read bundled JSON. Ch
 
 ## Sections
 
+The drive is the home screen: pick a day, then follow the timeline from departure to check-in, with highway directions for every leg, a Navigate button for every stop, and stops you can mark done. Overview, Lease, and House sit in the small "Other plans" links at the top.
+
 - `#map` — click Gainesville, a park Hilton, a corridor segment, or E17
 - `#hunt` — signed Park City lease (prior PCLodge page is background only)
 - `#drive` — Leave Wed Nov 11, 2026. Southern route around the snow: I-10 to Covington, Kerrville, and Deming, then US-93 to Kingman. Overnights are smaller towns, and big cities are drive-throughs, and I-15 up Utah with Provo Canyon on Sun Nov 15. A stop every 3 to 4 hours. Only Sunday reaches snow country, with a St. George hold. Hilton Honors + 150,000 points.

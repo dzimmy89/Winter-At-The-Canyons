@@ -1,5 +1,4 @@
 import { type ReactNode } from "react";
-import { destination } from "../data/towns";
 import type { BudgetTierId, DriveDay, HotelNight } from "../data/types";
 import {
   arriveParkCity,
@@ -13,7 +12,7 @@ import {
 import { formatPoints, formatUsd } from "../lib/money";
 import { Checklist } from "./Checklist";
 import { CorridorSources } from "./CorridorSources";
-import { DayItinerary } from "./DayItinerary";
+import { DriveGuide } from "./DriveGuide";
 import { ExpenseTable } from "./ExpenseTable";
 import { RiskCallout } from "./RiskCallout";
 
@@ -68,104 +67,106 @@ const tripRisks = [
   },
 ];
 
-function dayRole(day: DriveDay): string {
-  if (!day.hotel) {
-    return "Arrive on the clear corridor";
-  }
-  if (day.toLabel.includes("Kerrville")) {
-    return "Longest day";
-  }
-  if (day.toLabel.includes("Kingman")) {
-    return "Last night below the snow";
-  }
-  return "Sleep";
-}
-
 export function DriveSection({ row, tierId, onTier, map }: Props) {
   const longest = longestDriveHours(row.plan.days);
   return (
-    <section id="drive" className="section">
-      <p className="eyebrow">Drive</p>
-      <h2>Wednesday to Sunday. E17 on November 15.</h2>
-      <p className="lede">
-        Leave Gainesville {leaveGainesville}. Arrive {destination.label} {arriveParkCity}. Sleep in Covington, Kerrville,
-        Deming, and Kingman, all smaller towns. The route goes the long way around the snow: I-10 across the Gulf Coast and the
-        desert, US-93 past Hoover Dam, and I-15 up Utah on the last day only. A stop every 3 to 4 hours. Overnight only at
-        Hilton Honors hotels whose listings quote cats and two pets.
-      </p>
-      <p className="points-line">
-        {formatPoints(row.budget.pointsUsed)} of {formatPoints(row.budget.pointsStart)} points used.{" "}
-        {formatPoints(row.budget.pointsRemaining)} left.
-        {row.budget.cashLodgingNights > 0
-          ? ` ${row.budget.cashLodgingNights} cash nights on their own line.`
-          : ` Ceiling ledger: ${row.budget.awardNightsPaid} award nights.`}
-      </p>
-      <p className="disclaimer">
-        Cap {row.plan.cap} h. Longest day {longest.toFixed(1)} h.
-      </p>
-      <RouteComparison />
-      {map}
-      <ol className="day-cards">
-        {row.plan.days.map((day) => (
-          <li key={day.day}>
-            <span className="kicker">{day.dateLabel}</span>
-            <strong>
-              {day.fromLabel} → {day.toLabel}
-            </strong>
-            <span className="num">
-              Depart {day.departClock} · {day.miles} mi · {day.driveHours.toFixed(1)} h · {dayHotelLabel(day)}
-            </span>
-            <span>
-              Arrive {day.arriveClock}. Latest depart {day.latestSafeDepart}. {dayRole(day)}.
-            </span>
-            <span className="muted tight">
-              Snow: {day.snowGate.go}{" "}
-              <a href={day.snowGate.sourceUrl} target="_blank" rel="noreferrer">
-                {day.snowGate.sourceName}
-              </a>
-            </span>
-          </li>
-        ))}
-      </ol>
-      <p className="disclaimer">
-        Miles, hours, and elevations are a planning estimate from the public road network on October 24, 2026. They are
-        not a Mapbox run. Baton Rouge, Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are pass-throughs with no stops.
-      </p>
+    <section id="drive-guide" className="section section-wide">
+      <header className="trip-hero">
+        <p className="eyebrow">The drive · {leaveGainesville.replace(", 2026", "")} to {arriveParkCity.replace(", 2026", "")}</p>
+        <h1>Gainesville to Park City</h1>
+        <p className="lede">
+          Five days the long way around the snow, with a stop every 3 to 4 hours and each night at a cat-friendly Hilton
+          in a smaller town. Pick a day, then follow it top to bottom.
+        </p>
+        <dl className="trip-strip">
+          <div>
+            <dt>Distance</dt>
+            <dd>{row.plan.totalMiles.toLocaleString("en-US")} mi</dd>
+          </div>
+          <div>
+            <dt>Driving</dt>
+            <dd>{row.plan.totalHours.toFixed(0)} h over 5 days</dd>
+          </div>
+          <div>
+            <dt>Nights</dt>
+            <dd>Covington · Kerrville · Deming · Kingman</dd>
+          </div>
+          <div>
+            <dt>Longest day</dt>
+            <dd>{longest.toFixed(1)} h (cap {row.plan.cap} h)</dd>
+          </div>
+        </dl>
+      </header>
 
-      <div className="control-row">
-        <fieldset>
-          <legend>Budget</legend>
-          <label>
-            <input type="radio" name="tier" checked={tierId === "conservative"} onChange={() => onTier("conservative")} />
-            Conservative
-          </label>
-          <label>
-            <input type="radio" name="tier" checked={tierId === "realistic"} onChange={() => onTier("realistic")} />
-            Realistic
-          </label>
-          <label>
-            <input type="radio" name="tier" checked={tierId === "upscale"} onChange={() => onTier("upscale")} />
-            Upscale
-          </label>
-        </fieldset>
-      </div>
+      <DriveGuide plan={row.plan} />
 
-      <FocusedDrive row={row} />
-      <CorridorSources />
-      <RiskCallout items={tripRisks} />
-      <Checklist title="Before you roll" items={tripChecklist} />
+      <section className="more-details" aria-labelledby="trip-details-title">
+        <h2 id="trip-details-title">Trip details</h2>
+        <p className="muted">Planning background. Tap a heading to open it.</p>
+
+        <details>
+          <summary>Before you roll: checklist</summary>
+          <Checklist title="Before you roll" items={tripChecklist} />
+        </details>
+
+        <details>
+          <summary>Rules of the road and risks</summary>
+          <RiskCallout items={tripRisks} />
+        </details>
+
+        <details>
+          <summary>Why this route and not Wyoming</summary>
+          <RouteComparison />
+        </details>
+
+        <details>
+          <summary>Hotels and pet policies</summary>
+          <HotelEvidence days={row.plan.days} />
+        </details>
+
+        <details>
+          <summary>Budget and Hilton points</summary>
+          <p className="points-line">
+            {formatPoints(row.budget.pointsUsed)} of {formatPoints(row.budget.pointsStart)} points used.{" "}
+            {formatPoints(row.budget.pointsRemaining)} left.
+          </p>
+          <div className="control-row">
+            <fieldset>
+              <legend>Budget</legend>
+              <label>
+                <input type="radio" name="tier" checked={tierId === "conservative"} onChange={() => onTier("conservative")} />
+                Conservative
+              </label>
+              <label>
+                <input type="radio" name="tier" checked={tierId === "realistic"} onChange={() => onTier("realistic")} />
+                Realistic
+              </label>
+              <label>
+                <input type="radio" name="tier" checked={tierId === "upscale"} onChange={() => onTier("upscale")} />
+                Upscale
+              </label>
+            </fieldset>
+          </div>
+          <FocusedDrive row={row} />
+        </details>
+
+        <details>
+          <summary>Route map</summary>
+          {map}
+        </details>
+
+        <details>
+          <summary>Road-condition and traction-law links</summary>
+          <CorridorSources />
+        </details>
+
+        <p className="disclaimer tight">
+          Miles, hours, and elevations are planning estimates from the public road network, October 2026. Baton Rouge,
+          Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are pass-throughs with no stops.
+        </p>
+      </section>
     </section>
   );
-}
-
-function dayHotelLabel(day: DriveDay): string {
-  if (!day.hotel) {
-    return "Arrive — no hotel";
-  }
-  if (!isStayHotel(day.hotel)) {
-    return "Unassigned — no cat-Hilton";
-  }
-  return `${day.hotel.brand} · stay`;
 }
 
 function lodgingNote(row: DriveTownRow): string {
@@ -204,8 +205,6 @@ function FocusedDrive({ row }: { row: DriveTownRow }) {
         ]}
         total={row.budget.total}
       />
-      <DayItinerary days={row.plan.days} caption={`${leaveGainesville} to ${dest}`} />
-      <HotelEvidence days={row.plan.days} />
     </>
   );
 }
