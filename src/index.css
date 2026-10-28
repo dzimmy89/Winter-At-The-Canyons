@@ -18,6 +18,25 @@
   --shield-ink: #ffffff;
   --map-sea: #e7efe8;
   --map-land: #d5e3d6;
+  --lm-land: #faf6ee;
+  --lm-sea: #c9dde0;
+  --lm-water: #b5d0d6;
+  --lm-mexico: #ece6da;
+  --lm-river: #8fb8c2;
+  --lm-state-line: #a39782;
+  --lm-road: #ddd0bb;
+  --lm-road-major: #c9b48f;
+  --lm-route: #1f4d3a;
+  --lm-route-alt: #2f7a5a;
+  --lm-casing: #ffffff;
+  --lm-label: #2a261f;
+  --lm-label-soft: #7a7060;
+  --lm-halo: #faf6ee;
+  --lm-end: #b4441f;
+  --lm-i-shield: #1d4f91;
+  --lm-i-shield-ink: #ffffff;
+  --lm-us-shield: #ffffff;
+  --lm-us-shield-ink: #1c1915;
   --font: "Literata", Georgia, serif;
   --display: "Newsreader", Georgia, serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -44,7 +63,67 @@
     --shield-ink: #ffffff;
     --map-sea: #1c2721;
     --map-land: #2b3a31;
+    --lm-land: #232720;
+    --lm-sea: #142229;
+    --lm-water: #1d3640;
+    --lm-mexico: #1c1f1a;
+    --lm-river: #2f5866;
+    --lm-state-line: #6d665a;
+    --lm-road: #3b3d33;
+    --lm-road-major: #5e5845;
+    --lm-route: #7fc4a0;
+    --lm-route-alt: #b5e3c9;
+    --lm-casing: #10130f;
+    --lm-label: #efe9dc;
+    --lm-label-soft: #a59d8c;
+    --lm-halo: #191c16;
+    --lm-end: #ff8a5c;
+    --lm-i-shield: #2a62ad;
+    --lm-i-shield-ink: #ffffff;
+    --lm-us-shield: #f4f0e6;
+    --lm-us-shield-ink: #1c1915;
   }
+}
+
+:root[data-theme="dark"] {
+  --bg: #15140f;
+  --bg-2: #201e18;
+  --ink: #efe9dc;
+  --paper: #efe9dc;
+  --muted: #b3aa98;
+  --line: #3a362d;
+  --pine: #7fc4a0;
+  --ice: #7fc4a0;
+  --gold: #7fc4a0;
+  --warn: #f0a08f;
+  --go: #8fd6ad;
+  --go-bg: #1d3327;
+  --hold-bg: #3a2420;
+  --watch: #f3c06b;
+  --watch-bg: #3a2e18;
+  --shield: #2f6e53;
+  --shield-ink: #ffffff;
+  --map-sea: #1c2721;
+  --map-land: #2b3a31;
+  --lm-land: #232720;
+  --lm-sea: #142229;
+  --lm-water: #1d3640;
+  --lm-mexico: #1c1f1a;
+  --lm-river: #2f5866;
+  --lm-state-line: #6d665a;
+  --lm-road: #3b3d33;
+  --lm-road-major: #5e5845;
+  --lm-route: #7fc4a0;
+  --lm-route-alt: #b5e3c9;
+  --lm-casing: #10130f;
+  --lm-label: #efe9dc;
+  --lm-label-soft: #a59d8c;
+  --lm-halo: #191c16;
+  --lm-end: #ff8a5c;
+  --lm-i-shield: #2a62ad;
+  --lm-i-shield-ink: #ffffff;
+  --lm-us-shield: #f4f0e6;
+  --lm-us-shield-ink: #1c1915;
 }
 
 * {
@@ -1028,4 +1107,262 @@ td {
   .day-head .btn {
     flex: 1 1 100%;
   }
+}
+
+/* Leg and day maps, drawn from src/data/generated/leg-maps.json. */
+.leg-map {
+  margin: 0.6rem -0.9rem 0.7rem;
+  max-width: 34rem;
+}
+
+.day-head .leg-map {
+  margin: 0.4rem 0 0.9rem;
+}
+
+.leg-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-block: 1px solid var(--line);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.day-head .leg-map svg {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.leg-map-loading {
+  aspect-ratio: 520 / 340;
+  margin: 0.6rem 0;
+  border-radius: 10px;
+  background: var(--lm-sea);
+  opacity: 0.5;
+}
+
+.leg-map figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.lm-sea {
+  fill: var(--lm-sea);
+}
+
+.lm-land {
+  fill: var(--lm-land);
+}
+
+.lm-mexico {
+  fill: var(--lm-mexico);
+  stroke: var(--lm-state-line);
+  stroke-width: 2.5;
+}
+
+.lm-water {
+  fill: var(--lm-water);
+}
+
+.lm-river {
+  fill: none;
+  stroke: var(--lm-river);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+
+.lm-state-line {
+  fill: none;
+  stroke: var(--lm-state-line);
+  stroke-width: 1.4;
+  stroke-dasharray: 7 4 2 4;
+}
+
+.lm-road {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lm-road-state {
+  stroke: var(--lm-road);
+  stroke-width: 1.4;
+}
+
+.lm-road-us {
+  stroke: var(--lm-road);
+  stroke-width: 2.2;
+}
+
+.lm-road-i {
+  stroke: var(--lm-road-major);
+  stroke-width: 3;
+}
+
+.lm-route-casing {
+  fill: none;
+  stroke: var(--lm-casing);
+  stroke-width: 11;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lm-route {
+  fill: none;
+  stroke: var(--lm-route);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lm-route-alt {
+  stroke: var(--lm-route-alt);
+}
+
+.lm-connector {
+  fill: none;
+  stroke: var(--lm-route);
+  stroke-width: 3.5;
+  stroke-dasharray: 3 5;
+  stroke-linecap: round;
+}
+
+.leg-map text {
+  paint-order: stroke;
+  stroke: var(--lm-halo);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  fill: var(--lm-label);
+  font-size: 20px;
+}
+
+.lm-state-name {
+  font-size: 15px !important;
+  letter-spacing: 0.18em;
+  fill: var(--lm-label-soft) !important;
+}
+
+.lm-place circle {
+  fill: var(--lm-land);
+  stroke: var(--lm-label);
+  stroke-width: 2;
+}
+
+.lm-crossing circle {
+  fill: var(--lm-state-line);
+}
+
+.lm-crossing text {
+  font-size: 18px;
+  font-style: italic;
+  fill: var(--lm-label-soft);
+}
+
+.lm-shield rect {
+  stroke-width: 2;
+}
+
+.lm-shield text {
+  stroke: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.lm-shield-interstate rect {
+  fill: var(--lm-i-shield);
+  stroke: var(--lm-casing);
+}
+
+.lm-shield-interstate text {
+  fill: var(--lm-i-shield-ink);
+}
+
+.lm-shield-us rect,
+.lm-shield-state rect,
+.lm-shield-loop rect {
+  fill: var(--lm-us-shield);
+  stroke: var(--lm-us-shield-ink);
+}
+
+.lm-shield-us text,
+.lm-shield-state text,
+.lm-shield-loop text {
+  fill: var(--lm-us-shield-ink);
+}
+
+.lm-marker > circle {
+  stroke: var(--lm-casing);
+  stroke-width: 3;
+}
+
+.lm-marker-start > circle {
+  fill: var(--lm-route);
+}
+
+.lm-marker-end > circle {
+  fill: var(--lm-end);
+}
+
+.lm-marker-stop > circle {
+  fill: var(--lm-end);
+}
+
+.lm-marker-core {
+  fill: var(--lm-casing);
+}
+
+.lm-marker-n {
+  stroke: none !important;
+  fill: var(--lm-casing) !important;
+  font-size: 15px !important;
+  font-weight: 700;
+}
+
+.lm-marker-label {
+  font-size: 21px !important;
+  font-weight: 700;
+}
+
+.lm-scale path {
+  fill: none;
+  stroke: var(--lm-label);
+  stroke-width: 2;
+}
+
+.lm-scale text,
+.lm-north text {
+  font-size: 15px !important;
+}
+
+.lm-north path {
+  fill: var(--lm-label);
+}
+
+.lm-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.9rem;
+  margin: 0.45rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+}
+
+.lm-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lm-legend-n {
+  display: inline-grid;
+  place-items: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: var(--lm-end);
+  color: var(--lm-casing);
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }

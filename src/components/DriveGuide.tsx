@@ -5,6 +5,7 @@ import { isStayHotel, type DrivePlan } from "../lib/drive";
 import { buildDayGuide, dayDrivingMinutes, formatMinutes, mapsDayUrl, type TimelineItem } from "../lib/guide";
 import { assertNever, formatPoints, formatUsd } from "../lib/money";
 import { useChecklistState } from "../hooks/useChecklistState";
+import { LegMap } from "./LegMap";
 
 const DAY_KEY = "winter-expedition-day";
 
@@ -115,6 +116,11 @@ export function DriveGuide({ plan }: { plan: DrivePlan }) {
           <p className="muted tight">
             {day.timeZone}. Leave no later than {day.latestSafeDepart}.
           </p>
+          <LegMap
+            id={`day-${day.day}`}
+            title={`Map of day ${day.day}, ${shortTown(day.fromLabel)} to ${shortTown(day.toLabel)}`}
+            caption="Today's whole drive, with the road stops numbered in order. Each leg below has its own close-up map."
+          />
           <a className="btn btn-primary" href={mapsDayUrl(guide)} target="_blank" rel="noreferrer">
             Open today's whole route in Google Maps
           </a>
@@ -227,6 +233,7 @@ function TimelineRow({ item, done, onToggle }: { item: TimelineItem; done: boole
               {item.leg.miles} mi · about {formatMinutes(item.guide.minutes)} · tops out near{" "}
               {item.leg.topElevationFt.toLocaleString("en-US")} ft
             </p>
+            <LegMap id={item.leg.id} title={`Map of ${item.leg.road} from ${item.leg.from} to ${item.leg.to}`} />
             <ol className="directions">
               {item.guide.directions.map((step) => (
                 <li key={step}>{step}</li>

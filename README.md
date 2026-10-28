@@ -40,6 +40,9 @@ If the Firebase CLI asks to reauth, run `firebase login --reauth` as `hello@defi
 npm run seed                 # rewrite the E17 listing, Hilton catalog, and one route
 npm run refresh:hotels       # no-op without LITEAPI_KEY
 npm run refresh:routes       # no-op without MAPBOX_TOKEN
+npm run seed:maps            # redraw the leg and day maps from Natural Earth
 ```
+
+The leg maps are drawn in the browser from `src/data/generated/leg-maps.json`, with no map tiles, so they also work offline and inside the phone link. `npm run seed:maps` downloads Natural Earth's public-domain roads, borders, lakes and rivers once into `node_modules/.cache/natural-earth`, routes each leg along the highways named in `scripts/seed-leg-maps.ts`, and rewrites that file.
 
 `npm run seed` must not reintroduce other ski towns.
