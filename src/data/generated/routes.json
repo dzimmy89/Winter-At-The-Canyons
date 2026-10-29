@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-10-22T16:00:00.000Z",
+  "retrievedAt": "2026-10-29T21:45:00.000Z",
   "origin": {
     "label": "4922 NW 81st Ave, Gainesville, FL 32653",
     "lat": 29.7048,
@@ -8,12 +8,12 @@
   "routes": [
     {
       "townId": "park_city",
-      "miles": 2303,
-      "hours": 43.6,
+      "miles": 2780,
+      "hours": 42,
       "corridor": "parks_west",
-      "summary": "I-75 N → I-40 W Cookeville → I-24 / I-70 Topeka → I-70 Wheat Ridge → I-25 / I-80 Sunday → 900 Bitner Road, Apartment E17, Park City, UT 84098",
-      "winterNotes": "Sunday uses I-25 and I-80 over Sherman Summit, which stays lower than Eisenhower and Vail. Those Colorado passes are the backup only when Wyoming has snow and they are bare. If both have snow, stay in Wheat Ridge. The pin is Apartment E17, not the town centroid.",
-      "retrievedAt": "2026-10-22T16:00:00.000Z",
+      "summary": "Wed evening I-75 N / I-10 W to Daphne → Thu evening I-10 / I-12 W Sulphur → I-10 W Fort Stockton → I-10 W Goodyear → Sunday US-93 / I-15 / Provo Canyon → 900 Bitner Road, Apartment E17, Park City, UT 84098",
+      "winterNotes": "The southern route stays under 5,000 feet until Sunday. Sunday climbs I-15 to its 6,600-foot summit north of Beaver, then Provo Canyon instead of Parleys. If I-15 north of Cedar City has snow, stay in St. George. The pin is Apartment E17, not the town centroid.",
+      "retrievedAt": "2026-10-29T21:45:00.000Z",
       "provider": "planning_estimate"
     }
   ]

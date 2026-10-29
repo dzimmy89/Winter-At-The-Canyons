@@ -26,30 +26,37 @@ export function featuresEqual(a: MapFeature | null, b: MapFeature | null): boole
 }
 
 export function segmentForLeg(fromId: string, toId: string): RouteSegment {
-  if (toId === "dest" || fromId === "wheat_ridge") {
+  if (toId === "dest" || fromId === "goodyear") {
     return {
       id: "sunday",
-      title: "Sunday · clear corridor to E17",
-      body: "The planned road is I-25 north and I-80 west. Breaks are Vedauwoo, Fort Fred Steele, and the Echo Canyon rest area. Sherman Summit is the snow check. Eisenhower and Vail stay off the clock unless Wyoming has snow and those passes are bare. If both roads have snow, stay at the Wheat Ridge Hampton. The pin is 900 Bitner Road, Apartment E17.",
+      title: "Sunday · Goodyear to E17",
+      body: "The longest day: Wickenburg at first light, the Joshua trees on US-93, Kingman, Hoover Dam in the morning, the Virgin River Gorge in daylight, and lunch in St. George with the UDOT check. Then I-15 over the 6,600-foot summit in the afternoon and Provo Canyon to Kimball Junction after dark, about 7:00 PM. If I-15 has snow at lunch, stop in St. George. The pin is 900 Bitner Road, Apartment E17.",
     };
   }
-  if (toId === "wheat_ridge") {
+  if (toId === "goodyear") {
     return {
-      id: "i70-denver",
-      title: "I-70 W · Topeka to Wheat Ridge",
-      body: "Leave Topeka only if I-70 from Salina through Denver is bare or wet. E-470 is not the route. Wheat Ridge is east of the tunnel so Sunday can turn north onto I-25.",
+      id: "saturday",
+      title: "Saturday · Fort Stockton to Goodyear",
+      body: "The high-desert day: Balmorhea's spring pool at sunrise, straight through El Paso, lunch on the plaza in Old Mesilla, the Texas Canyon boulders, and around Phoenix on Loop 202. Blowing dust near Lordsburg is the hazard, not snow.",
     };
   }
-  if (toId === "topeka") {
+  if (toId === "fort_stockton") {
     return {
-      id: "cookeville-topeka",
-      title: "I-40 / I-24 / I-70 · Cookeville to Topeka",
-      body: "13.0 hours, the driving cap. Nashville and Kansas City are pass-throughs. The Gateway Arch is not a stop.",
+      id: "friday",
+      title: "Friday · Sulphur to Fort Stockton",
+      body: "Your day off. The Texas welcome-center boardwalk at sunrise, Houston after the rush, San Felipe de Austin, lunch in Seguin, the Hill Country, and West Texas at 80 mph. Fuel in Junction.",
+    };
+  }
+  if (toId === "sulphur") {
+    return {
+      id: "thursday-evening",
+      title: "Thursday · Daphne to Sulphur after work",
+      body: "Work in the Daphne hotel room until 3:00 PM CST, then I-10 and I-12 along the Gulf: the Mississippi welcome center, dinner in Hammond, and the Atchafalaya Basin Bridge in the dark. Bed in Sulphur about 9:05 PM.",
     };
   }
   return {
-    id: "i75",
-    title: "I-75 N / I-40 W · Gainesville to Cookeville",
-    body: "Leave 4922 Thursday, November 12, at 5:00 AM EST. Clear Atlanta before stopping again. Cookeville is east of Nashville. The Smokies are not on this road.",
+    id: "wednesday-evening",
+    title: "Wednesday · Gainesville to Daphne after work",
+    body: "Leave 4922 Wednesday, November 11, at 4:00 PM EST. I-75 and I-10 across the Panhandle, dinner in Marianna, and bed in Daphne on Mobile Bay about 9:15 PM CST. Sea level, no snow.",
   };
 }

@@ -13,9 +13,11 @@ The shipped site is a static SPA. Hunt, Drive, and Florida read bundled JSON. Ch
 
 ## Sections
 
+The drive is the home screen: pick a day, then follow the timeline from departure to check-in, with highway directions for every leg, a Navigate button for every stop, and stops you can mark done. Overview, Lease, and House sit in the small "Other plans" links at the top.
+
 - `#map` — click Gainesville, a park Hilton, a corridor segment, or E17
 - `#hunt` — signed Park City lease (prior PCLodge page is background only)
-- `#drive` — Leave Thu Nov 12, 2026. Cookeville, Topeka, Wheat Ridge. Sunday uses I-25 and I-80, not Eisenhower or Vail, unless Wyoming has snow. Arrive E17 Sun Nov 15. 13-hour cap. Hilton Honors + 150,000 points.
+- `#drive` — Built around work hours: leave Wed Nov 11 at 4 PM ET after work, work Thursday from the Daphne hotel room and drive after 4 PM ET, Friday is the one PTO day, then the weekend, arriving Sun Nov 15. Southern route around the snow: I-10 to Daphne, Sulphur, Fort Stockton, and Goodyear, then US-93 and I-15 up Utah with Provo Canyon on Sunday. Overnights are smaller towns, and big cities are drive-throughs. A stop every 3 to 4 hours. Only Sunday afternoon reaches snow country, with a UDOT check at lunch in St. George, which is also the hold. Hilton Honors + 150,000 points.
 - `#florida` — Secure Investments Realty is hired. Tanya Chappell is the contact. Written lease Nov 15, 2026 – May 16, 2027 so the Florida tax exemption holds.
 
 ## Hosting
@@ -38,6 +40,9 @@ If the Firebase CLI asks to reauth, run `firebase login --reauth` as `hello@defi
 npm run seed                 # rewrite the E17 listing, Hilton catalog, and one route
 npm run refresh:hotels       # no-op without LITEAPI_KEY
 npm run refresh:routes       # no-op without MAPBOX_TOKEN
+npm run seed:maps            # redraw the leg and day maps from Natural Earth
 ```
+
+The leg maps are drawn in the browser from `src/data/generated/leg-maps.json`, with no map tiles, so they also work offline and inside the phone link. `npm run seed:maps` downloads Natural Earth's public-domain roads, borders, lakes and rivers once into `node_modules/.cache/natural-earth`, routes each leg along the highways named in `scripts/seed-leg-maps.ts`, and rewrites that file.
 
 `npm run seed` must not reintroduce other ski towns.

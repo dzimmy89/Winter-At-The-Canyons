@@ -3,7 +3,7 @@ import { searchWeb } from "./lib/contextDev.ts";
 import { writeGenerated } from "./lib/io.ts";
 
 const query =
-  "official winter road conditions chain laws and pass status driving from Gainesville Florida to Park City Utah via I-75 I-24 I-70 Eisenhower Tunnel Vail Pass US-6 and I-80";
+  "official winter road conditions and traction laws driving from Gainesville Florida to Park City Utah via I-10 US-93 I-15 and Provo Canyon US-189";
 
 const outcome = await searchWeb({ query, numResults: 10 });
 
