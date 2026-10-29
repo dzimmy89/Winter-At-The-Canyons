@@ -26,37 +26,37 @@ export function featuresEqual(a: MapFeature | null, b: MapFeature | null): boole
 }
 
 export function segmentForLeg(fromId: string, toId: string): RouteSegment {
-  if (toId === "dest" || fromId === "kingman") {
+  if (toId === "dest" || fromId === "st_george") {
     return {
-      id: "sunday",
-      title: "Sunday · Kingman to E17 over I-15",
-      body: "US-93 over the Hoover Dam bridge, around Las Vegas, through the Virgin River Gorge, and up I-15 to Provo. Breaks are Hoover Dam, Zion's Kolob Canyons, and Bridal Veil Falls. The 6,600-foot I-15 summit north of Beaver is the snow check. Provo Canyon replaces Parleys. If I-15 has snow, stay in St. George. The pin is 900 Bitner Road, Apartment E17.",
+      id: "monday",
+      title: "Monday · St. George to E17 after work",
+      body: "Work in the Hilton Garden Inn room until 3:00 PM, then I-15 north past Cedar City and over the 6,600-foot summit near sunset, Fillmore for fuel, and Provo Canyon to Kimball Junction in the dark. The 2 PM UDOT check decides it. If I-15 has snow, stay the second night you booked. The pin is 900 Bitner Road, Apartment E17.",
     };
   }
-  if (toId === "kingman") {
+  if (toId === "st_george") {
     return {
-      id: "i10-us93",
-      title: "I-10 W / US-93 N · Deming to Kingman",
-      body: "Texas Canyon boulders, Picacho Peak, then around Phoenix on the loops, Wickenburg, and the Burro Creek bridge. Blowing dust near Lordsburg is the hazard, not snow.",
+      id: "sunday",
+      title: "Sunday · Deming to St. George",
+      body: "The long desert day: Texas Canyon boulders, Picacho Peak, around Phoenix on the loops, Wickenburg, Kingman, and Hoover Dam at sunset, then Las Vegas and the Virgin River Gorge after dark. Blowing dust near Lordsburg is the hazard, not snow.",
     };
   }
   if (toId === "deming") {
     return {
       id: "west-texas",
-      title: "I-10 W · Kerrville to Deming",
-      body: "West Texas at 80 mph. Balmorhea's spring pool, straight through El Paso, the plaza in Old Mesilla, and the night in small-town Deming. Fuel every chance you get.",
+      title: "Saturday · Seguin to Deming",
+      body: "Through San Antonio early, the Hill Country, and West Texas at 80 mph. Junction, Balmorhea's spring pool, straight through El Paso, and the plaza in Old Mesilla. Fuel every chance you get.",
     };
   }
-  if (toId === "kerrville") {
+  if (toId === "seguin") {
     return {
-      id: "gulf-hill-country",
-      title: "I-12 / I-10 W · Covington to Kerrville",
-      body: "The longest day. The Texas welcome-center boardwalk, through Houston at midday, San Felipe de Austin, Luling barbecue, and the Guadalupe River in Kerrville.",
+      id: "gulf-texas",
+      title: "Friday · Crestview to Seguin",
+      body: "Your day off and the longest drive. The Davis Bayou, the Atchafalaya Welcome Center, the Texas welcome-center boardwalk, Houston mid-afternoon, and San Felipe de Austin.",
     };
   }
   return {
-    id: "i10-gulf",
-    title: "I-75 N / I-10 W / I-12 W · Gainesville to Covington",
-    body: "Leave 4922 Wednesday, November 11, at 6:00 AM EST. Falling Waters, the Davis Bayou in Ocean Springs, and the Mandeville lakefront. Sea level all day.",
+    id: "thursday-evening",
+    title: "Thursday · Gainesville to Crestview after work",
+    body: "Leave 4922 Thursday, November 12, at 5:30 PM EST. I-75 and I-10 in the dark, dinner in Marianna, and bed in Crestview by 9:30 PM CST. Sea level, no snow.",
   };
 }

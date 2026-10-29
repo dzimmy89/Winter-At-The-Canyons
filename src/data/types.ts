@@ -108,6 +108,8 @@ export interface HotelNight {
   awardPointsPerNight: number | null;
   awardPointsQuote: string;
   parkingUsd: number | null;
+  // What the hotel offers for a workday, and whether the plan needs it.
+  workspace?: string;
 }
 
 export interface DriveStopEvent {
@@ -183,6 +185,14 @@ export interface DriveDay {
   stops: DriveStopEvent[];
   snowGate: SnowGate;
   corridors?: SundayCorridor[];
+  // Set on a day that starts with a workday, at home or in the hotel.
+  work?: WorkBlock;
+}
+
+export interface WorkBlock {
+  where: string;
+  hours: string;
+  notes: string[];
 }
 
 export interface ListingsSnapshot {

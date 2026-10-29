@@ -208,6 +208,31 @@ export function DriveGuide({ plan }: { plan: DrivePlan }) {
 
 function TimelineRow({ item, done, onToggle }: { item: TimelineItem; done: boolean; onToggle?: () => void }) {
   switch (item.kind) {
+    case "work":
+      return (
+        <li className="tl-node tl-work">
+          <span className="tl-mark" aria-hidden="true">
+            ⌨
+          </span>
+          <div className="tl-body">
+            <p className="tl-clock">
+              {item.work.hours}
+              <span className="stop-kind">Workday</span>
+            </p>
+            <h3>Work first: {item.work.where}</h3>
+            <ul className="plain-list">
+              {item.work.notes.map((note) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
+            {item.hotel?.workspace ? (
+              <p className="muted tight">
+                <strong>What the hotel has:</strong> {item.hotel.workspace}
+              </p>
+            ) : null}
+          </div>
+        </li>
+      );
     case "depart":
       return (
         <li className="tl-node tl-start">
@@ -290,7 +315,11 @@ function HotelLine({ hotel }: { hotel: NonNullable<Extract<TimelineItem, { kind:
       {hotel.awardPointsPerNight != null ? (
         <li>Hilton Honors: up to {formatPoints(hotel.awardPointsPerNight)} points for the night.</li>
       ) : null}
-      {hotel.callToConfirmTwoCats ? <li className="warn-line">Call ahead to confirm two cats and the points night.</li> : null}
+      {hotel.nights > 1 ? <li>Book {hotel.nights} nights here, so the room is yours through the next workday.</li> : null}
+      {hotel.workspace ? <li>Work space: {hotel.workspace}</li> : null}
+      {hotel.callToConfirmTwoCats ? (
+        <li className="warn-line">Call ahead to confirm two cats{hotel.nights > 1 ? ", both nights," : ""} and the points booking.</li>
+      ) : null}
     </ul>
   );
 }

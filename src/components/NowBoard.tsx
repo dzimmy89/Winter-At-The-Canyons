@@ -10,13 +10,13 @@ const rows = [
     href: "#drive",
     kicker: "Drive",
     title: `Leave ${leaveGainesville}. Arrive E17 ${arriveParkCity}.`,
-    body: "Sleep in Covington, Kerrville, Deming, and Kingman, all smaller towns. I-10 across the south, then I-15 up Utah on Sunday. A stop every 3 to 4 hours.",
+    body: "Thursday after work to Crestview, then Seguin, Deming and two nights in St. George, all smaller towns. Friday is your day off. Monday you work from the hotel, then drive I-15 up Utah after 3 PM.",
   },
   {
     href: "#drive",
     kicker: "Snow",
     title: "Bare or wet pavement is a go. Snow is a hold.",
-    body: "Only Sunday reaches snow country: the 6,600-foot I-15 summit and Provo Canyon. If I-15 has snow, stay in St. George and finish Monday.",
+    body: "Only Monday evening reaches snow country: the 6,600-foot I-15 summit and Provo Canyon. If UDOT shows snow at 2 PM, stay the second night in St. George and drive Tuesday after work.",
   },
   {
     href: "#lease",
@@ -36,7 +36,7 @@ const rows = [
     href: "#house",
     kicker: "This week",
     title: "Tanya Chappell runs the Nov 15 walkthrough.",
-    body: "You leave Wednesday, November 11. From Utah, Secure Investments runs 4922. You do not.",
+    body: "You leave Thursday, November 12, after work. From Utah, Secure Investments runs 4922. You do not.",
   },
 ] as const;
 
@@ -46,7 +46,7 @@ export function NowBoard() {
       <p className="eyebrow">Now</p>
       <h1>Four jobs. One season.</h1>
       <p className="lede">
-        You leave Gainesville on Wednesday, November 11, and sleep at 900 Bitner Road, Apartment E17, on November 15.
+        You leave Gainesville on Thursday, November 12, after work, and sleep at 900 Bitner Road, Apartment E17, on Monday, November 16.
       </p>
       <ol className="now-list">
         {rows.map((row) => (

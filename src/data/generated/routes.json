@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-10-25T10:30:00.000Z",
+  "retrievedAt": "2026-10-29T17:30:00.000Z",
   "origin": {
     "label": "4922 NW 81st Ave, Gainesville, FL 32653",
     "lat": 29.7048,
@@ -8,12 +8,12 @@
   "routes": [
     {
       "townId": "park_city",
-      "miles": 2793,
-      "hours": 41.6,
+      "miles": 2782,
+      "hours": 41.7,
       "corridor": "parks_west",
-      "summary": "I-75 N / I-10 W / I-12 W Covington → I-10 W Kerrville → I-10 W Deming → I-10 / US-93 Kingman → I-15 / Provo Canyon Sunday → 900 Bitner Road, Apartment E17, Park City, UT 84098",
+      "summary": "Thu evening I-75 N / I-10 W to Crestview → I-10 W / I-12 W Seguin → I-10 W Deming → I-10 / US-93 / I-15 St. George → Monday after work I-15 / Provo Canyon → 900 Bitner Road, Apartment E17, Park City, UT 84098",
       "winterNotes": "The southern route stays under 5,000 feet until Sunday. Sunday climbs I-15 to its 6,600-foot summit north of Beaver, then Provo Canyon instead of Parleys. If I-15 north of Cedar City has snow, stay in St. George. The pin is Apartment E17, not the town centroid.",
-      "retrievedAt": "2026-10-25T10:30:00.000Z",
+      "retrievedAt": "2026-10-29T17:30:00.000Z",
       "provider": "planning_estimate"
     }
   ]

@@ -888,6 +888,16 @@ td {
   border-color: var(--pine);
 }
 
+.tl-work .tl-mark {
+  border-color: var(--watch);
+  color: var(--watch);
+}
+
+.tl-work > .tl-body {
+  background: var(--watch-bg);
+  border-color: var(--watch);
+}
+
 .tl-stop.is-done > .tl-body {
   opacity: 0.6;
 }

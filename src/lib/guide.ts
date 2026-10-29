@@ -1,7 +1,8 @@
 import { endAddress, hotelAddresses, legGuides, stopPlaces, startAddress, type LegGuide } from "../data/driveGuide";
-import type { DriveDay, DriveLeg, DriveStopEvent, HotelNight } from "../data/types";
+import type { DriveDay, DriveLeg, DriveStopEvent, HotelNight, WorkBlock } from "../data/types";
 
 export type TimelineItem =
+  | { kind: "work"; work: WorkBlock; hotel: HotelNight | null }
   | { kind: "depart"; clock: string; label: string; address: string }
   | { kind: "leg"; leg: DriveLeg; guide: LegGuide; from: string; to: string }
   | { kind: "stop"; stop: DriveStopEvent; place: string }
@@ -41,9 +42,11 @@ export function buildDayGuide(day: DriveDay, previous: DriveDay | null): DayGuid
   const end = nightAddress(day.hotel);
   const stopsById = new Map(day.stops.map((stop) => [stop.id, stop]));
   const usedStops = new Set<string>();
-  const timeline: TimelineItem[] = [
-    { kind: "depart", clock: day.departClock, label: day.fromLabel, address: start },
-  ];
+  const timeline: TimelineItem[] = [];
+  if (day.work) {
+    timeline.push({ kind: "work", work: day.work, hotel: previous?.hotel ?? null });
+  }
+  timeline.push({ kind: "depart", clock: day.departClock, label: day.fromLabel, address: start });
   const roadStops: string[] = [];
   let from = start;
   day.legs.forEach((leg) => {
