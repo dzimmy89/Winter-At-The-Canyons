@@ -1,12 +1,12 @@
 {
   "retrievedAt": "2026-10-24T14:00:00.000Z",
-  "query": "official road conditions for the Thursday November 12 Gainesville to Kimball Junction drive on I-10, US-93, and I-15",
+  "query": "official road conditions for the Wednesday November 11 Gainesville to Kimball Junction drive on I-10, US-93, and I-15",
   "requestId": "hand-filed-2026-10-24",
   "results": [
     {
       "url": "https://udottraffic.utah.gov",
       "title": "UDOT Traffic",
-      "description": "Monday's gate, at 2:00 PM before checkout. I-15 from Cedar City to Nephi, including the 6,600-foot summit between Beaver and Cove Fort, and US-189 through Provo Canyon. Leave St. George only when both show bare or wet pavement, or stay the second night you booked.",
+      "description": "Sunday's gate, at lunch in St. George. I-15 from Cedar City to Nephi, including the 6,600-foot summit between Beaver and Cove Fort, and US-189 through Provo Canyon. Go on only when both show bare or wet pavement. Otherwise stay in St. George.",
       "relevance": "high"
     },
     {
@@ -18,19 +18,19 @@
     {
       "url": "https://www.az511.gov",
       "title": "AZ 511",
-      "description": "Sunday's gate. I-10 from the New Mexico line to Phoenix for blowing dust, and US-93 from Wickenburg to Kingman and on to Hoover Dam.",
+      "description": "Saturday and Sunday. I-10 from the New Mexico line to Phoenix for blowing dust, and US-93 from Wickenburg to Kingman and on to Hoover Dam.",
       "relevance": "high"
     },
     {
       "url": "https://drivetexas.org",
       "title": "DriveTexas",
-      "description": "Friday and Saturday. I-10 from Orange to El Paso. West Texas ice is rare and melts by late morning.",
+      "description": "Friday and Saturday's gate. I-10 from Orange to El Paso. West Texas ice is rare and melts by late morning.",
       "relevance": "medium"
     },
     {
       "url": "https://www.weather.gov",
       "title": "National Weather Service",
-      "description": "Thursday evening and Friday gate. Fog, ice storm, or winter storm warnings on I-10 along the Gulf Coast. A hold is hours, not a night.",
+      "description": "Wednesday and Thursday evenings. Fog, ice storm, or winter storm warnings on I-10 and I-12 along the Gulf Coast. A hold is hours, not a night.",
       "relevance": "medium"
     }
   ]

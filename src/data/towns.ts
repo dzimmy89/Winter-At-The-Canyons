@@ -47,7 +47,7 @@ export const towns: Town[] = [
     utilitiesBand: "Signed rent is $3,600/month. Confirm whether that includes utilities, internet, garage, and pets.",
     groceryNote: "Kimball Junction / Newpark is a few minutes away. Main Street is about 15 minutes.",
     winterNotes:
-      "The southern route stays under 5,000 feet until Sunday. Sunday climbs I-15 to its 6,600-foot summit north of Beaver, then Provo Canyon instead of Parleys. If I-15 north of Cedar City has snow, stay in St. George. The pin is Apartment E17, not the town centroid.",
+      "The southern route stays under 5,000 feet until Sunday afternoon. After lunch in St. George, Sunday climbs I-15 to its 6,600-foot summit north of Beaver, then Provo Canyon instead of Parleys. If I-15 north of Cedar City has snow at lunch, stay in St. George. The pin is Apartment E17, not the town centroid.",
   },
 ];
 

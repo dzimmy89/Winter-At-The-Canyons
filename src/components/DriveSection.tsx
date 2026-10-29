@@ -31,15 +31,15 @@ interface Props {
 
 const tripChecklist = [
   { id: "trip-c1", label: "Call every Hilton desk, say two cats, and confirm the stay is an award/points night" },
-  { id: "trip-c2", label: "M+S or 3PMSF tires are on the car before Thursday" },
+  { id: "trip-c2", label: "M+S or 3PMSF tires are on the car before Wednesday" },
   { id: "trip-c3", label: "Read the snow gate the night before each day, and again before the key turns" },
   { id: "trip-c4", label: "Litter, pads, carriers, and a hotel towel kit packed" },
-  { id: "trip-c5", label: "Monday 2 PM: Provo Canyon if I-15 and US-189 are bare or wet. Parleys if only Provo Canyon is bad. Stay the second St. George night if I-15 north of Cedar City has snow" },
-  { id: "trip-c7", label: "Buy the Balmorhea day pass online Friday night" },
-  { id: "trip-c8", label: "Fill the tank in Junction or Ozona on Saturday, and in Wickenburg and Kingman on Sunday" },
+  { id: "trip-c5", label: "Sunday lunch in St. George: Provo Canyon if I-15 and US-189 are bare or wet. Parleys if only Provo Canyon is bad. Stay in St. George if I-15 north of Cedar City has snow" },
+  { id: "trip-c7", label: "Buy the Balmorhea day pass online Friday night in Fort Stockton" },
+  { id: "trip-c8", label: "Fill the tank in Junction on Friday, Deming or Lordsburg on Saturday, and Wickenburg and Kingman on Sunday" },
   { id: "trip-c6", label: "Cats do not stay in a closed car" },
-  { id: "trip-c9", label: "Book the Hilton Garden Inn St. George for Sunday and Monday nights, so Monday's workday is in your room with the cats" },
-  { id: "trip-c10", label: "Pack the car Wednesday night, so Thursday after work is just cats, litter and cooler" },
+  { id: "trip-c9", label: "Get a 3 PM late checkout at the Hilton Garden Inn Daphne for Thursday's workday, or add Thursday night to the booking" },
+  { id: "trip-c10", label: "Pack the car Tuesday night, so Wednesday after work is just cats, litter, cooler and your work bag" },
 ];
 
 const tripRisks = [
@@ -49,23 +49,23 @@ const tripRisks = [
   },
   {
     title: "Small towns, not big cities",
-    body: "Every night is in a smaller town: Crestview, Seguin, Deming, and St. George. Every stop is a park, a small town, a welcome center or a rest area. Baton Rouge, Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are drive-throughs on the interstate with no exits.",
+    body: "Every night is in a smaller town or on the edge of a metro: Daphne, Sulphur, Fort Stockton, and Goodyear on the far west side of Phoenix. Every stop is a park, a small town, a welcome center or a rest area. Baton Rouge, Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are drive-throughs on the interstate with no exits.",
   },
   {
     title: "Work hours squeeze the weekend",
-    body: "With only Friday off, the drive fits into Thursday evening, three full days and Monday evening. Friday (729 miles, 11 hours) and Sunday (740 miles, 11.3 hours) are long, and each ends about an hour after dark. Houston comes on a Friday afternoon. If a day runs late, drop a rest stop, not sleep.",
+    body: "With only Friday off, the drive fits into two evenings after work and three full days. Sunday (723 miles, 11.5 hours) is the longest, and Provo Canyon comes after dark. Saturday (692 miles, 10 hours) ends just after sunset. If a day runs late, drop a rest stop, not sleep.",
   },
   {
-    title: "Snow is only a Monday-evening question",
-    body: "Thursday through Sunday stay under 5,000 feet across the Gulf Coast and the desert. Monday climbs I-15 to 6,600 feet north of Beaver around sunset and ends near 6,500 feet at E17 after dark. Falling snow, snow-packed pavement, a traction law, or a closure at the 2 PM check is a no-go. Then stay the second night you booked in St. George at 2,800 feet and drive Tuesday after work.",
+    title: "Snow is only a Sunday-afternoon question",
+    body: "Wednesday through Saturday and Sunday morning stay under 5,000 feet across the Gulf Coast and the desert. After lunch in St. George, Sunday climbs I-15 to 6,600 feet north of Beaver in daylight and ends near 6,500 feet at E17 after dark. Falling snow, snow-packed pavement, a traction law, or a closure at the lunch check is a no-go. Then stay in St. George at 2,800 feet, work Monday from the room, and drive after work.",
   },
   {
     title: "Dust, deer, and gas",
-    body: "West Texas and southern New Mexico trade snow for other hazards. Deer at dawn in the Hill Country and after dark east of Seguin, blowing dust near Lordsburg, and 100-mile gaps between stations. Pull fully off with lights off in a dust storm, and never drop below half a tank.",
+    body: "West Texas and southern New Mexico trade snow for other hazards. Deer in the Hill Country and at dawn near Fort Stockton, blowing dust near Lordsburg, and 100-mile gaps between stations. Pull fully off with lights off in a dust storm, and never drop below half a tank.",
   },
   {
     title: "150,000 points and the ceilings",
-    body: "Five Hilton nights at a 30,000-point ceiling each uses all 150,000: Crestview, Seguin, Deming, and two in St. George. A snow hold Tuesday night would be cash. Pet fees are still cash.",
+    body: "Four Hilton nights at a 30,000-point ceiling each uses 120,000: Daphne, Sulphur, Fort Stockton, and Goodyear. The last 30,000 covers either a second Daphne night for Thursday's workday or a St. George snow hold, not both. Pet fees are still cash.",
   },
 ];
 
@@ -77,8 +77,8 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
         <p className="eyebrow">The drive · {leaveGainesville.replace(", 2026", "")} to {arriveParkCity.replace(", 2026", "")}</p>
         <h1>Gainesville to Park City</h1>
         <p className="lede">
-          Built around your work hours: Thursday after work, Friday off, the weekend, and Monday after a workday in the
-          hotel. The long way around the snow, with a stop every 3 to 4 hours and each night at a cat-friendly Hilton in a
+          Built around your work hours: Wednesday after work, Thursday after a workday in the hotel, Friday off, and the
+          weekend. The long way around the snow, with a stop every 3 to 4 hours and each night at a cat-friendly Hilton in a
           smaller town. Pick a day, then follow it top to bottom.
         </p>
         <dl className="trip-strip">
@@ -92,7 +92,7 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
           </div>
           <div>
             <dt>Nights</dt>
-            <dd>Crestview · Seguin · Deming · St. George ×2</dd>
+            <dd>Daphne · Sulphur · Fort Stockton · Goodyear</dd>
           </div>
           <div>
             <dt>Longest day</dt>

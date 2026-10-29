@@ -26,37 +26,37 @@ export function featuresEqual(a: MapFeature | null, b: MapFeature | null): boole
 }
 
 export function segmentForLeg(fromId: string, toId: string): RouteSegment {
-  if (toId === "dest" || fromId === "st_george") {
-    return {
-      id: "monday",
-      title: "Monday · St. George to E17 after work",
-      body: "Work in the Hilton Garden Inn room until 3:00 PM, then I-15 north past Cedar City and over the 6,600-foot summit near sunset, Fillmore for fuel, and Provo Canyon to Kimball Junction in the dark. The 2 PM UDOT check decides it. If I-15 has snow, stay the second night you booked. The pin is 900 Bitner Road, Apartment E17.",
-    };
-  }
-  if (toId === "st_george") {
+  if (toId === "dest" || fromId === "goodyear") {
     return {
       id: "sunday",
-      title: "Sunday · Deming to St. George",
-      body: "The long desert day: Texas Canyon boulders, Picacho Peak, around Phoenix on the loops, Wickenburg, Kingman, and Hoover Dam at sunset, then Las Vegas and the Virgin River Gorge after dark. Blowing dust near Lordsburg is the hazard, not snow.",
+      title: "Sunday · Goodyear to E17",
+      body: "The longest day: Wickenburg at first light, the Joshua trees on US-93, Kingman, Hoover Dam in the morning, the Virgin River Gorge in daylight, and lunch in St. George with the UDOT check. Then I-15 over the 6,600-foot summit in the afternoon and Provo Canyon to Kimball Junction after dark, about 7:00 PM. If I-15 has snow at lunch, stop in St. George. The pin is 900 Bitner Road, Apartment E17.",
     };
   }
-  if (toId === "deming") {
+  if (toId === "goodyear") {
     return {
-      id: "west-texas",
-      title: "Saturday · Seguin to Deming",
-      body: "Through San Antonio early, the Hill Country, and West Texas at 80 mph. Junction, Balmorhea's spring pool, straight through El Paso, and the plaza in Old Mesilla. Fuel every chance you get.",
+      id: "saturday",
+      title: "Saturday · Fort Stockton to Goodyear",
+      body: "The high-desert day: Balmorhea's spring pool at sunrise, straight through El Paso, lunch on the plaza in Old Mesilla, the Texas Canyon boulders, and around Phoenix on Loop 202. Blowing dust near Lordsburg is the hazard, not snow.",
     };
   }
-  if (toId === "seguin") {
+  if (toId === "fort_stockton") {
     return {
-      id: "gulf-texas",
-      title: "Friday · Crestview to Seguin",
-      body: "Your day off and the longest drive. The Davis Bayou, the Atchafalaya Welcome Center, the Texas welcome-center boardwalk, Houston mid-afternoon, and San Felipe de Austin.",
+      id: "friday",
+      title: "Friday · Sulphur to Fort Stockton",
+      body: "Your day off. The Texas welcome-center boardwalk at sunrise, Houston after the rush, San Felipe de Austin, lunch in Seguin, the Hill Country, and West Texas at 80 mph. Fuel in Junction.",
+    };
+  }
+  if (toId === "sulphur") {
+    return {
+      id: "thursday-evening",
+      title: "Thursday · Daphne to Sulphur after work",
+      body: "Work in the Daphne hotel room until 3:00 PM CST, then I-10 and I-12 along the Gulf: the Mississippi welcome center, dinner in Hammond, and the Atchafalaya Basin Bridge in the dark. Bed in Sulphur about 9:05 PM.",
     };
   }
   return {
-    id: "thursday-evening",
-    title: "Thursday · Gainesville to Crestview after work",
-    body: "Leave 4922 Thursday, November 12, at 5:30 PM EST. I-75 and I-10 in the dark, dinner in Marianna, and bed in Crestview by 9:30 PM CST. Sea level, no snow.",
+    id: "wednesday-evening",
+    title: "Wednesday · Gainesville to Daphne after work",
+    body: "Leave 4922 Wednesday, November 11, at 4:00 PM EST. I-75 and I-10 across the Panhandle, dinner in Marianna, and bed in Daphne on Mobile Bay about 9:15 PM CST. Sea level, no snow.",
   };
 }

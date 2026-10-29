@@ -17,7 +17,7 @@ The drive is the home screen: pick a day, then follow the timeline from departur
 
 - `#map` — click Gainesville, a park Hilton, a corridor segment, or E17
 - `#hunt` — signed Park City lease (prior PCLodge page is background only)
-- `#drive` — Built around work hours: leave Thu Nov 12 after work, Friday is the one PTO day, then the weekend, and Monday is a workday in the St. George hotel room before the last drive. Southern route around the snow: I-10 to Crestview, Seguin, and Deming, then I-10 / US-93 / I-15 to St. George (two nights), and I-15 up Utah with Provo Canyon on Monday evening, Nov 16. Overnights are smaller towns, and big cities are drive-throughs. A stop every 3 to 4 hours. Only Monday evening reaches snow country, with a 2 PM UDOT check and the second St. George night as the hold. Hilton Honors + 150,000 points.
+- `#drive` — Built around work hours: leave Wed Nov 11 at 4 PM ET after work, work Thursday from the Daphne hotel room and drive after 4 PM ET, Friday is the one PTO day, then the weekend, arriving Sun Nov 15. Southern route around the snow: I-10 to Daphne, Sulphur, Fort Stockton, and Goodyear, then US-93 and I-15 up Utah with Provo Canyon on Sunday. Overnights are smaller towns, and big cities are drive-throughs. A stop every 3 to 4 hours. Only Sunday afternoon reaches snow country, with a UDOT check at lunch in St. George, which is also the hold. Hilton Honors + 150,000 points.
 - `#florida` — Secure Investments Realty is hired. Tanya Chappell is the contact. Written lease Nov 15, 2026 – May 16, 2027 so the Florida tax exemption holds.
 
 ## Hosting
