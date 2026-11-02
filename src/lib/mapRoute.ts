@@ -37,14 +37,14 @@ export function segmentForLeg(fromId: string, toId: string): RouteSegment {
     return {
       id: "saturday",
       title: "Saturday · Van Horn to Kingman",
-      body: "Through El Paso before dawn, breakfast on the plaza in Old Mesilla, the Texas Canyon boulders, lunch at Picacho Peak, around Phoenix on the loops, Wickenburg, and US-93 to Kingman at sunset. Blowing dust near Lordsburg is the hazard, not snow.",
+      body: "Through El Paso before dawn, breakfast on the plaza in Old Mesilla, lunch among the Texas Canyon boulders, past Picacho Peak and around Phoenix on the loops, Wickenburg, and US-93 to Kingman at sunset. Blowing dust near Lordsburg is the hazard, not snow.",
     };
   }
   if (toId === "van_horn") {
     return {
       id: "friday",
       title: "Friday · Winnie to Van Horn",
-      body: "Houston early in the morning, San Felipe de Austin, a river picnic in Junction, West Texas at 80 mph, fuel in Fort Stockton, and Van Horn before sunset.",
+      body: "Houston early in the morning, the painted church at High Hill, a river picnic in Junction, West Texas at 80 mph, fuel in Fort Stockton, and Van Horn before sunset.",
     };
   }
   return {

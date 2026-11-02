@@ -60,14 +60,15 @@ export const stopStories: Record<string, StopStory> = {
     ],
     cats: "Picnic tables by the parking lot. Eat lunch in sight of the car.",
   },
-  "fri-san-felipe": {
-    hook: "The town where Texas was planned, on a bluff above the Brazos River.",
+  "fri-high-hill": {
+    hook: "A plain brick church in the cotton fields, painted inside like a cathedral.",
     what: [
-      "Stephen F. Austin made San Felipe the headquarters of his colony in 1824. The meetings that led to the Texas Revolution happened here, including the Consultation of 1835, and the first Texas newspapers were printed here.",
-      "In March 1836 the town's own people burned it rather than leave it to Santa Anna's army. A modern museum tells the story, and the grounds keep the old town's street plan, a statue of Austin, and a walk out to the Brazos.",
+      "Czech and German farmers settled this part of Texas in the 1800s and built a handful of country churches that look plain outside and are covered in paint inside. Together they are known as the Painted Churches of Texas.",
+      "St. Mary's at High Hill is the grandest. It is a red-brick Gothic church with a 111-foot steeple, finished in 1906. In 1912 two San Antonio artists painted the inside: soft-colored vaulted ceilings with angels, stained glass, a hand-carved altar, and wooden pillars painted to look like marble.",
+      "It is still a working parish church. The door is usually open in daylight. If it is locked or a service is on, the outside and the churchyard are still worth the stop.",
     ],
-    cats: "The grounds are open and quiet early. Walk the river overlook while the other person stays with the car.",
-    townId: "san-felipe",
+    cats: "A quiet country lot with room to park in the shade. Take turns going inside.",
+    townId: "schulenburg",
   },
   "fri-junction": {
     hook: "A picnic under the pecans where two clear Hill Country rivers meet.",
@@ -104,14 +105,6 @@ export const stopStories: Record<string, StopStory> = {
       "The rest area sits right in the boulders. The Dragoon Mountains to the south were home to the Chiricahua Apache leader Cochise.",
     ],
     cats: "Restrooms and a short loop through the rocks a few steps from the parking spaces.",
-  },
-  "sat-picacho": {
-    hook: "A volcanic spike above a saguaro forest, and the westernmost Civil War battle.",
-    what: [
-      "Picacho Peak rises about 1,500 feet straight out of the desert floor to 3,374 feet, and you can see it from miles away on I-10. The park around it is full of tall saguaro cactus.",
-      "On April 15, 1862, Union and Confederate cavalry fought a small skirmish in the pass here, usually counted as the westernmost battle of the Civil War. Markers in the park tell the story.",
-    ],
-    cats: "Picnic ramadas with shade near the parking areas. About $7 per vehicle.",
   },
   "sat-wickenburg": {
     hook: "A gold-rush town with a tree that served as its jail.",
@@ -207,20 +200,23 @@ export const townProfiles: Record<string, TownProfile> = {
       "The visitor center hours are posted on the park's website. The boardwalk and grounds do not depend on them.",
     ],
   },
-  "san-felipe": {
-    id: "san-felipe",
-    name: "San Felipe, Texas",
-    tagline: "A small town on the Brazos where the Texas Revolution was planned.",
+  schulenburg: {
+    id: "schulenburg",
+    name: "Schulenburg, Texas",
+    tagline: "A Czech and German farm town halfway between Houston and San Antonio.",
     facts: [
-      { label: "Population", value: "About 750" },
-      { label: "Founded", value: "1823 to 1824 by Stephen F. Austin" },
-      { label: "Known for", value: "San Felipe de Austin State Historic Site" },
+      { label: "Population", value: "About 2,900" },
+      { label: "Elevation", value: "About 350 ft" },
+      { label: "Known for", value: "The Painted Churches, kolaches" },
     ],
     about: [
-      "San Felipe de Austin was the capital of Austin's colony, the first large American settlement in Mexican Texas. Conventions here in 1832, 1833 and 1835 laid the groundwork for independence, and Gail Borden printed the Telegraph and Texas Register here.",
-      "The residents burned the town in 1836 as Santa Anna's army approached. It never regained its old importance. Today the small town sits next to the historic site and Stephen F. Austin State Park.",
+      "German and Czech settlers founded Schulenburg in the 1870s when the railroad came through. It still celebrates both. The bakeries sell kolaches, the sweet and savory Czech pastries Texans eat for breakfast.",
+      "Its visitor center hands out maps to the Painted Churches of Texas. High Hill, Ammannsville, Dubina and Praha are all within about 15 minutes.",
     ],
-    goodToKnow: ["A tiny farm town just north of I-10, quiet at 8 AM."],
+    goodToKnow: [
+      "A small, friendly farm town right on I-10, with gas and food at exit 674.",
+      "Grab kolaches for the road here. It is the best snack stop of the trip.",
+    ],
   },
   junction: {
     id: "junction",
@@ -473,7 +469,7 @@ export const routeTownOrder: string[] = [
   "defuniak",
   "ocean-springs",
   "winnie",
-  "san-felipe",
+  "schulenburg",
   "junction",
   "fort-stockton",
   "van-horn",
