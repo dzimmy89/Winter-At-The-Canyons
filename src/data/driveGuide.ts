@@ -14,120 +14,94 @@ export const startAddress = "4922 NW 81st Ave, Gainesville, FL 32653";
 export const endAddress = "900 Bitner Road, Park City, UT 84098";
 
 export const legGuides: Record<string, LegGuide> = {
-  "wed-i75": {
+  "thu-i75": {
     minutes: 45,
     navTo: "Lake City, FL",
     directions: [
       "Neighborhood streets to the nearest I-75 on-ramp. Tap Navigate for the turns out of the driveway.",
-      "I-75 North about 40 miles, past Alachua and High Springs.",
+      "I-75 North about 40 miles, past Alachua and High Springs, in the dark.",
       "Exit 435 onto I-10 West toward Tallahassee.",
     ],
   },
-  "wed-big-bend": {
-    minutes: 140,
-    endStopId: "wed-marianna",
+  "thu-big-bend": {
+    minutes: 145,
+    endStopId: "thu-marianna",
     directions: [
-      "I-10 West the whole way. It gets dark around Madison.",
-      "Live Oak and Madison, then Tallahassee at about 1.5 hours (exits 199 to 209). Stay on I-10.",
+      "I-10 West the whole way. Sunrise comes around Madison.",
+      "Tallahassee at about 1.5 hours (exits 199 to 209). Stay on I-10.",
       "Cross the Apalachicola River near exit 158. Clocks go back one hour to Central.",
-      "Exit 142 (SR-71, Marianna) for gas and dinner at the ramp.",
+      "Exit 142 (SR-71, Marianna) for gas and breakfast at the ramp.",
     ],
   },
-  "wed-panhandle": {
-    minutes: 155,
+  "thu-coast": {
+    minutes: 205,
+    endStopId: "thu-davis-bayou",
     directions: [
-      "Back to I-10 West at exit 142.",
-      "Past Chipley (exit 120), DeFuniak Springs (exit 85) and Crestview (exit 56).",
-      "Pensacola: stay on I-10 through the city exits and across the Escambia Bay bridge.",
-      "Into Alabama. Exit 35 (US-98 / US-90, Daphne). The Hilton Garden Inn is on North Main Street at the exit.",
+      "Back to I-10 West at exit 142, past Chipley, DeFuniak Springs and Crestview.",
+      "Pensacola: stay on I-10 through the city exits.",
+      "Into Alabama. In Mobile, I-10 crosses the bay causeway and runs through the Wallace Tunnel. Stay on I-10.",
+      "Into Mississippi. Exit 50 (Ocean Springs). Head south toward town and follow the brown signs for Gulf Islands National Seashore, Davis Bayou.",
     ],
   },
-  "thu-mobile-bay": {
-    minutes: 35,
-    endStopId: "thu-ms-welcome",
-    directions: [
-      "From the hotel back to I-10 West at exit 35.",
-      "Across the Mobile Bay causeway and through the Wallace Tunnel under the Mobile River. Stay on I-10.",
-      "Into Mississippi. The welcome center is on the right near mile 75, right after the state line.",
-    ],
-  },
-  "thu-gulf-coast": {
-    minutes: 115,
-    endStopId: "thu-hammond",
-    directions: [
-      "I-10 West past Pascagoula, Biloxi and Gulfport.",
-      "Cross the Pearl River into Louisiana. At Slidell keep right for I-12 West toward Hammond and Baton Rouge. Do not follow I-10 toward New Orleans.",
-      "I-12 West past Mandeville and Covington.",
-      "Exit 40 (US-51, Hammond) for gas and dinner at the ramp.",
-    ],
-  },
-  "thu-cajun": {
+  "thu-louisiana": {
     minutes: 165,
+    endStopId: "thu-atchafalaya",
     directions: [
-      "Back to I-12 West to Baton Rouge, where it ends at I-10. Follow I-10 West over the Mississippi River bridge.",
-      "The Atchafalaya Basin Bridge, 18 miles with no shoulder. Hold the speed limit.",
+      "Back to I-10 West at exit 50, past Gulfport.",
+      "Cross the Pearl River into Louisiana. At Slidell keep right for I-12 West toward Hammond and Baton Rouge. Do not follow I-10 toward New Orleans.",
+      "I-12 West about 85 miles past Covington and Hammond to Baton Rouge, where it ends at I-10. Follow I-10 West over the Mississippi River bridge.",
+      "Onto the Atchafalaya Basin Bridge. Exit 121 (Butte La Rose) for the welcome center, partway across.",
+    ],
+  },
+  "thu-sulphur": {
+    minutes: 90,
+    directions: [
+      "Back to I-10 West at exit 121 and finish the basin bridge. No shoulder, so hold the speed limit.",
       "Lafayette and Lake Charles: stay on I-10, including the Calcasieu River bridge.",
       "Exit 20 (LA-27, Sulphur). The Hampton Inn is on Henning Drive at the exit.",
     ],
   },
-  "fri-sabine": {
-    minutes: 20,
-    endStopId: "fri-orange",
-    directions: [
-      "I-10 West from exit 20, the last exits before Texas.",
-      "Cross the Sabine River into Texas. Exit 880 for the Texas Travel Information Center, right after the bridge.",
-    ],
-  },
   "fri-houston": {
-    minutes: 150,
+    minutes: 175,
     endStopId: "fri-san-felipe",
     directions: [
-      "I-10 West through Orange and Beaumont.",
-      "Houston: stay on I-10 (the Katy Freeway) straight through. Around 9:00 AM on a Friday, allow an extra 30 minutes.",
+      "I-10 West from exit 20 into Texas at the Sabine River, then Orange and Beaumont.",
+      "Houston: stay on I-10 (the Katy Freeway) straight through. It is the Friday morning rush, so allow an extra 30 to 45 minutes.",
       "Exit 723 (FM 1458, San Felipe). North about 2 miles to the historic site.",
     ],
   },
-  "fri-seguin": {
-    minutes: 105,
-    endStopId: "fri-seguin",
-    directions: [
-      "Back to I-10 West at exit 723.",
-      "Past Sealy, Columbus, Schulenburg and Luling.",
-      "Exit 610 into Seguin. South about 2 miles to the courthouse square downtown.",
-    ],
-  },
   "fri-hill-country": {
-    minutes: 140,
+    minutes: 235,
     endStopId: "fri-junction",
     directions: [
-      "Back to I-10 West from Seguin.",
+      "Back to I-10 West at exit 723, past Columbus, Schulenburg and Seguin.",
       "San Antonio: stay on I-10 West through downtown, where it briefly shares lanes with I-35. Follow the I-10 West / El Paso signs.",
       "Northwest into the Hill Country past Boerne, Comfort and Kerrville (exit 508).",
-      "Exit 456 into Junction for gas.",
+      "Exit 456 into Junction. Gas at the ramp, then 5 minutes south on US-377 to South Llano River State Park.",
     ],
   },
   "fri-west-texas": {
     minutes: 160,
+    endStopId: "fri-fort-stockton",
     directions: [
       "Back to I-10 West at exit 456.",
       "Sonora and Ozona. The limit is 80 mph and towns are 60 to 100 miles apart.",
-      "Fort Stockton exits start at 261. The Hampton Inn is on the I-10 frontage road at the west end of town, near exit 256. Tap Navigate for the last turns.",
+      "Exit 257 into Fort Stockton for gas.",
     ],
   },
-  "sat-balmorhea": {
-    minutes: 50,
-    endStopId: "sat-balmorhea",
+  "fri-van-horn": {
+    minutes: 95,
     directions: [
-      "I-10 West from Fort Stockton, at sunrise.",
-      "Exit 209 for TX-17 and follow the signs about 7 miles through Balmorhea to the state park at Toyahvale.",
+      "Back to I-10 West.",
+      "Past Balmorhea (exit 209) with the Davis Mountains to the south. It gets dark in the last half hour.",
+      "Exit 138 into Van Horn. The Hampton Inn is on the southwest frontage road. Tap Navigate for the last turns.",
     ],
   },
   "sat-el-paso": {
-    minutes: 200,
+    minutes: 145,
     endStopId: "sat-mesilla",
     directions: [
-      "TX-17 back north to I-10 West.",
-      "Van Horn is the last easy fuel before El Paso. Clocks go back an hour to Mountain time west of Van Horn.",
+      "I-10 West from Van Horn, in the dark. Clocks go back an hour to Mountain time at the Hudspeth County line.",
       "El Paso: stay on I-10 West straight through the city, about 30 minutes, then into New Mexico.",
       "Exit 140 (NM-28, Avenida de Mesilla). South about 2 miles to the plaza in Old Mesilla.",
     ],
@@ -142,59 +116,50 @@ export const legGuides: Record<string, LegGuide> = {
       "Texas Canyon rest area near mile 320, right off I-10. Follow the Rest Area sign.",
     ],
   },
-  "sat-phoenix": {
-    minutes: 180,
+  "sat-tucson": {
+    minutes: 90,
+    endStopId: "sat-picacho",
     directions: [
       "I-10 West through Benson.",
       "Tucson: stay on I-10 through the city.",
-      "Past Casa Grande. Near Chandler, take Loop 202 West (the South Mountain Freeway). It skips downtown and rejoins I-10 West on the west side.",
-      "I-10 West to exit 128 (Litchfield Road). The Hampton Inn is just north of the freeway.",
+      "Exit 219 (Picacho Peak Road). The park entrance is at the exit.",
     ],
   },
-  "sun-wickenburg": {
-    minutes: 60,
-    endStopId: "sun-wickenburg",
+  "sat-phoenix": {
+    minutes: 125,
+    endStopId: "sat-wickenburg",
     directions: [
-      "I-10 West from exit 128 to Loop 303 North (exit 124).",
-      "Loop 303 North to US-60 (Grand Avenue).",
-      "US-60 West about 30 miles into Wickenburg.",
+      "I-10 West toward Phoenix.",
+      "Near Chandler, take Loop 202 West (the South Mountain Freeway). It skips downtown and rejoins I-10 West on the west side.",
+      "I-10 West to Loop 303 North (exit 124).",
+      "Loop 303 North to US-60 (Grand Avenue), then US-60 West about 30 miles into Wickenburg.",
     ],
   },
-  "sun-us93": {
+  "sat-us93": {
     minutes: 120,
-    endStopId: "sun-kingman",
     directions: [
       "US-93 North out of Wickenburg toward Kingman.",
-      "Joshua Forest Scenic Road: about 20 miles of Joshua trees on both sides at sunrise, then the Burro Creek bridge.",
+      "Joshua Forest Scenic Road: about 20 miles of Joshua trees on both sides, then the Burro Creek bridge.",
       "Through Wikieup. US-93 joins I-40 West into Kingman.",
-      "Take a Kingman exit for gas on Andy Devine Avenue (Route 66).",
-    ],
-  },
-  "sun-hoover": {
-    minutes: 70,
-    endStopId: "sun-hoover",
-    directions: [
-      "From Route 66 back to I-40, then US-93 North toward Las Vegas.",
-      "About 70 miles of divided highway across the desert.",
-      "Exit 2 (Hoover Dam). Pass the security checkpoint and follow the signs to the Memorial Bridge walkway parking.",
+      "Take the Stockton Hill Road exit. The Home2 Suites is on Sunrise Avenue. Tap Navigate for the last turns.",
     ],
   },
   "sun-gorge": {
-    minutes: 140,
+    minutes: 210,
     endStopId: "sun-st-george",
     directions: [
-      "Back to I-11 North toward Henderson.",
-      "I-215 West around the south side of Las Vegas to I-15 North.",
-      "I-15 North out of the city to Mesquite at the Arizona line.",
-      "Virgin River Gorge: about 29 miles of tight canyon through the corner of Arizona. No stopping.",
-      "Into Utah. Clocks go forward an hour. Exit 8 (St. George Boulevard) for lunch.",
+      "I-40 to US-93 North toward Las Vegas, in the dark.",
+      "Over the Hoover Dam bypass bridge into Nevada (Pacific time), then I-11 North toward Henderson.",
+      "I-215 West around the south side of Las Vegas to I-15 North, then out to Mesquite.",
+      "Virgin River Gorge: about 29 miles of tight canyon at first light. No stopping.",
+      "Into Utah. Clocks go forward an hour. Take a St. George exit for gas.",
     ],
   },
   "sun-i15-summit": {
     minutes: 150,
     endStopId: "sun-fillmore",
     directions: [
-      "Back to I-15 North. Only go on if the lunch UDOT check said go.",
+      "Back to I-15 North. Only go on if the St. George UDOT check said go.",
       "Cedar City at about 50 minutes, then Beaver.",
       "The 6,600-foot summit before Cove Fort. Watch the UDOT signs for traction-law notices.",
       "Exit 167 into Fillmore for gas.",
@@ -205,7 +170,7 @@ export const legGuides: Record<string, LegGuide> = {
     navTo: "800 North and I-15, Orem, UT",
     directions: [
       "Back to I-15 North.",
-      "Scipio and Nephi at dusk, then down into Utah Valley past Provo.",
+      "Scipio and Nephi, then down into Utah Valley past Provo.",
       "Exit 272 (800 North, Orem). East on 800 North, which becomes US-189 into Provo Canyon.",
     ],
   },
@@ -222,32 +187,29 @@ export const legGuides: Record<string, LegGuide> = {
 
 // What Google Maps searches for at each stop.
 export const stopPlaces: Record<string, string> = {
-  "wed-marianna": "I-10 Exit 142, Marianna, FL",
-  "thu-ms-welcome": "Mississippi Welcome Center, I-10 West, Moss Point, MS",
-  "thu-hammond": "I-12 Exit 40, Hammond, LA",
-  "fri-orange": "Texas Travel Information Center, Orange, TX",
+  "thu-marianna": "I-10 Exit 142, Marianna, FL",
+  "thu-davis-bayou": "Davis Bayou Area, Gulf Islands National Seashore, Ocean Springs, MS",
+  "thu-atchafalaya": "Atchafalaya Welcome Center, Butte La Rose, LA",
+  "thu-dinner": "Sulphur, LA",
   "fri-san-felipe": "San Felipe de Austin State Historic Site, San Felipe, TX",
-  "fri-seguin": "Central Park, Seguin, TX",
-  "fri-junction": "Junction, TX",
-  "fri-dinner": "Fort Stockton, TX",
-  "sat-balmorhea": "Balmorhea State Park, Toyahvale, TX",
+  "fri-junction": "South Llano River State Park, Junction, TX",
+  "fri-fort-stockton": "Paisano Pete, Fort Stockton, TX",
+  "fri-dinner": "Van Horn, TX",
   "sat-mesilla": "Mesilla Plaza, Mesilla, NM",
   "sat-texas-canyon": "Texas Canyon Rest Area, I-10, Dragoon, AZ",
-  "sat-dinner": "Goodyear, AZ",
-  "sun-wickenburg": "Jail Tree, Wickenburg, AZ",
-  "sun-kingman": "Historic Route 66, Kingman, AZ",
-  "sun-hoover": "Mike O'Callaghan-Pat Tillman Memorial Bridge, Boulder City, NV",
-  "sun-st-george": "Town Square, St. George, UT",
+  "sat-picacho": "Picacho Peak State Park, Picacho, AZ",
+  "sat-wickenburg": "Jail Tree, Wickenburg, AZ",
+  "sat-dinner": "Kingman, AZ",
+  "sun-st-george": "I-15 Exit 8, St. George, UT",
   "sun-fillmore": "I-15 Exit 167, Fillmore, UT",
-  "sun-arrive": "Kimball Junction, Park City, UT",
+  "sun-arrive": "900 Bitner Road, Park City, UT 84098",
 };
 
 // Street addresses for the nights, so Navigate lands on the hotel and not the town.
 export const hotelAddresses: Record<string, string> = {
-  daphne: "Hilton Garden Inn Mobile East Bay/Daphne, 29546 N Main St, Daphne, AL 36526",
   sulphur: "Hampton Inn Sulphur/Lake Charles Area, 210 Henning Dr, Sulphur, LA 70663",
-  fort_stockton: "Hampton Inn Fort Stockton, 2271 W I-10, Fort Stockton, TX 79735",
-  goodyear: "Hampton Inn & Suites Phoenix-Goodyear, 2000 N Litchfield Rd, Goodyear, AZ 85395",
+  van_horn: "Hampton Inn Van Horn, 1921 SW Frontage Rd, Van Horn, TX 79855",
+  kingman: "Home2 Suites by Hilton Kingman, 1121 Sunrise Ave, Kingman, AZ 86401",
   st_george: "Hilton Garden Inn St. George, 1731 S Convention Center Dr, St. George, UT 84790",
 };
 

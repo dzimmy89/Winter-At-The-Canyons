@@ -26,37 +26,30 @@ export function featuresEqual(a: MapFeature | null, b: MapFeature | null): boole
 }
 
 export function segmentForLeg(fromId: string, toId: string): RouteSegment {
-  if (toId === "dest" || fromId === "goodyear") {
+  if (toId === "dest" || fromId === "kingman") {
     return {
       id: "sunday",
-      title: "Sunday · Goodyear to E17",
-      body: "The longest day: Wickenburg at first light, the Joshua trees on US-93, Kingman, Hoover Dam in the morning, the Virgin River Gorge in daylight, and lunch in St. George with the UDOT check. Then I-15 over the 6,600-foot summit in the afternoon and Provo Canyon to Kimball Junction after dark, about 7:00 PM. If I-15 has snow at lunch, stop in St. George. The pin is 900 Bitner Road, Apartment E17.",
+      title: "Sunday · Kingman to E17, keys by 2 PM",
+      body: "Leave at 4:00 AM. Hoover Dam and Las Vegas in the dark, the Virgin River Gorge at first light, and fuel plus the UDOT check in St. George at 7:30 AM. Then I-15 over the 6,600-foot summit in the morning, Fillmore, and Provo Canyon to Kimball Junction about 1:05 PM. If I-15 has snow, call the landlord from St. George. The pin is 900 Bitner Road, Apartment E17.",
     };
   }
-  if (toId === "goodyear") {
+  if (toId === "kingman") {
     return {
       id: "saturday",
-      title: "Saturday · Fort Stockton to Goodyear",
-      body: "The high-desert day: Balmorhea's spring pool at sunrise, straight through El Paso, lunch on the plaza in Old Mesilla, the Texas Canyon boulders, and around Phoenix on Loop 202. Blowing dust near Lordsburg is the hazard, not snow.",
+      title: "Saturday · Van Horn to Kingman",
+      body: "Through El Paso before dawn, breakfast on the plaza in Old Mesilla, the Texas Canyon boulders, lunch at Picacho Peak, around Phoenix on the loops, Wickenburg, and US-93 to Kingman at sunset. Blowing dust near Lordsburg is the hazard, not snow.",
     };
   }
-  if (toId === "fort_stockton") {
+  if (toId === "van_horn") {
     return {
       id: "friday",
-      title: "Friday · Sulphur to Fort Stockton",
-      body: "Your day off. The Texas welcome-center boardwalk at sunrise, Houston after the rush, San Felipe de Austin, lunch in Seguin, the Hill Country, and West Texas at 80 mph. Fuel in Junction.",
-    };
-  }
-  if (toId === "sulphur") {
-    return {
-      id: "thursday-evening",
-      title: "Thursday · Daphne to Sulphur after work",
-      body: "Work in the Daphne hotel room until 3:00 PM CST, then I-10 and I-12 along the Gulf: the Mississippi welcome center, dinner in Hammond, and the Atchafalaya Basin Bridge in the dark. Bed in Sulphur about 9:05 PM.",
+      title: "Friday · Sulphur to Van Horn",
+      body: "The longest day. Houston in the morning rush, San Felipe de Austin, a river picnic in Junction, West Texas at 80 mph, fuel in Fort Stockton, and Van Horn just after dark.",
     };
   }
   return {
-    id: "wednesday-evening",
-    title: "Wednesday · Gainesville to Daphne after work",
-    body: "Leave 4922 Wednesday, November 11, at 4:00 PM EST. I-75 and I-10 across the Panhandle, dinner in Marianna, and bed in Daphne on Mobile Bay about 9:15 PM CST. Sea level, no snow.",
+    id: "thursday",
+    title: "Thursday · Gainesville to Sulphur",
+    body: "Leave 4922 Thursday, November 12, at 5:00 AM EST. Breakfast in Marianna, the Davis Bayou, a late lunch at the Atchafalaya Welcome Center, and Sulphur by 4:10 PM CST. Sea level, no snow.",
   };
 }

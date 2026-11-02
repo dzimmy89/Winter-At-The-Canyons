@@ -2,15 +2,15 @@ import { destination, origin, townById } from "../src/data/towns.ts";
 import type { RouteRecord } from "../src/data/types.ts";
 import { writeGenerated } from "./lib/io.ts";
 
-const retrievedAt = "2026-10-29T21:45:00.000Z";
+const retrievedAt = "2026-11-02T14:30:00.000Z";
 const town = townById.park_city;
 
 const route: RouteRecord = {
   townId: "park_city",
-  miles: 2780,
-  hours: 42,
+  miles: 2767,
+  hours: 41.4,
   corridor: "parks_west",
-  summary: `Wed evening I-75 N / I-10 W to Daphne → Thu evening I-10 / I-12 W Sulphur → I-10 W Fort Stockton → I-10 W Goodyear → Sunday US-93 / I-15 / Provo Canyon → ${destination.label}`,
+  summary: `Thu 5 AM I-75 N / I-10 W / I-12 W to Sulphur → I-10 W Van Horn → I-10 / US-93 Kingman → Sunday US-93 / I-15 / Provo Canyon → ${destination.label} by 2 PM`,
   winterNotes: town.winterNotes,
   retrievedAt,
   provider: "planning_estimate",
