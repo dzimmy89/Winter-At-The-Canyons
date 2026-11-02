@@ -26,30 +26,37 @@ export function featuresEqual(a: MapFeature | null, b: MapFeature | null): boole
 }
 
 export function segmentForLeg(fromId: string, toId: string): RouteSegment {
-  if (toId === "dest" || fromId === "kingman") {
+  if (toId === "dest" || fromId === "st_george") {
     return {
       id: "sunday",
-      title: "Sunday · Kingman to E17, keys by 2 PM",
-      body: "Leave at 4:00 AM. Hoover Dam and Las Vegas in the dark, the Virgin River Gorge at first light, then sunrise on the red rock at Pioneer Park, fuel, and the UDOT check in St. George at 7:30 AM. Then I-15 over the 6,600-foot summit in the morning, Utah's first capitol in Fillmore, and Provo Canyon to Kimball Junction about 1:15 PM. If I-15 has snow, call the landlord from St. George. The pin is 900 Bitner Road, Apartment E17.",
+      title: "Sunday · St. George to E17, keys by 2 PM",
+      body: "Check UDOT in the hotel room at 7:30 AM and leave at 8:00 AM. I-15 over the 6,600-foot summit in the morning, Utah's first capitol in Fillmore, and Provo Canyon to Kimball Junction about 1:15 PM. If I-15 has snow, keep the room and call the landlord. The pin is 900 Bitner Road, Apartment E17.",
     };
   }
-  if (toId === "kingman") {
+  if (toId === "st_george") {
     return {
       id: "saturday",
-      title: "Saturday · Van Horn to Kingman",
-      body: "Through El Paso before dawn, breakfast on the plaza in Old Mesilla, lunch among the Texas Canyon boulders, past Picacho Peak and around Phoenix on the loops, Wickenburg, and US-93 to Kingman at sunset. Blowing dust near Lordsburg is the hazard, not snow.",
+      title: "Saturday · Marana to St. George",
+      body: "Leave at 7:00 AM. Past Picacho Peak and around Phoenix on the loops, Wickenburg, the Joshua trees on US-93, Kingman, lunch on the bridge over Hoover Dam, then the Virgin River Gorge into Utah and red rock at Pioneer Park before sunset.",
     };
   }
-  if (toId === "van_horn") {
+  if (toId === "marana") {
     return {
       id: "friday",
-      title: "Friday · Winnie to Van Horn",
-      body: "Houston early in the morning, the painted church at High Hill, a river picnic in Junction, West Texas at 80 mph, fuel in Fort Stockton, and Van Horn before sunset.",
+      title: "Friday · Fort Stockton to Marana",
+      body: "Leave at 8:00 AM. Van Horn and El Paso, lunch on the plaza in Old Mesilla, Deming and Lordsburg, the Texas Canyon boulders, and Tucson's quiet northwest edge by about 4:00 PM. Blowing dust near Lordsburg is the hazard, not snow.",
+    };
+  }
+  if (toId === "fort_stockton") {
+    return {
+      id: "thursday",
+      title: "Thursday · Broussard to Fort Stockton",
+      body: "Leave at 6:00 AM. The swamp boardwalk at the Texas line, Houston after the rush, the painted church at High Hill, a river stop in Junction, West Texas at 80 mph, and Fort Stockton about 6:00 PM. The longest day.",
     };
   }
   return {
-    id: "thursday",
-    title: "Thursday · Gainesville to Winnie",
-    body: "Leave 4922 Thursday, November 12, at 5:00 AM EST. Breakfast by the round lake in DeFuniak Springs, the Davis Bayou, a late lunch at the Atchafalaya Welcome Center, then past Lafayette and Beaumont to Winnie, Texas, by 5:20 PM CST. The longest day. Sea level, no snow.",
+    id: "wednesday",
+    title: "Wednesday · Gainesville to Broussard",
+    body: "Leave 4922 Wednesday, November 11, at 6:30 AM EST. Breakfast by the round lake in DeFuniak Springs, lunch at the Davis Bayou, then I-12 around New Orleans and over the Atchafalaya swamp to Broussard by about 4:30 PM CST. Sea level, no snow.",
   };
 }

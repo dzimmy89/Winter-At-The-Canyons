@@ -110,7 +110,7 @@ export function RouteTownsIndex() {
   const hotelByTown = new Map<string, HotelProfile>();
   for (const [hotelId, townId] of Object.entries(hotelTown)) {
     const hotel = hotelProfiles[hotelId];
-    if (hotel && hotelId !== "st_george") {
+    if (hotel) {
       hotelByTown.set(townId, hotel);
     }
   }

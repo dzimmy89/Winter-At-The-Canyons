@@ -32,15 +32,15 @@ interface Props {
 
 const tripChecklist = [
   { id: "trip-c1", label: "Call every Hilton desk, say two cats, and confirm the stay is an award/points night" },
-  { id: "trip-c2", label: "M+S or 3PMSF tires are on the car before Thursday" },
+  { id: "trip-c2", label: "M+S or 3PMSF tires are on the car before Wednesday" },
   { id: "trip-c3", label: "Read the snow gate the night before each day, and again before the key turns" },
   { id: "trip-c4", label: "Litter, pads, carriers, and a hotel towel kit packed" },
   { id: "trip-c5", label: "Sunday 7:30 AM in St. George: Provo Canyon if I-15 and US-189 are bare or wet. Parleys if only Provo Canyon is bad. Call the landlord and wait in St. George if I-15 north of Cedar City has snow" },
   { id: "trip-c7", label: "Confirm the 2:00 PM Sunday key meeting with the landlord, and agree a backup time in case Utah has snow" },
-  { id: "trip-c8", label: "Fill the tank in Junction and Fort Stockton on Friday, Deming or Lordsburg and Wickenburg on Saturday, and St. George on Sunday" },
+  { id: "trip-c8", label: "Fill the tank in DeFuniak Springs on Wednesday, Schulenburg, Junction and Fort Stockton on Thursday, Las Cruces and Deming or Lordsburg on Friday, Wickenburg and Kingman on Saturday, and in St. George Saturday night" },
   { id: "trip-c6", label: "Cats do not stay in a closed car" },
-  { id: "trip-c9", label: "Ask the Kingman desk Saturday night for a grab-and-go breakfast, since Sunday leaves at 4:00 AM" },
-  { id: "trip-c10", label: "Pack the car Wednesday night, so Thursday at 5:00 AM is just cats, litter and cooler" },
+  { id: "trip-c9", label: "Ask the Broussard desk Wednesday night for a grab-and-go breakfast, since Thursday leaves at 6:00 AM" },
+  { id: "trip-c10", label: "Pack the car Tuesday night, so Wednesday at 6:30 AM is just cats, litter and cooler" },
 ];
 
 const tripRisks = [
@@ -50,23 +50,23 @@ const tripRisks = [
   },
   {
     title: "Small towns, not big cities",
-    body: "Every night is in a smaller town: Winnie, Van Horn, and Kingman. Every stop is a park, a small town, a welcome center or a rest area. Baton Rouge, Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are drive-throughs on the interstate with no exits.",
+    body: "Every night is in a smaller town or a quiet suburb: Broussard, Fort Stockton, Marana, and St. George. Every stop is a park, a small town, a welcome center or a rest area. Baton Rouge, Lafayette, Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are drive-throughs on the interstate with no exits.",
   },
   {
-    title: "Three long days and a deadline",
-    body: "Getting the keys by 2:00 PM Sunday means about 12 hours of driving Thursday, 10 Friday and 11 Saturday, then 8.5 hours Sunday with a 4:00 AM start. The plan arrives about 1:15 PM, so there is about 45 minutes of slack. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
+    title: "Five days and a deadline",
+    body: "No day starts before 6:00 AM. Wednesday is about 10 hours of driving from 6:30 AM, Thursday about 11 from 6:00 AM, Friday and Saturday about 8 each from 8:00 and 7:00 AM, and Sunday 5 hours from 8:00 AM. The plan reaches E17 about 1:15 PM, so there is about 45 minutes of slack before the 2:00 PM keys. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
   },
   {
     title: "Snow is only a Sunday-morning question",
-    body: "Thursday through Saturday stay under 5,000 feet across the Gulf Coast and the desert. Sunday climbs I-15 from St. George to 6,600 feet north of Beaver around 9:50 AM in daylight and ends near 6,500 feet at E17. Falling snow, snow-packed pavement, a traction law, or a closure at the 7:30 AM check is a no-go. Then wait in St. George at 2,800 feet and call the landlord to move the key time. The plan has no spare day, so a Saturday-night storm forecast for Utah is the moment to warn them.",
+    body: "Wednesday through Saturday stay under 5,000 feet across the Gulf Coast and the desert. Sunday climbs I-15 from St. George to 6,600 feet north of Beaver around 9:50 AM in daylight and ends near 6,500 feet at E17. Falling snow, snow-packed pavement, a traction law, or a closure at the 7:30 AM check is a no-go. Then keep the room in St. George at 2,800 feet and call the landlord to move the key time. The plan has no spare day, so a Saturday-night storm forecast for Utah is the moment to warn them.",
   },
   {
     title: "Dust, deer, and gas",
-    body: "West Texas and southern New Mexico trade snow for other hazards. Deer in the Hill Country and after dark near Van Horn, blowing dust near Lordsburg, and 100-mile gaps between stations. Pull fully off with lights off in a dust storm, and never drop below half a tank.",
+    body: "West Texas and southern New Mexico trade snow for other hazards. Deer in the Hill Country and near dusk around Fort Stockton, blowing dust near Lordsburg, and 100-mile gaps between stations. Pull fully off with lights off in a dust storm, and never drop below half a tank.",
   },
   {
     title: "150,000 points and the ceilings",
-    body: "Three Hilton nights at a 30,000-point ceiling each uses 90,000: Winnie, Van Horn, and Kingman. The other 60,000 covers a St. George snow hold if Utah needs one. Pet fees and the Kingman pet deposit are still cash.",
+    body: "Four Hilton nights at a 30,000-point ceiling each uses 120,000: Broussard, Fort Stockton, Marana, and St. George. The other 30,000 covers a second St. George night if Utah needs a snow hold. Pet fees are still cash.",
   },
 ];
 
@@ -78,7 +78,7 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
         <p className="eyebrow">The drive · {leaveGainesville.replace(", 2026", "")} to {arriveParkCity.replace(", 2026", "")}</p>
         <h1>Gainesville to Park City</h1>
         <p className="lede">
-          Built around the key handoff: leave Thursday at 5:00 AM and meet the landlord at E17 by 2:00 PM Sunday. The long way around the snow, with a stop every 3 to 4 hours and each night at a cat-friendly Hilton in a
+          Built around the key handoff: leave Wednesday at 6:30 AM, never start a day before 6:00 AM, and meet the landlord at E17 by 2:00 PM Sunday. The long way around the snow, with a stop every 2 to 4 hours and each night at a cat-friendly Hilton in a
           smaller town. Pick a day, then follow it top to bottom.
         </p>
         <dl className="trip-strip">
@@ -92,7 +92,7 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
           </div>
           <div>
             <dt>Nights</dt>
-            <dd>Winnie · Van Horn · Kingman</dd>
+            <dd>Broussard · Fort Stockton · Marana · St. George</dd>
           </div>
           <div>
             <dt>Longest day</dt>

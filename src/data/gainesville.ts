@@ -249,10 +249,10 @@ export const gainesvilleTimeline: TimelinePhase[] = [
   },
   {
     id: "gnv-movein",
-    window: "Nov 12 – Nov 15, 2026",
+    window: "Nov 11 – Nov 15, 2026",
     title: "Leave before the tenant moves in",
     deliverables: [
-      "You leave Gainesville Thursday, November 12, at 5:00 AM, and reach E17 by 2:00 PM on Sunday, November 15, for the keys",
+      "You leave Gainesville Wednesday, November 11, at 6:30 AM, and reach E17 by 2:00 PM on Sunday, November 15, for the keys",
       "The manager does the Nov 15 walkthrough if you are already on the road",
       "Welcome binder: GRU cap, HOA rules, manager’s phone, your Utah address",
       "Tenant renters insurance required; your DP-3 is already in force",

@@ -10,13 +10,13 @@ const rows = [
     href: "#drive",
     kicker: "Drive",
     title: `Leave ${leaveGainesville}. Arrive E17 ${arriveParkCity}.`,
-    body: "Thursday at 5:00 AM to Winnie, Friday to Van Horn, Saturday to Kingman, all smaller towns. Sunday leaves Kingman at 4:00 AM and reaches E17 about 1:15 PM, before the 2:00 PM key meeting.",
+    body: "Wednesday at 6:30 AM to Broussard, Thursday at 6:00 AM to Fort Stockton, Friday at 8:00 AM to Marana, Saturday at 7:00 AM to St. George, all smaller towns or quiet suburbs. Sunday leaves St. George at 8:00 AM and reaches E17 about 1:15 PM, before the 2:00 PM key meeting.",
   },
   {
     href: "#drive",
     kicker: "Snow",
     title: "Bare or wet pavement is a go. Snow is a hold.",
-    body: "Only Sunday morning reaches snow country: the 6,600-foot I-15 summit and Provo Canyon. If UDOT shows snow at the 7:30 AM St. George check, call the landlord and move the key time.",
+    body: "Only Sunday morning reaches snow country: the 6,600-foot I-15 summit and Provo Canyon. If UDOT shows snow at the 7:30 AM St. George check, keep the hotel room, call the landlord and move the key time.",
   },
   {
     href: "#lease",
@@ -36,7 +36,7 @@ const rows = [
     href: "#house",
     kicker: "This week",
     title: "Tanya Chappell runs the Nov 15 walkthrough.",
-    body: "You leave Thursday, November 12, at 5:00 AM. From Utah, Secure Investments runs 4922. You do not.",
+    body: "You leave Wednesday, November 11, at 6:30 AM. From Utah, Secure Investments runs 4922. You do not.",
   },
 ] as const;
 
@@ -46,7 +46,7 @@ export function NowBoard() {
       <p className="eyebrow">Now</p>
       <h1>Four jobs. One season.</h1>
       <p className="lede">
-        You leave Gainesville on Thursday, November 12, at 5:00 AM, and get the keys to 900 Bitner Road, Apartment E17, by 2:00 PM on Sunday, November 15.
+        You leave Gainesville on Wednesday, November 11, at 6:30 AM, and get the keys to 900 Bitner Road, Apartment E17, by 2:00 PM on Sunday, November 15.
       </p>
       <ol className="now-list">
         {rows.map((row) => (
