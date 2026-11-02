@@ -112,7 +112,7 @@ const tiers: TierRates[] = [
   },
 ];
 
-type HubId = "sulphur" | "van_horn" | "kingman";
+type HubId = "winnie" | "van_horn" | "kingman";
 
 interface Hub {
   id: HubId;
@@ -127,13 +127,13 @@ interface Hub {
 // Overnights are smaller towns on purpose. Big cities on the route are interstate pass-throughs.
 const hubs: Hub[] = [
   {
-    id: "sulphur",
-    label: "Sulphur, LA",
-    shortLabel: "Sulphur",
-    city: "Sulphur",
-    state: "LA",
-    lat: 30.2366,
-    lng: -93.3774,
+    id: "winnie",
+    label: "Winnie, TX",
+    shortLabel: "Winnie",
+    city: "Winnie",
+    state: "TX",
+    lat: 29.8202,
+    lng: -94.3846,
   },
   {
     id: "van_horn",
@@ -219,23 +219,23 @@ const dayDrafts: DayDraft[] = [
     date: "2026-11-12",
     dateLabel: "Thu Nov 12",
     fromLabel: "Gainesville, FL",
-    toLabel: "Sulphur, LA",
+    toLabel: "Winnie, TX",
     departClock: "5:00 AM EST",
-    arriveClock: "4:10 PM CST",
+    arriveClock: "5:15 PM CST",
     latestSafeDepart: "6:00 AM EST",
     timeZone: "EST to CST",
-    miles: 719,
-    driveHours: 10.8,
+    miles: 790,
+    driveHours: 11.9,
     routeSummary:
-      "An early start: I-75 N to Lake City, then I-10 W across the Big Bend, the Panhandle, Mobile and the Mississippi coast, I-12 W around New Orleans, and across the Atchafalaya Basin to Sulphur. Stops: Marianna, the Davis Bayou, and the Atchafalaya Welcome Center. Tallahassee, Pensacola, Mobile, Baton Rouge and Lafayette are drive-throughs.",
-    hubId: "sulphur",
+      "An early start: I-75 N to Lake City, then I-10 W across the Big Bend, the Panhandle, Mobile and the Mississippi coast, I-12 W around New Orleans, across the Atchafalaya Basin, then on past Lafayette, Lake Charles and Beaumont into Texas to Winnie. Stops: Marianna, the Davis Bayou, and the Atchafalaya Welcome Center. Tallahassee, Pensacola, Mobile, Baton Rouge, Lafayette, Lake Charles and Beaumont are drive-throughs.",
+    hubId: "winnie",
     winterNotes:
-      "Sea level all day, so snow is not a factor. The first two hours are in the dark (sunrise is about 6:55 AM EST at Lake City), so watch for deer between Lake City and Tallahassee. Clocks go back an hour at the Apalachicola River, near exit 158. You reach Sulphur before sunset (about 4:55 PM). Sulphur is a small town just west of Lake Charles, and the hotel is at I-10 exit 20.",
+      "Sea level all day, so snow is not a factor. The first two hours are in the dark (sunrise is about 6:55 AM EST at Lake City), so watch for deer between Lake City and Tallahassee. Clocks go back an hour at the Apalachicola River, near exit 158. The last half hour past Beaumont is at dusk (sunset is about 5:20 PM). Winnie is a quiet rice-country town of about 3,000 between Beaumont and Houston, and the hotel is right at I-10 exit 829. Stopping here also puts Houston first thing Friday, before the worst of the traffic builds.",
     snowGate: {
       ...weatherGate,
       checkAt: "Wed Nov 11 night, and again before 5:00 AM EST",
-      go: "No winter storm, ice storm, or dense fog warning on I-10 or I-12 from Lake City to Lake Charles.",
-      hold: "Leave an hour later. Thursday has about an hour of slack before Sulphur gets dark.",
+      go: "No winter storm, ice storm, or dense fog warning on I-10 or I-12 from Lake City to Beaumont.",
+      hold: "Leave up to an hour later. The last hour past Beaumont is then after dark, but it is all interstate.",
     },
     legs: [
       {
@@ -279,14 +279,14 @@ const dayDrafts: DayDraft[] = [
         note: "I-12 at Slidell keeps New Orleans 30 miles south. Baton Rouge's Mississippi bridge comes early afternoon. Then the Atchafalaya Basin Bridge, 18 miles long with no shoulder.",
       },
       {
-        id: "thu-sulphur",
+        id: "thu-winnie",
         road: "I-10 W",
         from: "Atchafalaya Welcome Center",
-        to: "Sulphur (exit 20)",
-        miles: 101,
+        to: "Winnie, TX (exit 829)",
+        miles: 172,
         topElevationFt: 100,
         snowRisk: "none",
-        note: "Lafayette and Lake Charles stay on the interstate. The Hampton Inn is on Henning Drive at exit 20.",
+        note: "Lafayette, Lake Charles and Beaumont all stay on the interstate. Into Texas over the Sabine River at Orange. The Hampton Inn & Suites is on Spur 5 at exit 829.",
       },
     ],
     stops: [
@@ -335,11 +335,11 @@ const dayDrafts: DayDraft[] = [
       {
         id: "thu-dinner",
         kind: "meal",
-        place: "Sulphur",
-        road: "Near 210 Henning Dr, after check-in",
-        purpose: "Dinner pickup and an early night. Friday starts at 6:00 AM and goes through Houston.",
+        place: "Winnie",
+        road: "Near 318 Spur 5, after check-in",
+        purpose: "Dinner pickup and an early night. Friday starts at 6:00 AM and is through Houston by about 7:30.",
         minutes: 30,
-        clock: "5:00 PM CST",
+        clock: "5:45 PM CST",
         realisticUsd: 40,
       },
     ],
@@ -347,36 +347,36 @@ const dayDrafts: DayDraft[] = [
   {
     date: "2026-11-13",
     dateLabel: "Fri Nov 13",
-    fromLabel: "Sulphur, LA",
+    fromLabel: "Winnie, TX",
     toLabel: "Van Horn, TX",
     departClock: "6:00 AM CST",
-    arriveClock: "6:15 PM CST",
-    latestSafeDepart: "6:30 AM CST",
+    arriveClock: "5:10 PM CST",
+    latestSafeDepart: "6:45 AM CST",
     timeZone: "CST",
-    miles: 764,
-    driveHours: 11.1,
+    miles: 693,
+    driveHours: 10.1,
     routeSummary:
-      "The longest day. I-10 W into Texas at Orange, through Houston in the morning, past San Felipe de Austin, around San Antonio, up into the Hill Country, and across West Texas at 80 mph to Van Horn. Stops: San Felipe de Austin, Junction, and Fort Stockton. Beaumont, Houston and San Antonio are drive-throughs.",
+      "I-10 W from Winnie through Houston early in the morning, past San Felipe de Austin, around San Antonio, up into the Hill Country, and across West Texas at 80 mph to Van Horn. Stops: San Felipe de Austin, Junction, and Fort Stockton. Houston and San Antonio are drive-throughs.",
     hubId: "van_horn",
     winterNotes:
-      "Sea level to about 4,000 feet and dry, so snow is very unlikely. Houston comes around 8:00 AM, in the Friday rush, so allow an extra 30 to 45 minutes. Deer are thick in the Hill Country. The last 20 minutes into Van Horn are after sunset (about 5:55 PM). Services are far apart west of Junction, so never let the tank drop below half. Van Horn is a ranch town of 2,000 on I-10, and the hotel is on the frontage road.",
+      "Sea level to about 4,000 feet and dry, so snow is very unlikely. Houston comes around 7:00 AM, early in the Friday rush, so allow an extra 30 minutes. Westbound out of downtown is the lighter direction. Deer are thick in the Hill Country. You reach Van Horn about 45 minutes before sunset (about 5:55 PM). Services are far apart west of Junction, so never let the tank drop below half. Van Horn is a ranch town of 2,000 on I-10, and the hotel is on the frontage road.",
     snowGate: {
       checkAt: "Thu Nov 12 night, and again before 6:00 AM CST",
       sourceName: "DriveTexas",
       sourceUrl: "https://drivetexas.org",
       go: "No ice, closure, or dense fog warning on I-10 from Orange to Van Horn.",
-      hold: "Wait in Sulphur. West Texas ice is rare and melts by late morning. An hour lost here comes out of Sunday's hour of slack, so drop the Fort Stockton stop to make it up.",
+      hold: "Wait in Winnie. West Texas ice is rare and melts by late morning. An hour's wait still gets you to Van Horn just after dark, on I-10 the whole way, and Saturday's start does not change.",
     },
     legs: [
       {
         id: "fri-houston",
         road: "I-10 W",
-        from: "Sulphur",
+        from: "Winnie",
         to: "San Felipe (exit 723)",
-        miles: 179,
+        miles: 106,
         topElevationFt: 150,
         snowRisk: "none",
-        note: "Into Texas at Orange, then Beaumont, then straight through Houston on the Katy Freeway in the morning rush. No exits inside the city.",
+        note: "Past Baytown, then straight through Houston on the Katy Freeway early in the morning rush. No exits inside the city.",
       },
       {
         id: "fri-hill-country",
@@ -416,9 +416,9 @@ const dayDrafts: DayDraft[] = [
         place: "San Felipe de Austin State Historic Site",
         road: "I-10 W exit 723, then about 2 miles north on FM 1458",
         purpose:
-          "About 3 hours out, just past Houston. The town Stephen F. Austin founded in 1824, on a bluff above the Brazos. Walk the grounds and the river overlook with the cats.",
+          "About 2 hours out, just past Houston. The town Stephen F. Austin founded in 1824, on a bluff above the Brazos. Walk the grounds and the river overlook with the cats. The museum opens later, but the grounds are open.",
         minutes: 15,
-        clock: "8:55 AM CST",
+        clock: "7:50 AM CST",
         realisticUsd: 0,
       },
       {
@@ -429,7 +429,7 @@ const dayDrafts: DayDraft[] = [
         purpose:
           "About 4 hours later. Fill the tank at the ramp, then a picnic lunch by the river in a small Hill Country town where two forks of the Llano meet. Leash.",
         minutes: 40,
-        clock: "1:05 PM CST",
+        clock: "12:00 PM CST",
         realisticUsd: 30,
       },
       {
@@ -440,7 +440,7 @@ const dayDrafts: DayDraft[] = [
         purpose:
           "About 2 hours 40 minutes later. Fuel and a short walk. Paisano Pete, the giant roadrunner statue, is two minutes off the exit.",
         minutes: 15,
-        clock: "4:25 PM CST",
+        clock: "3:20 PM CST",
         realisticUsd: 5,
       },
       {
@@ -460,7 +460,7 @@ const dayDrafts: DayDraft[] = [
         road: "Near 1921 SW Frontage Rd, after check-in",
         purpose: "Dinner pickup and fill the tank tonight. Saturday leaves at 6:00 AM.",
         minutes: 30,
-        clock: "6:30 PM CST",
+        clock: "5:30 PM CST",
         realisticUsd: 35,
       },
     ],

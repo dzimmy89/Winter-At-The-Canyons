@@ -49,11 +49,11 @@ const tripRisks = [
   },
   {
     title: "Small towns, not big cities",
-    body: "Every night is in a smaller town: Sulphur, Van Horn, and Kingman. Every stop is a park, a small town, a welcome center or a rest area. Baton Rouge, Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are drive-throughs on the interstate with no exits.",
+    body: "Every night is in a smaller town: Winnie, Van Horn, and Kingman. Every stop is a park, a small town, a welcome center or a rest area. Baton Rouge, Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are drive-throughs on the interstate with no exits.",
   },
   {
     title: "Three long days and a deadline",
-    body: "Getting the keys by 2:00 PM Sunday means about 11 hours of driving on each of Thursday, Friday and Saturday, then 8.5 hours Sunday with a 4:00 AM start. The plan arrives about 1:05 PM, so there is roughly an hour of slack. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
+    body: "Getting the keys by 2:00 PM Sunday means about 12 hours of driving Thursday, 10 Friday and 11 Saturday, then 8.5 hours Sunday with a 4:00 AM start. The plan arrives about 1:05 PM, so there is roughly an hour of slack. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
   },
   {
     title: "Snow is only a Sunday-morning question",
@@ -65,7 +65,7 @@ const tripRisks = [
   },
   {
     title: "150,000 points and the ceilings",
-    body: "Three Hilton nights at a 30,000-point ceiling each uses 90,000: Sulphur, Van Horn, and Kingman. The other 60,000 covers a St. George snow hold if Utah needs one. Pet fees and the Kingman pet deposit are still cash.",
+    body: "Three Hilton nights at a 30,000-point ceiling each uses 90,000: Winnie, Van Horn, and Kingman. The other 60,000 covers a St. George snow hold if Utah needs one. Pet fees and the Kingman pet deposit are still cash.",
   },
 ];
 
@@ -91,7 +91,7 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
           </div>
           <div>
             <dt>Nights</dt>
-            <dd>Sulphur · Van Horn · Kingman</dd>
+            <dd>Winnie · Van Horn · Kingman</dd>
           </div>
           <div>
             <dt>Longest day</dt>

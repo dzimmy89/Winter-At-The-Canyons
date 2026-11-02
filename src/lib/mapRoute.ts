@@ -43,13 +43,13 @@ export function segmentForLeg(fromId: string, toId: string): RouteSegment {
   if (toId === "van_horn") {
     return {
       id: "friday",
-      title: "Friday · Sulphur to Van Horn",
-      body: "The longest day. Houston in the morning rush, San Felipe de Austin, a river picnic in Junction, West Texas at 80 mph, fuel in Fort Stockton, and Van Horn just after dark.",
+      title: "Friday · Winnie to Van Horn",
+      body: "Houston early in the morning, San Felipe de Austin, a river picnic in Junction, West Texas at 80 mph, fuel in Fort Stockton, and Van Horn before sunset.",
     };
   }
   return {
     id: "thursday",
-    title: "Thursday · Gainesville to Sulphur",
-    body: "Leave 4922 Thursday, November 12, at 5:00 AM EST. Breakfast in Marianna, the Davis Bayou, a late lunch at the Atchafalaya Welcome Center, and Sulphur by 4:10 PM CST. Sea level, no snow.",
+    title: "Thursday · Gainesville to Winnie",
+    body: "Leave 4922 Thursday, November 12, at 5:00 AM EST. Breakfast in Marianna, the Davis Bayou, a late lunch at the Atchafalaya Welcome Center, then past Lafayette and Beaumont to Winnie, Texas, by 5:15 PM CST. The longest day. Sea level, no snow.",
   };
 }

@@ -53,20 +53,22 @@ export const legGuides: Record<string, LegGuide> = {
       "Onto the Atchafalaya Basin Bridge. Exit 121 (Butte La Rose) for the welcome center, partway across.",
     ],
   },
-  "thu-sulphur": {
-    minutes: 90,
+  "thu-winnie": {
+    minutes: 155,
     directions: [
       "Back to I-10 West at exit 121 and finish the basin bridge. No shoulder, so hold the speed limit.",
       "Lafayette and Lake Charles: stay on I-10, including the Calcasieu River bridge.",
-      "Exit 20 (LA-27, Sulphur). The Hampton Inn is on Henning Drive at the exit.",
+      "Cross the Sabine River into Texas at Orange. The Texas Travel Information Center just past the state line is a restroom break if you need one.",
+      "Beaumont: stay on I-10 through the city and over the Neches River.",
+      "Exit 829 (Winnie). The Hampton Inn & Suites is on Spur 5 at the exit.",
     ],
   },
   "fri-houston": {
-    minutes: 175,
+    minutes: 110,
     endStopId: "fri-san-felipe",
     directions: [
-      "I-10 West from exit 20 into Texas at the Sabine River, then Orange and Beaumont.",
-      "Houston: stay on I-10 (the Katy Freeway) straight through. It is the Friday morning rush, so allow an extra 30 to 45 minutes.",
+      "I-10 West from exit 829, past Baytown and over the San Jacinto River.",
+      "Houston: stay on I-10 (the Katy Freeway) straight through. It is early in the Friday rush, so allow an extra 30 minutes.",
       "Exit 723 (FM 1458, San Felipe). North about 2 miles to the historic site.",
     ],
   },
@@ -190,7 +192,7 @@ export const stopPlaces: Record<string, string> = {
   "thu-marianna": "I-10 Exit 142, Marianna, FL",
   "thu-davis-bayou": "Davis Bayou Area, Gulf Islands National Seashore, Ocean Springs, MS",
   "thu-atchafalaya": "Atchafalaya Welcome Center, Butte La Rose, LA",
-  "thu-dinner": "Sulphur, LA",
+  "thu-dinner": "Winnie, TX",
   "fri-san-felipe": "San Felipe de Austin State Historic Site, San Felipe, TX",
   "fri-junction": "South Llano River State Park, Junction, TX",
   "fri-fort-stockton": "Paisano Pete, Fort Stockton, TX",
@@ -207,7 +209,7 @@ export const stopPlaces: Record<string, string> = {
 
 // Street addresses for the nights, so Navigate lands on the hotel and not the town.
 export const hotelAddresses: Record<string, string> = {
-  sulphur: "Hampton Inn Sulphur/Lake Charles Area, 210 Henning Dr, Sulphur, LA 70663",
+  winnie: "Hampton Inn & Suites Winnie, 318 Spur 5, Winnie, TX 77665",
   van_horn: "Hampton Inn Van Horn, 1921 SW Frontage Rd, Van Horn, TX 79855",
   kingman: "Home2 Suites by Hilton Kingman, 1121 Sunrise Ave, Kingman, AZ 86401",
   st_george: "Hilton Garden Inn St. George, 1731 S Convention Center Dr, St. George, UT 84790",

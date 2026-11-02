@@ -10,7 +10,7 @@ const rows = [
     href: "#drive",
     kicker: "Drive",
     title: `Leave ${leaveGainesville}. Arrive E17 ${arriveParkCity}.`,
-    body: "Thursday at 5:00 AM to Sulphur, Friday to Van Horn, Saturday to Kingman, all smaller towns. Sunday leaves Kingman at 4:00 AM and reaches E17 about 1:05 PM, before the 2:00 PM key meeting.",
+    body: "Thursday at 5:00 AM to Winnie, Friday to Van Horn, Saturday to Kingman, all smaller towns. Sunday leaves Kingman at 4:00 AM and reaches E17 about 1:05 PM, before the 2:00 PM key meeting.",
   },
   {
     href: "#drive",

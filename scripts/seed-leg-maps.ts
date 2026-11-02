@@ -74,7 +74,7 @@ const home: LngLat = [origin.lng, origin.lat];
 const e17: LngLat = [destination.lng, destination.lat];
 
 const hotels = {
-  sulphur: [-93.374, 30.221] as LngLat,
+  winnie: [-94.383, 29.832] as LngLat,
   vanHorn: [-104.857, 31.038] as LngLat,
   kingman: [-114.031, 35.214] as LngLat,
 };
@@ -241,32 +241,33 @@ const legs: LegSpec[] = [
     towns: ["Gulfport", "Slidell", "Covington", "Hammond", "Baton Rouge", "New Orleans"],
   },
   {
-    id: "thu-sulphur",
+    id: "thu-winnie",
     startLabel: "Atchafalaya",
     start: stops.atchafalaya,
-    endLabel: "Hampton Inn Sulphur",
-    end: hotels.sulphur,
+    endLabel: "Hampton Inn Winnie",
+    end: hotels.winnie,
     via: [
       [-92.02, 30.25],
       [-93.22, 30.24],
+      [-93.72, 30.1],
+      [-94.13, 30.07],
     ],
     prefer: ["I10"],
-    towns: ["Lafayette", "Jennings", "Lake Charles"],
+    towns: ["Lafayette", "Jennings", "Lake Charles", "Orange", "Beaumont"],
   },
   {
     id: "fri-houston",
-    startLabel: "Sulphur",
-    start: hotels.sulphur,
+    startLabel: "Winnie",
+    start: hotels.winnie,
     endLabel: "San Felipe",
     end: stops.sanFelipe,
     via: [
-      [-93.72, 30.1],
-      [-94.13, 30.07],
+      [-94.98, 29.79],
       [-95.37, 29.78],
       [-96.1, 29.785],
     ],
     prefer: ["I10"],
-    towns: ["Sulphur", "Orange", "Beaumont", "Winnie", "Baytown", "Houston", "Katy", "San Felipe"],
+    towns: ["Winnie", "Baytown", "Houston", "Katy", "San Felipe"],
   },
   {
     id: "fri-hill-country",
@@ -475,17 +476,17 @@ const legs: LegSpec[] = [
 const days: { id: string; legs: string[]; startLabel: string; endLabel: string; towns: string[] }[] = [
   {
     id: "day-1",
-    legs: ["thu-i75", "thu-big-bend", "thu-coast", "thu-louisiana", "thu-sulphur"],
+    legs: ["thu-i75", "thu-big-bend", "thu-coast", "thu-louisiana", "thu-winnie"],
     startLabel: "Home",
-    endLabel: "Sulphur",
-    towns: ["Gainesville", "Tallahassee", "Pensacola", "Mobile", "Baton Rouge", "Lafayette", "New Orleans"],
+    endLabel: "Winnie",
+    towns: ["Gainesville", "Tallahassee", "Pensacola", "Mobile", "Baton Rouge", "Lafayette", "Beaumont"],
   },
   {
     id: "day-2",
     legs: ["fri-houston", "fri-hill-country", "fri-west-texas", "fri-van-horn"],
-    startLabel: "Sulphur",
+    startLabel: "Winnie",
     endLabel: "Van Horn",
-    towns: ["Beaumont", "Houston", "San Antonio", "Kerrville", "Ozona"],
+    towns: ["Houston", "San Antonio", "Kerrville", "Ozona"],
   },
   {
     id: "day-3",
