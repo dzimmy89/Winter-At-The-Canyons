@@ -24,20 +24,21 @@ export const legGuides: Record<string, LegGuide> = {
     ],
   },
   "thu-big-bend": {
-    minutes: 145,
-    endStopId: "thu-marianna",
+    minutes: 200,
+    endStopId: "thu-defuniak",
     directions: [
       "I-10 West the whole way. Sunrise comes around Madison.",
       "Tallahassee at about 1.5 hours (exits 199 to 209). Stay on I-10.",
       "Cross the Apalachicola River near exit 158. Clocks go back one hour to Central.",
-      "Exit 142 (SR-71, Marianna) for gas and breakfast at the ramp.",
+      "Past Marianna (exit 142) and Chipley (exit 120).",
+      "Exit 85 (US-331, DeFuniak Springs). North about 2 miles into town. The lake is downtown, circled by Circle Drive.",
     ],
   },
   "thu-coast": {
-    minutes: 205,
+    minutes: 155,
     endStopId: "thu-davis-bayou",
     directions: [
-      "Back to I-10 West at exit 142, past Chipley, DeFuniak Springs and Crestview.",
+      "South on US-331 back to I-10 West at exit 85, past Crestview.",
       "Pensacola: stay on I-10 through the city exits.",
       "Into Alabama. In Mobile, I-10 crosses the bay causeway and runs through the Wallace Tunnel. Stay on I-10.",
       "Into Mississippi. Exit 50 (Ocean Springs). Head south toward town and follow the brown signs for Gulf Islands National Seashore, Davis Bayou.",
@@ -154,17 +155,17 @@ export const legGuides: Record<string, LegGuide> = {
       "Over the Hoover Dam bypass bridge into Nevada (Pacific time), then I-11 North toward Henderson.",
       "I-215 West around the south side of Las Vegas to I-15 North, then out to Mesquite.",
       "Virgin River Gorge: about 29 miles of tight canyon at first light. No stopping.",
-      "Into Utah. Clocks go forward an hour. Take a St. George exit for gas.",
+      "Into Utah. Clocks go forward an hour. Exit 8 (St. George Boulevard) for Pioneer Park and gas.",
     ],
   },
   "sun-i15-summit": {
     minutes: 150,
     endStopId: "sun-fillmore",
     directions: [
-      "Back to I-15 North. Only go on if the St. George UDOT check said go.",
+      "Back to I-15 North at exit 8. Only go on if the St. George UDOT check said go.",
       "Cedar City at about 50 minutes, then Beaver.",
       "The 6,600-foot summit before Cove Fort. Watch the UDOT signs for traction-law notices.",
-      "Exit 167 into Fillmore for gas.",
+      "Exit 167 into Fillmore. The Territorial Statehouse is on Main Street in the middle of town.",
     ],
   },
   "sun-utah-valley": {
@@ -189,7 +190,7 @@ export const legGuides: Record<string, LegGuide> = {
 
 // What Google Maps searches for at each stop.
 export const stopPlaces: Record<string, string> = {
-  "thu-marianna": "I-10 Exit 142, Marianna, FL",
+  "thu-defuniak": "Lake DeFuniak, Circle Drive, DeFuniak Springs, FL",
   "thu-davis-bayou": "Davis Bayou Area, Gulf Islands National Seashore, Ocean Springs, MS",
   "thu-atchafalaya": "Atchafalaya Welcome Center, Butte La Rose, LA",
   "thu-dinner": "Winnie, TX",
@@ -202,8 +203,8 @@ export const stopPlaces: Record<string, string> = {
   "sat-picacho": "Picacho Peak State Park, Picacho, AZ",
   "sat-wickenburg": "Jail Tree, Wickenburg, AZ",
   "sat-dinner": "Kingman, AZ",
-  "sun-st-george": "I-15 Exit 8, St. George, UT",
-  "sun-fillmore": "I-15 Exit 167, Fillmore, UT",
+  "sun-st-george": "Pioneer Park, Red Hills Parkway, St. George, UT",
+  "sun-fillmore": "Territorial Statehouse State Park Museum, Fillmore, UT",
   "sun-arrive": "900 Bitner Road, Park City, UT 84098",
 };
 

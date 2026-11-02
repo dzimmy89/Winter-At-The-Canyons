@@ -6,6 +6,7 @@ import { buildDayGuide, dayDrivingMinutes, formatMinutes, mapsDayUrl, type Timel
 import { assertNever, formatPoints, formatUsd } from "../lib/money";
 import { useChecklistState } from "../hooks/useChecklistState";
 import { LegMap } from "./LegMap";
+import { StayNotes, StopStoryBlock } from "./PlaceNotes";
 
 const DAY_KEY = "winter-expedition-day";
 
@@ -293,6 +294,7 @@ function TimelineRow({ item, done, onToggle }: { item: TimelineItem; done: boole
             <h3>{item.hotel ? `Check in: ${item.hotel.propertyName}` : "Arrive: Apartment E17"}</h3>
             <p className="muted">{item.address}</p>
             {item.hotel ? <HotelLine hotel={item.hotel} /> : <p>Keys, then unload the cats first.</p>}
+            <StayNotes hotelId={item.hotel?.id ?? null} />
             <a className="btn btn-primary" href={mapsDirectionsUrl(item.address)} target="_blank" rel="noreferrer">
               Navigate here
             </a>
@@ -350,6 +352,7 @@ function StopCard({
       <p className="muted tight">
         <strong>Getting there:</strong> {stop.road}.
       </p>
+      <StopStoryBlock stopId={stop.id} />
       <div className="stop-actions">
         <a className="btn btn-primary" href={mapsDirectionsUrl(place)} target="_blank" rel="noreferrer">
           Navigate here

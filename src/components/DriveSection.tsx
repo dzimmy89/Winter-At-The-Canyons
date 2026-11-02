@@ -13,6 +13,7 @@ import { formatPoints, formatUsd } from "../lib/money";
 import { Checklist } from "./Checklist";
 import { CorridorSources } from "./CorridorSources";
 import { DriveGuide } from "./DriveGuide";
+import { RouteTownsIndex } from "./PlaceNotes";
 import { ExpenseTable } from "./ExpenseTable";
 import { RiskCallout } from "./RiskCallout";
 
@@ -53,11 +54,11 @@ const tripRisks = [
   },
   {
     title: "Three long days and a deadline",
-    body: "Getting the keys by 2:00 PM Sunday means about 12 hours of driving Thursday, 10 Friday and 11 Saturday, then 8.5 hours Sunday with a 4:00 AM start. The plan arrives about 1:05 PM, so there is roughly an hour of slack. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
+    body: "Getting the keys by 2:00 PM Sunday means about 12 hours of driving Thursday, 10 Friday and 11 Saturday, then 8.5 hours Sunday with a 4:00 AM start. The plan arrives about 1:15 PM, so there is about 45 minutes of slack. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
   },
   {
     title: "Snow is only a Sunday-morning question",
-    body: "Thursday through Saturday stay under 5,000 feet across the Gulf Coast and the desert. Sunday climbs I-15 from St. George to 6,600 feet north of Beaver around 9:40 AM in daylight and ends near 6,500 feet at E17. Falling snow, snow-packed pavement, a traction law, or a closure at the 7:30 AM check is a no-go. Then wait in St. George at 2,800 feet and call the landlord to move the key time. The plan has no spare day, so a Saturday-night storm forecast for Utah is the moment to warn them.",
+    body: "Thursday through Saturday stay under 5,000 feet across the Gulf Coast and the desert. Sunday climbs I-15 from St. George to 6,600 feet north of Beaver around 9:50 AM in daylight and ends near 6,500 feet at E17. Falling snow, snow-packed pavement, a traction law, or a closure at the 7:30 AM check is a no-go. Then wait in St. George at 2,800 feet and call the landlord to move the key time. The plan has no spare day, so a Saturday-night storm forecast for Utah is the moment to warn them.",
   },
   {
     title: "Dust, deer, and gas",
@@ -105,6 +106,11 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
       <section className="more-details" aria-labelledby="trip-details-title">
         <h2 id="trip-details-title">Trip details</h2>
         <p className="muted">Planning background. Tap a heading to open it.</p>
+
+        <details>
+          <summary>Every town and overnight, in order</summary>
+          <RouteTownsIndex />
+        </details>
 
         <details>
           <summary>Before you roll: checklist</summary>

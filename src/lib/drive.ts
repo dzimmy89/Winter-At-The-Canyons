@@ -221,13 +221,13 @@ const dayDrafts: DayDraft[] = [
     fromLabel: "Gainesville, FL",
     toLabel: "Winnie, TX",
     departClock: "5:00 AM EST",
-    arriveClock: "5:15 PM CST",
+    arriveClock: "5:20 PM CST",
     latestSafeDepart: "6:00 AM EST",
     timeZone: "EST to CST",
     miles: 790,
     driveHours: 11.9,
     routeSummary:
-      "An early start: I-75 N to Lake City, then I-10 W across the Big Bend, the Panhandle, Mobile and the Mississippi coast, I-12 W around New Orleans, across the Atchafalaya Basin, then on past Lafayette, Lake Charles and Beaumont into Texas to Winnie. Stops: Marianna, the Davis Bayou, and the Atchafalaya Welcome Center. Tallahassee, Pensacola, Mobile, Baton Rouge, Lafayette, Lake Charles and Beaumont are drive-throughs.",
+      "An early start: I-75 N to Lake City, then I-10 W across the Big Bend, the Panhandle, Mobile and the Mississippi coast, I-12 W around New Orleans, across the Atchafalaya Basin, then on past Lafayette, Lake Charles and Beaumont into Texas to Winnie. Stops: the round lake at DeFuniak Springs, the Davis Bayou, and the Atchafalaya Welcome Center. Tallahassee, Pensacola, Mobile, Baton Rouge, Lafayette, Lake Charles and Beaumont are drive-throughs.",
     hubId: "winnie",
     winterNotes:
       "Sea level all day, so snow is not a factor. The first two hours are in the dark (sunrise is about 6:55 AM EST at Lake City), so watch for deer between Lake City and Tallahassee. Clocks go back an hour at the Apalachicola River, near exit 158. The last half hour past Beaumont is at dusk (sunset is about 5:20 PM). Winnie is a quiet rice-country town of about 3,000 between Beaumont and Houston, and the hotel is right at I-10 exit 829. Stopping here also puts Houston first thing Friday, before the worst of the traffic builds.",
@@ -252,18 +252,18 @@ const dayDrafts: DayDraft[] = [
         id: "thu-big-bend",
         road: "I-10 W",
         from: "Lake City",
-        to: "Marianna (exit 142)",
-        miles: 161,
+        to: "DeFuniak Springs (exit 85)",
+        miles: 218,
         topElevationFt: 300,
         snowRisk: "none",
-        note: "Sunrise near Madison. Tallahassee is about an hour in, on the interstate. Central time starts at the Apalachicola River, just before Marianna.",
+        note: "Sunrise near Madison. Tallahassee is about an hour in, on the interstate. Central time starts at the Apalachicola River. Then past Marianna and Chipley.",
       },
       {
         id: "thu-coast",
         road: "I-10 W",
-        from: "Marianna",
+        from: "DeFuniak Springs",
         to: "Ocean Springs, MS (exit 50)",
-        miles: 228,
+        miles: 171,
         topElevationFt: 300,
         snowRisk: "none",
         note: "Past Crestview, through Pensacola and Mobile on the interstate, including the Wallace Tunnel under the Mobile River, and into Mississippi.",
@@ -291,13 +291,14 @@ const dayDrafts: DayDraft[] = [
     ],
     stops: [
       {
-        id: "thu-marianna",
+        id: "thu-defuniak",
         kind: "meal",
-        place: "Marianna, I-10 exit 142",
-        road: "I-10 W exit 142 (SR-71), gas and food at the ramp",
-        purpose: "About 3 hours out. Fuel, restrooms, and breakfast to go. One person stays with the cats.",
-        minutes: 20,
-        clock: "7:10 AM CST",
+        place: "Lake DeFuniak, DeFuniak Springs",
+        road: "I-10 W exit 85, then about 2 miles north on US-331 into town. Gas at the exit",
+        purpose:
+          "About 4 hours out, in full daylight. A spring-fed lake so round it looks drawn with a compass, ringed by Victorian houses and an 1887 lakeside library. Breakfast from the cooler on a lakeside bench, a slow lap of Circle Drive, and fuel on the way back to I-10.",
+        minutes: 25,
+        clock: "8:00 AM CST",
         realisticUsd: 25,
       },
       {
@@ -308,7 +309,7 @@ const dayDrafts: DayDraft[] = [
         purpose:
           "About 3.5 hours later. A quiet bayou with live oaks and marsh birds. A short boardwalk from the parking lot, leash. Free.",
         minutes: 20,
-        clock: "10:55 AM CST",
+        clock: "11:00 AM CST",
         realisticUsd: 0,
       },
       {
@@ -319,7 +320,7 @@ const dayDrafts: DayDraft[] = [
         purpose:
           "About 2 hours 45 minutes later. A Louisiana welcome center on stilts in America's largest river swamp, with a short nature walk among the cypress. A late picnic lunch from the cooler. Leash. Free.",
         minutes: 40,
-        clock: "2:00 PM CST",
+        clock: "2:05 PM CST",
         realisticUsd: 25,
       },
       {
@@ -599,7 +600,7 @@ const dayDrafts: DayDraft[] = [
         place: "Kingman",
         road: "Near 1121 Sunrise Ave, after check-in",
         purpose:
-          "Dinner pickup, fill the tank, and read tomorrow's forecast for I-15 in Utah. Sunday leaves at 4:00 AM, so set out clothes, coffee and cat food before bed. Text the landlord your planned 1:00 PM arrival.",
+          "Dinner pickup, fill the tank, and read tomorrow's forecast for I-15 in Utah. Sunday leaves at 4:00 AM, so set out clothes, coffee and cat food before bed. Text the landlord your planned 1:15 PM arrival.",
         minutes: 30,
         clock: "5:45 PM MST",
         realisticUsd: 40,
@@ -612,16 +613,16 @@ const dayDrafts: DayDraft[] = [
     fromLabel: "Kingman, AZ",
     toLabel: "900 Bitner Road, Apartment E17",
     departClock: "4:00 AM MST",
-    arriveClock: "1:05 PM MST",
+    arriveClock: "1:15 PM MST",
     latestSafeDepart: "4:45 AM MST",
     timeZone: "MST, with Nevada an hour behind on Pacific time",
     miles: 541,
     driveHours: 8.5,
     routeSummary:
-      "Keys by 2:00 PM. US-93 north over the Hoover Dam bridge before dawn, I-11, I-215 and I-15 past Las Vegas and through the Virgin River Gorge to St. George at sunrise. Then I-15 N past Cedar City over the 6,600-foot summit in the morning, and US-189 up Provo Canyon and US-40 to I-80 at Kimball Junction. Stops: St. George (fuel and the snow check) and Fillmore. Las Vegas is a drive-through.",
+      "Keys by 2:00 PM. US-93 north over the Hoover Dam bridge before dawn, I-11, I-215 and I-15 past Las Vegas and through the Virgin River Gorge to St. George at sunrise. Then I-15 N past Cedar City over the 6,600-foot summit in the morning, and US-189 up Provo Canyon and US-40 to I-80 at Kimball Junction. Stops: Pioneer Park in St. George (sunrise on the red rock, fuel, and the snow check) and Utah's first capitol building in Fillmore. Las Vegas is a drive-through.",
     hubId: null,
     winterNotes:
-      "The only day in snow country. The first three hours are dark desert, 1,000 to 3,700 feet. After St. George, I-15 climbs from 2,800 feet to a 6,600-foot summit between Beaver and Cove Fort, which you reach around 9:40 AM in full daylight, and E17 sits near 6,500 feet. Bare or wet pavement is a go. Falling snow, snow-packed pavement, a traction law, or a closure means you call the landlord from St. George and move the key time. The plan arrives about 1:05 PM, so it has about 55 minutes of slack for traffic or a slow canyon.",
+      "The only day in snow country. The first three hours are dark desert, 1,000 to 3,700 feet. After St. George, I-15 climbs from 2,800 feet to a 6,600-foot summit between Beaver and Cove Fort, which you reach around 9:50 AM in full daylight, and E17 sits near 6,500 feet. Bare or wet pavement is a go. Falling snow, snow-packed pavement, a traction law, or a closure means you call the landlord from St. George and move the key time. The plan arrives about 1:15 PM, so it has about 45 minutes of slack for traffic or a slow canyon. If the morning runs late, skip Pioneer Park and just fuel at exit 8.",
     snowGate: {
       checkAt: "Sat Nov 14 night (forecast), and UDOT at about 7:30 AM MST in St. George",
       sourceName: "UDOT Traffic",
@@ -698,23 +699,23 @@ const dayDrafts: DayDraft[] = [
       {
         id: "sun-st-george",
         kind: "rest",
-        place: "St. George",
-        road: "I-15 N exit 6 or 8, gas at the ramp",
+        place: "Pioneer Park, St. George",
+        road: "I-15 N exit 8, east on St. George Boulevard, left on 1000 East, left on Red Hills Parkway. About 5 minutes each way. Gas at exit 8",
         purpose:
-          "About 3.5 hours out, around sunrise. Fuel, coffee, a short walk for the cats, and the snow check: open UDOT Traffic and read I-15 to Nephi and US-189 before you go on.",
-        minutes: 20,
+          "About 3.5 hours out, at sunrise. Red sandstone boulders on the bluff above town, with the white DIXIE letters painted on the Sugarloaf rock and the whole valley lit orange below. Ten minutes on the rocks, then fuel, coffee, and the snow check: open UDOT Traffic and read I-15 to Nephi and US-189 before you go on.",
+        minutes: 30,
         clock: "7:30 AM MST",
         realisticUsd: 15,
       },
       {
         id: "sun-fillmore",
         kind: "rest",
-        place: "Fillmore, I-15 exit 167",
-        road: "I-15 N exit 167, gas at the ramp",
+        place: "Territorial Statehouse, Fillmore",
+        road: "I-15 N exit 167, then about a mile into town on Main Street. Gas at the exit",
         purpose:
-          "About 2.5 hours later, just over the summit. Fuel and a short walk. Fillmore was Utah's first territorial capital and is a quiet town of 2,500.",
+          "About 2.5 hours later, just over the summit. Utah's oldest surviving government building, a red sandstone capitol from 1855 built for a state that did not exist yet. Walk the lawn with the cats, then fuel at the exit.",
         minutes: 15,
-        clock: "10:20 AM MST",
+        clock: "10:30 AM MST",
         realisticUsd: 15,
       },
       {
@@ -734,7 +735,7 @@ const dayDrafts: DayDraft[] = [
         road: "900 Bitner Road, Apartment E17",
         purpose: "Meet the landlord by 2:00 PM for the keys. Cats in first, then a late lunch at Kimball Junction.",
         minutes: 30,
-        clock: "1:05 PM MST",
+        clock: "1:15 PM MST",
         realisticUsd: 30,
       },
     ],

@@ -80,7 +80,7 @@ const hotels = {
 };
 
 const stops = {
-  marianna: [-85.229, 30.8] as LngLat,
+  defuniak: [-86.118, 30.716] as LngLat,
   davisBayou: [-88.7965, 30.3925] as LngLat,
   atchafalaya: [-91.686, 30.311] as LngLat,
   sanFelipe: [-96.0995, 29.803] as LngLat,
@@ -203,27 +203,30 @@ const legs: LegSpec[] = [
     id: "thu-big-bend",
     startLabel: "Lake City",
     start: [-82.6475, 30.2075],
-    endLabel: "Marianna (exit 142)",
-    end: stops.marianna,
-    via: [[-84.28, 30.53]],
+    endLabel: "DeFuniak Springs",
+    end: stops.defuniak,
+    via: [
+      [-84.28, 30.53],
+      [-85.23, 30.78],
+      [-85.53, 30.765],
+    ],
     prefer: ["I10"],
-    towns: ["Lake City", "Live Oak", "Madison", "Tallahassee", "Quincy"],
+    towns: ["Lake City", "Madison", "Tallahassee", "Marianna", "Chipley"],
   },
   {
     id: "thu-coast",
-    startLabel: "Marianna",
-    start: stops.marianna,
+    startLabel: "DeFuniak Springs",
+    start: stops.defuniak,
     endLabel: "Davis Bayou",
     end: stops.davisBayou,
     via: [
-      [-85.53, 30.765],
       [-86.57, 30.73],
       [-87.2, 30.53],
       [-88.04, 30.66],
       [-88.79, 30.435],
     ],
     prefer: ["I10"],
-    towns: ["Marianna", "Chipley", "DeFuniak Springs", "Crestview", "Pensacola", "Mobile", "Pascagoula", "Ocean Springs"],
+    towns: ["Crestview", "Pensacola", "Mobile", "Pascagoula", "Ocean Springs"],
   },
   {
     id: "thu-louisiana",
