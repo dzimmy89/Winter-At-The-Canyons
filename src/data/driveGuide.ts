@@ -26,29 +26,23 @@ export const legGuides: Record<string, LegGuide> = {
     ],
   },
   "wed-panhandle": {
-    minutes: 110,
+    minutes: 185,
     directions: [
       "Back to I-10 West at exit 181.",
       "Cross the Apalachicola River near exit 158. Clocks go back one hour to Central.",
-      "Past Marianna (exit 142), Chipley (exit 120) and DeFuniak Springs (exit 85).",
-      "Exit 56 (FL-85, Crestview). The Hampton Inn is right at the exit on the south side. Tap Navigate for the last turns.",
-    ],
-  },
-  "thu-coast": {
-    minutes: 135,
-    endStopId: "thu-davis-bayou",
-    directions: [
-      "I-10 West from exit 56, as the sky gets light.",
-      "Pensacola: stay on I-10 over Escambia Bay and through the city exits.",
-      "Into Alabama. In Mobile, I-10 crosses the bay causeway and runs through the Wallace Tunnel. Stay on I-10.",
-      "Into Mississippi. Exit 50 (Ocean Springs). Head south toward town and follow the brown signs for Gulf Islands National Seashore, Davis Bayou.",
+      "Past Marianna (exit 142), DeFuniak Springs (exit 85) and Crestview (exit 56).",
+      "Pensacola: stay on I-10 over Escambia Bay and past the city exits.",
+      "Cross the Perdido River into Alabama.",
+      "Exit 35 (US-98, Daphne/Fairhope). The Hilton Garden Inn is on US-98 (North Main Street) just south of the exit. Tap Navigate for the last turns.",
     ],
   },
   "thu-louisiana": {
-    minutes: 170,
+    minutes: 215,
     endStopId: "thu-atchafalaya",
     directions: [
-      "Back to I-10 West at exit 50, past Gulfport.",
+      "Back to I-10 West at exit 35, onto the Jubilee Parkway over Mobile Bay as the sun comes up.",
+      "Mobile: I-10 runs through the Wallace Tunnel under the Mobile River. Stay on I-10.",
+      "Into Mississippi, past Pascagoula, Biloxi and Gulfport.",
       "Cross the Pearl River into Louisiana. At Slidell keep right for I-12 West toward Hammond and Baton Rouge. Do not follow I-10 toward New Orleans.",
       "I-12 West about 85 miles past Covington and Hammond to Baton Rouge, where it ends at I-10. Follow I-10 West over the Mississippi River bridge.",
       "Onto the Atchafalaya Basin Bridge, 18 miles over the swamp with no shoulder, so hold the speed limit.",
@@ -67,31 +61,32 @@ export const legGuides: Record<string, LegGuide> = {
     ],
   },
   "thu-houston": {
-    minutes: 190,
+    minutes: 150,
+    endStopId: "thu-luling",
     directions: [
       "Back to I-10 West.",
-      "Houston: stay on I-10 (the Katy Freeway) straight through, about 45 minutes. The afternoon rush is starting, so keep to the middle lanes.",
+      "Houston: stay on I-10 (the Katy Freeway) straight through, about 45 minutes. At 2:30 PM it is ahead of the rush.",
       "Past Katy, Sealy and Columbus, over the Brazos and Colorado rivers.",
-      "Schulenburg (exit 674) and Luling in the dusk.",
-      "Exit 610 at Seguin. The Hampton Inn is on Larkin Avenue near the exit. Tap Navigate for the last turns.",
+      "Schulenburg (exit 674) and Flatonia.",
+      "Exit 632 (US-183). North about 6 miles on US-183 into Luling, then right on Davis Street downtown.",
     ],
   },
-  "fri-hill-country": {
-    minutes: 140,
-    endStopId: "fri-junction",
+  "thu-hill-country": {
+    minutes: 135,
     directions: [
-      "I-10 West from Seguin toward San Antonio.",
-      "San Antonio: stay on I-10 West through downtown, where it briefly shares lanes with I-35. Follow the I-10 West / El Paso signs. At 6:30 AM it is quiet.",
-      "Northwest into the Hill Country past Boerne, Comfort and Kerrville (exit 508).",
-      "Exit 456 into Junction. Gas at the ramp, then 5 minutes south on US-377 to South Llano River State Park.",
+      "South on US-183 back to I-10, then I-10 West.",
+      "Past Seguin (exit 610).",
+      "San Antonio: stay on I-10 West through downtown, where it briefly shares lanes with I-35. Follow the I-10 West / El Paso signs. It is the evening rush, so keep to the middle lanes.",
+      "Northwest into the Hill Country past Boerne and Comfort, in the dark. Watch for deer.",
+      "Exit 508 (TX-16, Kerrville). The Hampton Inn is on Sidney Baker Street right at the exit. Tap Navigate for the last turns.",
     ],
   },
   "fri-west-texas": {
-    minutes: 170,
+    minutes: 210,
     endStopId: "fri-fort-stockton",
     directions: [
-      "Back to I-10 West at exit 456.",
-      "Sonora and Ozona. The limit is 80 mph and towns are 60 to 100 miles apart.",
+      "I-10 West from exit 508 in the dark. Deer are thick for the first hour, so hold the speed down until it is light.",
+      "Junction (exit 456), then Sonora and Ozona as the sun comes up. The limit is 80 mph and towns are 60 to 100 miles apart.",
       "Exit 257 into Fort Stockton. Food and gas are at the exit; Paisano Pete is two minutes in on Dickinson Boulevard.",
     ],
   },
@@ -105,31 +100,30 @@ export const legGuides: Record<string, LegGuide> = {
       "Exit 140 (NM-28, Avenida de Mesilla). South about 2 miles to the plaza in Old Mesilla.",
     ],
   },
-  "fri-lordsburg": {
-    minutes: 110,
+  "fri-cochise": {
+    minutes: 190,
+    endStopId: "fri-texas-canyon",
     directions: [
       "Back to I-10 West at exit 140, past Las Cruces.",
       "About 55 miles of open desert to Deming (exit 85). Fuel here if the tank is under half.",
-      "Another hour west across the desert, toward the sunset.",
-      "Exit 22 into Lordsburg. The Hampton Inn is on West Wabash Street. Tap Navigate for the last turns.",
+      "Past Lordsburg. Watch the blowing-dust signs from here to the Arizona line.",
+      "Into Arizona at San Simon, then Willcox (exit 340).",
+      "The Texas Canyon rest area, right on I-10 near mile 320, in the boulders.",
     ],
   },
-  "sat-picacho": {
-    minutes: 175,
-    endStopId: "sat-picacho",
+  "fri-marana": {
+    minutes: 80,
     directions: [
-      "I-10 West from Lordsburg in the dark. Watch the blowing-dust signs from here to the Arizona line.",
-      "Into Arizona past San Simon and Willcox as the sun comes up, then the Texas Canyon boulders.",
-      "Down through Benson.",
-      "Tucson: stay on I-10 through the city.",
-      "Exit 219 (Picacho Peak). The state park entrance is right at the exit.",
+      "Back onto I-10 West, down through Benson.",
+      "Tucson: stay on I-10 through the city, about 20 minutes, no exits.",
+      "Exit 240 (Tangerine Road). The Hampton Inn & Suites is in the Marana Center shopping area by the exit. Tap Navigate for the last turns.",
     ],
   },
   "sat-phoenix": {
-    minutes: 125,
+    minutes: 145,
     endStopId: "sat-wickenburg",
     directions: [
-      "Back to I-10 West toward Phoenix, past Casa Grande.",
+      "I-10 West from exit 240 toward Phoenix. Picacho Peak rises on the left after 20 minutes, then Casa Grande.",
       "Near Chandler, take Loop 202 West (the South Mountain Freeway). It skips downtown and rejoins I-10 West on the west side.",
       "I-10 West to Loop 303 North (exit 124).",
       "Loop 303 North to US-60 (Grand Avenue), then US-60 West about 30 miles into Wickenburg.",
@@ -151,7 +145,7 @@ export const legGuides: Record<string, LegGuide> = {
     directions: [
       "Back up the dam road to I-11 North toward Henderson.",
       "I-215 West around the south side of Las Vegas to I-15 North, then out to Mesquite.",
-      "Virgin River Gorge: about 29 miles of tight canyon, around sunset. Headlights on, no stopping.",
+      "Virgin River Gorge: about 29 miles of tight canyon, in afternoon light. Headlights on, no stopping.",
       "Into Utah. Clocks go forward an hour. Exit 6 (Bluff Street) for the Hilton Garden Inn. Tap Navigate for the last turns.",
     ],
   },
@@ -182,15 +176,14 @@ export const legGuides: Record<string, LegGuide> = {
 // What Google Maps searches for at each stop.
 export const stopPlaces: Record<string, string> = {
   "wed-quincy": "I-10 exit 181, Quincy, FL",
-  "thu-davis-bayou": "Davis Bayou Area, Gulf Islands National Seashore, Ocean Springs, MS",
   "thu-atchafalaya": "Atchafalaya Welcome Center, I-10 exit 121, Butte La Rose, LA",
   "thu-baytown": "Buc-ee's, I-10 East Freeway, Baytown, TX",
-  "thu-dinner": "Seguin, TX",
-  "fri-junction": "South Llano River State Park, Junction, TX",
+  "thu-luling": "Central Texas Oil Patch Museum, Luling, TX",
+  "thu-dinner": "Kerrville, TX",
   "fri-fort-stockton": "Paisano Pete, Fort Stockton, TX",
   "fri-mesilla": "Mesilla Plaza, Mesilla, NM",
-  "fri-dinner": "Lordsburg, NM",
-  "sat-picacho": "Picacho Peak State Park, Picacho, AZ",
+  "fri-texas-canyon": "Texas Canyon Rest Area, I-10, Dragoon, AZ",
+  "fri-dinner": "Tucson Premium Outlets, Marana, AZ",
   "sat-wickenburg": "Jail Tree, Wickenburg, AZ",
   "sat-hoover": "Mike O'Callaghan-Pat Tillman Memorial Bridge parking, Boulder City, NV",
   "sat-dinner": "St. George, UT",
@@ -200,9 +193,9 @@ export const stopPlaces: Record<string, string> = {
 
 // Street addresses for the nights, so Navigate lands on the hotel and not the town.
 export const hotelAddresses: Record<string, string> = {
-  crestview: "Hampton Inn Crestview South I-10, 112 John King Rd, Crestview, FL 32539",
-  seguin: "Hampton Inn Seguin, 1130 Larkin Ave, Seguin, TX 78155",
-  lordsburg: "Hampton Inn Lordsburg, 412 W Wabash St, Lordsburg, NM 88045",
+  daphne: "Hilton Garden Inn Mobile East Bay/Daphne, 29546 N Main St, Daphne, AL 36526",
+  kerrville: "Hampton Inn Kerrville, 2038 Sidney Baker St, Kerrville, TX 78028",
+  marana: "Hampton Inn & Suites Tucson Marana, 6300 W Marana Center Blvd, Tucson, AZ 85742",
   st_george: "Hilton Garden Inn St. George, 1731 S Convention Center Dr, St. George, UT 84790",
 };
 

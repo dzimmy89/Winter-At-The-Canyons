@@ -42,15 +42,6 @@ export const stopStories: Record<string, StopStory> = {
     cats: "A well-lit gas station lot at the exit. One person runs in while the other stays with the carriers.",
     townId: "quincy",
   },
-  "thu-davis-bayou": {
-    hook: "A quiet piece of the Gulf Islands National Seashore, with live oaks, marsh and a boardwalk over the bayou.",
-    what: [
-      "Davis Bayou is the mainland part of Gulf Islands National Seashore. Spanish moss hangs from the live oaks, and a short boardwalk and fishing pier look out over salt marsh where herons, egrets and the odd alligator sit in the grass.",
-      "The William M. Colmer Visitor Center has exhibits on the barrier islands offshore. Entry to this part of the seashore is free.",
-    ],
-    cats: "The boardwalk is short and shaded. In November it is cool enough to leave the windows cracked while one person walks it.",
-    townId: "ocean-springs",
-  },
   "thu-atchafalaya": {
     hook: "A welcome center on stilts in the middle of the country's largest river swamp, halfway across an 18-mile bridge.",
     what: [
@@ -58,7 +49,7 @@ export const stopStories: Record<string, StopStory> = {
       "The welcome center at exit 121 sits right in the swamp. Inside are exhibits on the basin's wildlife and Cajun life on the water. Outside, a short trail runs under the cypress.",
       "This is where Cajun country starts. Lafayette, just ahead, is the capital of Acadiana.",
     ],
-    cats: "Picnic tables by the parking lot. Eat lunch in sight of the car.",
+    cats: "Picnic tables by the parking lot. Eat brunch in sight of the car.",
   },
   "thu-baytown": {
     hook: "The Texas gas station that is a destination in itself.",
@@ -68,29 +59,30 @@ export const stopStories: Record<string, StopStory> = {
     ],
     cats: "The lot is huge. Park at the far edge near the pumps. One person goes in while the other stays with the car, then swap.",
   },
-  "thu-dinner": {
-    hook: "A pecan town on the Guadalupe River.",
+  "thu-luling": {
+    hook: "An oil-boom town where the pumpjacks wear costumes.",
     what: [
-      "Seguin has Tex-Mex, barbecue and chains near the hotel and along I-10. The courthouse square downtown has a five-foot pecan statue, which the town calls the world's largest pecan.",
+      "Luling was a rough cattle-trail railroad town in the 1870s. In 1922 Edgar B. Davis, after years of dry holes, struck oil just outside town, and the Luling field turned it into an oil town almost overnight.",
+      "Pumpjacks still nod all over town, and many are painted as cartoon characters, from a grasshopper to a cow jumping over the moon. The Central Texas Oil Patch Museum sits in an old storefront on Davis Street.",
+      "City Market, a block away, is one of the classic old Texas barbecue halls: brisket and sausage on butcher paper, ordered in a smoky back room. It keeps short hours, so take it as a bonus if it is open.",
+    ],
+    cats: "Park on Davis Street with the car in sight. One person walks a block of pumpjacks while the other stays, then swap.",
+    townId: "luling",
+  },
+  "thu-dinner": {
+    hook: "A Hill Country river town for the night.",
+    what: [
+      "Kerrville has Tex-Mex, barbecue and chains along Sidney Baker Street near the hotel, and more downtown by the river. Brisket from Luling, warmed up in the room, also counts.",
       "Pick up dinner and eat in the room with the cats. Friday leaves at 6:00 AM.",
     ],
   },
-  "fri-junction": {
-    hook: "A picnic under the pecans where two clear Hill Country rivers meet.",
-    what: [
-      "Junction sits where the North and South Llano rivers join. The town calls itself the Land of Living Waters.",
-      "South Llano River State Park is five minutes south of I-10. It has a shaded pecan bottom along a spring-fed river that runs clear over limestone. Wild turkeys roost in the bottomland in winter, so part of the park closes to protect them. The picnic areas stay open.",
-    ],
-    cats: "A small day-use fee per adult. Early on a weekday the park is nearly empty. Pick a spot near the parking lot.",
-    townId: "junction",
-  },
   "fri-fort-stockton": {
-    hook: "Lunch with an 11-foot roadrunner in a frontier fort town.",
+    hook: "Breakfast with an 11-foot roadrunner in a frontier fort town.",
     what: [
       "Paisano Pete, an 11-foot-tall, 22-foot-long roadrunner statue from 1980, is two minutes from the exit. He is the town's mascot and a well-loved roadside photo stop.",
       "Fort Stockton grew up around Comanche Springs, once one of the biggest springs in Texas and a watering stop on the Comanche Trail and later the San Antonio–El Paso road. Historic Fort Stockton, a few blocks away, was an Army post from 1859, staffed for years by Buffalo Soldiers.",
     ],
-    cats: "Lunch to go from a café or the exit, eaten in sight of the car. Paisano Pete makes a good photo with the cat carriers.",
+    cats: "Breakfast to go from a café or the exit, eaten in sight of the car. Paisano Pete makes a good photo with the cat carriers.",
     townId: "fort-stockton",
   },
   "fri-mesilla": {
@@ -98,26 +90,25 @@ export const stopStories: Record<string, StopStory> = {
     what: [
       "Mesilla was Mexican until the Gadsden Purchase took effect in 1854, and the American flag was raised on this plaza. Billy the Kid was tried and sentenced here in 1881.",
       "The plaza is ringed by adobe buildings and shaded benches, with the twin towers of the Basilica of San Albino on the north side. It is one of the best-kept old plazas in the Southwest.",
-      "Green chile is everywhere. Green chile is everywhere. A snack from a café near the plaza, or a bag of roasted chile to take along.",
+      "Green chile is everywhere. Lunch at a café on or near the plaza, and maybe a bag of roasted chile to take along.",
     ],
-    cats: "Park on a side street off the plaza. A walk around the plaza, one person at a time, with the car in sight.",
+    cats: "Park on a side street off the plaza. Lunch to go on a plaza bench in sight of the car, and a walk around the plaza one person at a time.",
     townId: "mesilla",
   },
-  "fri-dinner": {
-    hook: "A railroad town at the edge of the old silver country.",
+  "fri-texas-canyon": {
+    hook: "Giant granite boulders stacked beside the interstate like a toddler's blocks.",
     what: [
-      "Lordsburg has a few Mexican cafés and diners on Motel Drive and Main Street, and fast food by the interstate. Pick up dinner and eat in the room with the cats.",
-      "The ghost town of Shakespeare, a silver-mining camp from the 1870s, sits two miles south of town. It opens only on some weekends, so it is a story for the road this time.",
+      "Texas Canyon is a field of rounded granite boulders in the Little Dragoon Mountains, some the size of houses, balanced on top of each other. They weathered into these shapes underground, then the soil around them washed away.",
+      "The rest area sits right in the boulders, and at this hour the low sun turns them orange. The Dragoon Mountains to the south were home to the Chiricahua Apache leader Cochise.",
     ],
+    cats: "Restrooms and a short loop through the rocks a few steps from the parking spaces.",
   },
-  "sat-picacho": {
-    hook: "A volcanic spike in the desert, and the westernmost battle of the Civil War.",
+  "fri-dinner": {
+    hook: "A sit-down dinner after the longest day.",
     what: [
-      "Picacho Peak rises about 1,500 feet straight out of the flat desert between Tucson and Phoenix. It is the eroded remnant of old lava flows, and travelers have used it as a landmark for centuries, from the Spanish to the Butterfield stagecoaches.",
-      "In April 1862 Union cavalry from California ran into Confederate scouts at Picacho Pass. The skirmish is counted as the westernmost battle of the Civil War. A small monument stands near the park entrance.",
-      "Around the visitor center, saguaros and palo verde trees cover the slopes. A short walk near the parking lot is plenty.",
+      "The Marana Center around the hotel has restaurants in walking distance, and the Tucson Premium Outlets next door has more. Takeout back to the room works well with the cats.",
+      "Saturday leaves at 7:30 AM, so there is time for a real night's sleep and the hotel breakfast.",
     ],
-    cats: "The parking lot is close to the paths. One person walks while the other stays with the carriers, then swap.",
   },
   "sat-wickenburg": {
     hook: "A gold-rush town with a tree that served as its jail.",
@@ -125,11 +116,11 @@ export const stopStories: Record<string, StopStory> = {
       "Henry Wickenburg found gold at the Vulture Mine in 1863, and the town grew up beside the Hassayampa River. Legend says anyone who drinks from the Hassayampa never tells the truth again.",
       "The town had no jail for years, so prisoners were chained to a big mesquite. The Jail Tree still stands downtown on Tegner Street. Later Wickenburg became the dude-ranch capital of Arizona, and the main street still looks the part.",
     ],
-    cats: "Park downtown near the Jail Tree. Lunch from a café on the main street, a short walk, then fill the tank on the way out.",
+    cats: "Park downtown near the Jail Tree. Brunch from a café on the main street, a short walk, then fill the tank on the way out.",
     townId: "wickenburg",
   },
   "sat-hoover": {
-    hook: "Lunch at the car after looking straight down on Hoover Dam from 900 feet up.",
+    hook: "A late lunch at the car after looking straight down on Hoover Dam from 900 feet up.",
     what: [
       "Hoover Dam was finished in 1936. It stands 726 feet tall, plugs Black Canyon on the Colorado River and holds back Lake Mead. Thousands of men built it in the Depression, working through summers over 110 degrees.",
       "The Mike O'Callaghan–Pat Tillman Memorial Bridge opened in 2010 to carry US-93 over the canyon. A path with stairs and ramps leads from the parking lot onto a walkway on the side facing the dam, with the classic view of the dam's face, the intake towers and the river far below. The state line between Arizona and Nevada runs across the middle.",
@@ -182,80 +173,67 @@ export const townProfiles: Record<string, TownProfile> = {
       "You only use the I-10 exit, which has gas and fast food. Quincy is still on Eastern time; Central starts about 20 miles west.",
     ],
   },
-  crestview: {
-    id: "crestview",
-    name: "Crestview, Florida",
-    tagline: "The hub city of the western Panhandle, on a ridge above the Blackwater forests.",
+  daphne: {
+    id: "daphne",
+    name: "Daphne, Alabama",
+    tagline: "A quiet bluff-top town on the Eastern Shore of Mobile Bay.",
     facts: [
-      { label: "Population", value: "About 27,000" },
-      { label: "Elevation", value: "About 235 ft" },
-      { label: "County", value: "Okaloosa County seat" },
-      { label: "Known for", value: "Eglin Air Force Base, Blackwater River State Forest" },
+      { label: "Population", value: "About 28,000" },
+      { label: "Elevation", value: "About 150 ft" },
+      { label: "County", value: "Baldwin County" },
+      { label: "Violent crime", value: "About 0.6 per 1,000 residents a year (US about 3.7)" },
+      { label: "Known for", value: "Mobile Bay jubilees, Village Point Park" },
     ],
     about: [
-      "Crestview grew up on the railroad in the 1880s, on one of the highest ridges in Florida. Today it is a quiet, mostly residential city where many Eglin Air Force Base families live.",
-      "Blackwater River State Forest, one of the largest state forests in Florida, starts just west of town.",
+      "Daphne sits on bluffs along the Eastern Shore, across Mobile Bay from the city. It was the Baldwin County seat until 1901, when Bay Minette took the job, and, the local story goes, the county records too, in the middle of the night.",
+      "On a few summer nights the bay does something almost nowhere else does: a jubilee, when crabs, shrimp and flounder crowd into the shallows at dawn and people wade out with buckets. Village Point Park keeps the Jackson Oak, where Andrew Jackson is said to have camped.",
+      "Today it is a mostly residential suburb with some of the lowest crime numbers on the whole route.",
     ],
     goodToKnow: [
-      "A safe, ordinary small city. The hotel is right at I-10 exit 56 with gas and fast food around it.",
-      "You arrive late, about 9:30 PM Central. Park near the lit entrance and bring the cats in first.",
+      "One of the safest stops of the trip. The hotel is on US-98 a minute from I-10 exit 35, with gas and food around it.",
+      "You arrive late, about 10:40 PM Central. Park near the lit entrance and bring the cats in first.",
+      "Thursday starts on the Jubilee Parkway causeway across the top of the bay, right as the sun comes up behind you.",
     ],
   },
-  "ocean-springs": {
-    id: "ocean-springs",
-    name: "Ocean Springs, Mississippi",
-    tagline: "An old French colony turned arts town on Biloxi Bay.",
+  luling: {
+    id: "luling",
+    name: "Luling, Texas",
+    tagline: "An old oil and cattle town where the pumpjacks are painted like cartoons.",
     facts: [
-      { label: "Population", value: "About 18,000" },
-      { label: "Founded", value: "1699, as Fort Maurepas" },
-      { label: "Known for", value: "Walter Anderson, Shearwater Pottery, live oaks" },
+      { label: "Population", value: "About 5,500" },
+      { label: "Elevation", value: "About 420 ft" },
+      { label: "County", value: "Caldwell County" },
+      { label: "Known for", value: "The 1922 oil strike, City Market barbecue, the Watermelon Thump" },
     ],
     about: [
-      "French explorer Pierre Le Moyne d'Iberville built Fort Maurepas here in 1699, one of the first European settlements on the Gulf Coast. The town grew into a resort with mineral springs, which gave it its name.",
-      "It is best known as an arts town. The painter Walter Anderson lived and worked here, and his family's Shearwater Pottery is still open. Downtown has galleries and cafés under huge live oaks.",
+      "Luling began in 1874 at the end of a railroad line, and for a while trail drivers called it one of the toughest towns in Texas. Edgar B. Davis's oil strike in 1922 changed everything, and oil money built the brick downtown on Davis Street.",
+      "Every June the Watermelon Thump fills the streets with seed-spitting contests. The rest of the year it is a small, quiet county town with some of the best-known barbecue in Texas.",
     ],
     goodToKnow: [
-      "A well-kept, low-key town, and the bayou is on the quiet east side away from the casinos in Biloxi.",
-      "The visitor center hours are posted on the park's website. The boardwalk and grounds do not depend on them.",
+      "About 6 miles north of I-10 on US-183, so this stop costs about 12 extra minutes of driving.",
+      "Fill the tank here or at the big Buc-ee's at the I-10 exit. San Antonio's rush is next.",
     ],
   },
-  seguin: {
-    id: "seguin",
-    name: "Seguin, Texas",
-    tagline: "A river and pecan town just east of San Antonio.",
+  kerrville: {
+    id: "kerrville",
+    name: "Kerrville, Texas",
+    tagline: "A Hill Country river town on the Guadalupe.",
     facts: [
-      { label: "Population", value: "About 30,000" },
-      { label: "Elevation", value: "About 520 ft" },
-      { label: "County", value: "Guadalupe County seat" },
-      { label: "Known for", value: "Pecans, the Guadalupe River" },
+      { label: "Population", value: "About 24,000" },
+      { label: "Elevation", value: "About 1,650 ft" },
+      { label: "County", value: "Kerr County seat" },
+      { label: "Violent crime", value: "About 1.5 per 1,000 residents a year (US about 3.7)" },
+      { label: "Known for", value: "The Guadalupe River, the Kerrville Folk Festival, Western art" },
     ],
     about: [
-      "Founded in 1838 and named for Juan Seguín, a Tejano hero of the Texas Revolution, Seguin is one of the older towns in Texas. Pecan orchards line the Guadalupe River, and the town keeps a giant pecan statue on its courthouse square.",
-      "Max Starcke Park runs along the river with big cypress and pecan trees. It is a calm, small-city place to sleep that keeps you out of San Antonio.",
+      "Kerrville started in the 1850s as a camp of cypress-shingle makers on the Guadalupe River. Charles Schreiner, a Confederate veteran turned merchant and rancher, built much of the town, and his old store still stands downtown.",
+      "Today it is a retirement and summer-camp town with a river trail through cypress and limestone bluffs, the Museum of Western Art, and the Kerrville Folk Festival every late spring.",
+      "The Guadalupe flooded catastrophically on July 4, 2025, and Kerr County lost more than a hundred people, many of them children at camps upriver. The town is still rebuilding, and you will see memorials.",
     ],
     goodToKnow: [
-      "A safe, quiet town. The hotel is near I-10 with restaurants and gas around it.",
-      "You arrive about an hour after dark. Park near the lit entrance and bring the cats in first.",
-      "Friday's 6:00 AM start puts you through San Antonio by 6:30, ahead of the rush.",
-    ],
-  },
-  junction: {
-    id: "junction",
-    name: "Junction, Texas",
-    tagline: "A Hill Country river town where the Llanos meet.",
-    facts: [
-      { label: "Population", value: "About 2,500" },
-      { label: "Elevation", value: "About 1,700 ft" },
-      { label: "County", value: "Kimble County seat" },
-      { label: "Known for", value: "Clear rivers, deer hunting, pecans" },
-    ],
-    about: [
-      "Junction takes its name from the meeting of the North and South Llano rivers. It is the last real town for 100 miles going west, and the edge of the Hill Country before the land flattens into the Edwards Plateau.",
-      "In November the town is full of deer hunters, and the cafés open early. Texas Tech has a field campus on the river.",
-    ],
-    goodToKnow: [
-      "Fill the tank here. The next good services are in Fort Stockton, about 2.5 hours west.",
-      "Deer are thick on I-10 around Junction at dawn and dusk. Midday is fine.",
+      "A safe, calm small city. The hotel is right at I-10 exit 508 with gas and restaurants around it, so you never drive into town in the dark.",
+      "You arrive about 7:25 PM, well after dark. Park near the lit entrance and bring the cats in first.",
+      "Deer are thick on I-10 west of town at dawn. Friday's first hour is the time to watch.",
     ],
   },
   "fort-stockton": {
@@ -273,7 +251,7 @@ export const townProfiles: Record<string, TownProfile> = {
       "Today it is a ranching and oil town and the main service stop between San Antonio and El Paso.",
     ],
     goodToKnow: [
-      "Friday's lunch stop. Food and gas are at exit 257, and Paisano Pete is two minutes away.",
+      "Friday's breakfast stop. Food and gas are at exit 257, and Paisano Pete is two minutes away.",
       "Fill the tank here. Gas is sparse between here and Van Horn.",
     ],
   },
@@ -290,26 +268,26 @@ export const townProfiles: Record<string, TownProfile> = {
       "Mesilla was settled in the 1840s by families who wanted to stay in Mexico after the Mexican-American War. It became American a few years later with the Gadsden Purchase. It was a stop on the Butterfield Overland Mail, and briefly the Confederate capital of Arizona Territory in 1861.",
       "The plaza is a National Historic Landmark district. Adobe shops, restaurants and the Basilica of San Albino surround it, and the Mesilla Valley's chile and pecan farms start at the edge of town.",
     ],
-    goodToKnow: ["A small, walkable historic village. On a Friday afternoon it is quiet, with a few shops and cafés open."],
+    goodToKnow: ["A small, walkable historic village. On a Friday at lunchtime it is quiet, with a few shops and cafés open."],
   },
-  lordsburg: {
-    id: "lordsburg",
-    name: "Lordsburg, New Mexico",
-    tagline: "A small railroad and ranching town in the bootheel, near two ghost towns.",
+  marana: {
+    id: "marana",
+    name: "Marana, Arizona",
+    tagline: "A farm town turned quiet suburb on the northwest edge of Tucson.",
     facts: [
-      { label: "Population", value: "About 2,300" },
-      { label: "Elevation", value: "About 4,250 ft" },
-      { label: "County", value: "Hidalgo County seat" },
-      { label: "Known for", value: "Shakespeare ghost town, Steins, the Southern Pacific" },
+      { label: "Population", value: "About 55,000" },
+      { label: "Elevation", value: "About 2,000 ft" },
+      { label: "County", value: "Pima County" },
+      { label: "Violent crime", value: "About 1.1 per 1,000 residents a year (US about 3.7)" },
+      { label: "Known for", value: "Cotton farms, the Tortolita Mountains, saguaros" },
     ],
     about: [
-      "Lordsburg was founded in 1880 when the Southern Pacific railroad came through, and it became the supply town for silver and copper mines in the hills around it. Shakespeare, two miles south, is one of the best-kept ghost towns in New Mexico.",
-      "Today it is a quiet stop on I-10 between Las Cruces and Tucson, with ranch country stretching to the Arizona line.",
+      "Marana was cotton and farm country along the Santa Cruz River for most of the 1900s and became a town in 1977. Today it is a fast-growing, mostly residential suburb on I-10, which lets you stay out of Tucson itself. The town is regularly ranked among Arizona's safest.",
+      "Saguaro National Park's western half and the Arizona-Sonora Desert Museum are about 30 minutes south, in the Tucson Mountains.",
     ],
     goodToKnow: [
-      "A very small, remote town. Parts of downtown are worn and empty, so stay around the hotel and the interstate exits in the evening.",
-      "You arrive right around sunset. Park near the lit entrance and bring the cats in first.",
-      "At 4,250 feet, November nights drop near freezing. Bring the cats and their water inside.",
+      "A safe, newer suburb. The hotel is in a shopping center right off I-10 with restaurants in walking distance.",
+      "The desert cools fast after sunset. Expect the 40s by morning.",
     ],
   },
   wickenburg: {
@@ -408,44 +386,44 @@ export const townProfiles: Record<string, TownProfile> = {
 
 // Overnight hotels. Policies come from the listings in hotels.json; the rest is practical.
 export const hotelProfiles: Record<string, HotelProfile> = {
-  crestview: {
-    id: "crestview",
-    name: "Hampton Inn Crestview South I-10",
-    address: "112 John King Rd, Crestview, FL 32539 (I-10 exit 56)",
+  daphne: {
+    id: "daphne",
+    name: "Hilton Garden Inn Mobile East Bay/Daphne",
+    address: "29546 N Main St, Daphne, AL 36526 (US-98, by I-10 exit 35)",
     about: [
-      "Right at the interstate exit, so there are no town streets to find in the dark. Free hot breakfast and free parking.",
-      "Cats and dogs, 2 total, $75 per stay. Pets cannot be left alone in the room.",
+      "On US-98 a minute south of the interstate, so there are no town streets to find in the dark. Free parking.",
+      "Dogs and cats only, 2 total, $75 per stay.",
     ],
     tips: [
-      "You check in about 9:30 PM Central. Call ahead the day before so the room is held for a late arrival.",
+      "You check in about 10:45 PM Central. Call ahead the day before so the room is held for a late arrival.",
       "Ask for a ground-floor room near a side door for the carriers and litter box.",
-      "Breakfast may open after your 6:00 AM start. Ask for a grab-and-go bag at check-in.",
+      "Thursday leaves at 6:30 AM. Ask what time breakfast opens, and get coffee and something to go if it is later.",
     ],
   },
-  seguin: {
-    id: "seguin",
-    name: "Hampton Inn Seguin",
-    address: "1130 Larkin Ave, Seguin, TX 78155",
+  kerrville: {
+    id: "kerrville",
+    name: "Hampton Inn Kerrville",
+    address: "2038 Sidney Baker St, Kerrville, TX 78028 (I-10 exit 508)",
     about: [
-      "A Hampton near I-10 on the north side of town, with restaurants and gas close by. Free hot breakfast and free parking.",
-      "Cats and dogs, 2 total, $75 per room per day.",
+      "Right at the interstate exit on TX-16, a few minutes north of downtown and the river, with restaurants and gas around it. Free hot breakfast and free parking.",
+      "Cats and dogs, 2 total, $75 per stay.",
     ],
     tips: [
       "Friday leaves at 6:00 AM. Ask for a grab-and-go breakfast at check-in.",
-      "Lay out the carriers and the cooler before bed.",
+      "Fill the tank tonight at the exit, and lay out the carriers and the cooler before bed.",
     ],
   },
-  lordsburg: {
-    id: "lordsburg",
-    name: "Hampton Inn Lordsburg",
-    address: "412 W Wabash St, Lordsburg, NM 88045 (off I-10 exit 22)",
+  marana: {
+    id: "marana",
+    name: "Hampton Inn & Suites Tucson Marana",
+    address: "6300 W Marana Center Blvd, Tucson, AZ 85742 (I-10 exit 240)",
     about: [
-      "A Hampton just off the interstate on the west side of town. Free hot breakfast and free parking.",
-      "Cats and dogs, 2 total, up to 25 lb each, $75 per stay. Check-in 3 PM to 1 AM, checkout 11 AM.",
+      "A newer Hampton in the Marana Center shopping area just off I-10, with restaurants in walking distance. Free hot breakfast and free parking.",
+      "Cats and dogs, 2 total, $75 per stay.",
     ],
     tips: [
-      "Saturday leaves at 6:00 AM. Ask for a grab-and-go breakfast at check-in.",
-      "Fill the tank tonight. The stations by the interstate are the easy ones.",
+      "Saturday leaves at 7:30 AM, so you can eat the hot breakfast before you go.",
+      "After the longest day, unload only the cats, litter and one bag.",
     ],
   },
   st_george: {
@@ -465,9 +443,9 @@ export const hotelProfiles: Record<string, HotelProfile> = {
 
 // Town profile for each night's stop, by hotel id. The arrival has no hotel.
 export const hotelTown: Record<string, string> = {
-  crestview: "crestview",
-  seguin: "seguin",
-  lordsburg: "lordsburg",
+  daphne: "daphne",
+  kerrville: "kerrville",
+  marana: "marana",
   st_george: "st-george",
   dest: "kimball-junction",
 };
@@ -475,13 +453,12 @@ export const hotelTown: Record<string, string> = {
 // Every town on the route that is a stop or a night, in driving order.
 export const routeTownOrder: string[] = [
   "quincy",
-  "crestview",
-  "ocean-springs",
-  "seguin",
-  "junction",
+  "daphne",
+  "luling",
+  "kerrville",
   "fort-stockton",
   "mesilla",
-  "lordsburg",
+  "marana",
   "wickenburg",
   "boulder-city",
   "st-george",

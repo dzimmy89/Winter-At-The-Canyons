@@ -36,27 +36,27 @@ export function segmentForLeg(fromId: string, toId: string): RouteSegment {
   if (toId === "st_george") {
     return {
       id: "saturday",
-      title: "Saturday · Lordsburg to St. George",
-      body: "Leave at 6:00 AM. Sunrise over the Arizona line, Picacho Peak, around Phoenix on the loops, lunch in Wickenburg, the Joshua trees on US-93, the bridge over Hoover Dam, and the Virgin River Gorge at dusk to St. George about 5:45 PM.",
+      title: "Saturday · Marana to St. George",
+      body: "Leave at 7:30 AM after the long day. Past Picacho Peak, around Phoenix on the loops, brunch in Wickenburg, the Joshua trees on US-93, the bridge over Hoover Dam, and the Virgin River Gorge in daylight to St. George about 4:25 PM.",
     };
   }
-  if (toId === "lordsburg") {
+  if (toId === "marana") {
     return {
       id: "friday",
-      title: "Friday · Seguin to Lordsburg",
-      body: "Leave at 6:00 AM. San Antonio before the rush, the South Llano River at Junction, lunch with the giant roadrunner in Fort Stockton, Van Horn and El Paso, the plaza in Old Mesilla, and Lordsburg about 5:15 PM.",
+      title: "Friday · Kerrville to Marana",
+      body: "Leave at 6:00 AM. The longest day, almost 12 hours at mostly 75 to 80 mph: breakfast with the giant roadrunner in Fort Stockton, Van Horn and El Paso, lunch on the plaza in Old Mesilla, the Texas Canyon boulders at sunset, and Marana about 6:20 PM.",
     };
   }
-  if (toId === "seguin") {
+  if (toId === "kerrville") {
     return {
       id: "thursday",
-      title: "Thursday · Crestview to Seguin",
-      body: "Leave at 6:00 AM. Breakfast at the Davis Bayou, lunch in the Atchafalaya swamp, Buc-ee's in Baytown, Houston at the start of the rush, and Seguin about 6:50 PM. The longest day.",
+      title: "Thursday · Daphne to Kerrville",
+      body: "Leave at 6:30 AM over Mobile Bay at sunrise. Brunch in the Atchafalaya swamp, lunch at Buc-ee's in Baytown, Houston before its rush, the painted pumpjacks of Luling, and Kerrville in the Hill Country about 7:25 PM.",
     };
   }
   return {
     id: "wednesday",
-    title: "Wednesday · Gainesville to Crestview",
-    body: "Leave 4922 Wednesday, November 11, after work at 5:30 PM EST. I-75 and I-10 in the dark, dinner and fuel at Quincy, and the Hampton Inn at Crestview's exit 56 about 9:25 PM CST. Sea level, no snow.",
+    title: "Wednesday · Gainesville to Daphne",
+    body: "Leave 4922 Wednesday, November 11, after work at 5:30 PM EST. I-75 and I-10 in the dark, dinner and fuel at Quincy, and the Hilton Garden Inn at Daphne on Mobile Bay about 10:40 PM CST. Sea level, no snow.",
   };
 }

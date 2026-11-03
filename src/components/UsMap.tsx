@@ -20,9 +20,9 @@ interface Props {
 }
 
 const stopNudge: Record<string, { dx: number; dy: number }> = {
-  crestview: { dx: 8, dy: 12 },
-  seguin: { dx: 8, dy: 12 },
-  lordsburg: { dx: 8, dy: 12 },
+  daphne: { dx: 8, dy: 12 },
+  kerrville: { dx: 8, dy: 12 },
+  marana: { dx: 8, dy: 12 },
   st_george: { dx: 8, dy: 12 },
 };
 
@@ -234,8 +234,8 @@ function MapPanelBody({
       <>
         <h3>Click a pin or a corridor</h3>
         <p>
-          Gainesville is the house Tanya Chappell at Secure Investments Realty is managing. Crestview, Seguin,
-          Lordsburg, and St. George are the Hilton nights, all smaller towns. E17 is the signed lease in Kimball Junction.
+          Gainesville is the house Tanya Chappell at Secure Investments Realty is managing. Daphne, Kerrville,
+          Marana, and St. George are the Hilton nights, all safe smaller towns or quiet suburbs. E17 is the signed lease in Kimball Junction.
         </p>
       </>
     );

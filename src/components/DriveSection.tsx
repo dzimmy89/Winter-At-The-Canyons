@@ -38,9 +38,9 @@ const tripChecklist = [
   { id: "trip-c4", label: "Litter, pads, carriers, and a hotel towel kit packed" },
   { id: "trip-c5", label: "Sunday 7:30 AM in the St. George hotel: Provo Canyon if I-15 and US-189 are bare or wet. Parleys if only Provo Canyon is bad. Call the landlord and keep the room if I-15 north of Cedar City has snow" },
   { id: "trip-c7", label: "Confirm the 2:00 PM Sunday key meeting with the landlord, and agree a backup time in case Utah has snow" },
-  { id: "trip-c8", label: "Fill the tank in Quincy on Wednesday, Mobile or Ocean Springs and Baytown on Thursday, Junction, Fort Stockton and Deming on Friday, Wickenburg and Kingman on Saturday, and in St. George Saturday night" },
+  { id: "trip-c8", label: "Fill the tank in Quincy on Wednesday, Baytown and Luling on Thursday, Fort Stockton, Mesilla and Deming on Friday, Wickenburg and Kingman on Saturday, and in St. George Saturday night" },
   { id: "trip-c6", label: "Cats do not stay in a closed car" },
-  { id: "trip-c9", label: "Ask the Crestview, Seguin and Lordsburg desks for a grab-and-go breakfast, since Thursday, Friday and Saturday leave at 6:00 AM" },
+  { id: "trip-c9", label: "Call the Daphne desk to hold the room for a 10:45 PM arrival, and ask Daphne and Kerrville for grab-and-go breakfasts, since Thursday leaves at 6:30 AM and Friday at 6:00 AM" },
   { id: "trip-c10", label: "Pack the car Tuesday night, so leaving work Wednesday at 5:30 PM is just cats, litter and cooler" },
 ];
 
@@ -51,11 +51,11 @@ const tripRisks = [
   },
   {
     title: "Small towns, not big cities",
-    body: "Every night is in a smaller town: Crestview, Seguin, Lordsburg, and St. George. Every stop is a park, a small town, a welcome center, a rest area or a Buc-ee's. Tallahassee, Pensacola, Mobile, Baton Rouge, Lafayette, Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are drive-throughs on the interstate with no exits.",
+    body: "Every night is in a smaller town or quiet suburb picked for low crime: Daphne, Kerrville, Marana, and St. George. Every stop is a park, a small town, a welcome center, a rest area or a Buc-ee's. Tallahassee, Pensacola, Mobile, Baton Rouge, Lafayette, Houston, San Antonio, El Paso, Tucson, Phoenix, and Las Vegas are drive-throughs on the interstate with no exits.",
   },
   {
     title: "Five days and a deadline",
-    body: "Wednesday starts after work at 5:30 PM with 4.5 hours in the dark to Crestview. Thursday is the long one, about 11.5 hours of driving from 6:00 AM with Houston at the start of the afternoon rush. Friday is about 11 hours from 6:00 AM and Saturday about 10.5 from 6:00 AM, so Sunday is only 5 hours from 8:00 AM. The plan reaches E17 about 1:15 PM, 45 minutes before the 2:00 PM keys. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
+    body: "Wednesday starts after work at 5:30 PM with almost 6 hours in the dark to Daphne. Thursday is about 11.5 hours of driving from 6:30 AM, through Houston before its rush and San Antonio in the evening one. Friday is the long one, almost 12 hours from 6:00 AM, mostly at 75 to 80 mph. Saturday is an easier 8 hours from 7:30 AM, and Sunday only 5 hours from 8:00 AM. The plan reaches E17 about 1:15 PM, 45 minutes before the 2:00 PM keys. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
   },
   {
     title: "Snow is only a Sunday-morning question",
@@ -63,11 +63,11 @@ const tripRisks = [
   },
   {
     title: "Dust, deer, and gas",
-    body: "West Texas and southern New Mexico trade snow for other hazards. Deer in the Hill Country around Friday's sunrise, blowing dust near Lordsburg, and 100-mile gaps between stations. Pull fully off with lights off in a dust storm, and never drop below half a tank.",
+    body: "West Texas and southern New Mexico trade snow for other hazards. Deer in the Hill Country at Thursday's dusk and Friday's dawn, blowing dust near Lordsburg on Friday afternoon, and 100-mile gaps between stations. Pull fully off with lights off in a dust storm, and never drop below half a tank.",
   },
   {
     title: "150,000 points and the ceilings",
-    body: "Four Hilton nights at a 30,000-point ceiling each uses 120,000: Crestview, Seguin, Lordsburg, and St. George. The other 30,000 covers a second St. George night if Utah needs a snow hold. Pet fees are still cash.",
+    body: "Four Hilton nights at a 30,000-point ceiling each uses 120,000: Daphne, Kerrville, Marana, and St. George. The other 30,000 covers a second St. George night if Utah needs a snow hold. Pet fees are still cash.",
   },
 ];
 
@@ -93,7 +93,7 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
           </div>
           <div>
             <dt>Nights</dt>
-            <dd>Crestview · Seguin · Lordsburg · St. George</dd>
+            <dd>Daphne · Kerrville · Marana · St. George</dd>
           </div>
           <div>
             <dt>Longest day</dt>
