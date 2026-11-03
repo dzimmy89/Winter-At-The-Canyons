@@ -1092,6 +1092,71 @@ td {
   margin: 1.2rem 0 2rem;
 }
 
+.offline-card {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--go);
+  border-radius: 10px;
+  background: var(--bg-2);
+  margin: 0 0 1.25rem;
+  padding: 0 0.9rem;
+}
+
+.offline-card.offline-unavailable {
+  border-left-color: var(--watch);
+}
+
+.offline-card summary {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  cursor: pointer;
+  padding: 0.75rem 0;
+  min-height: 44px;
+  line-height: 1.4;
+}
+
+.offline-dot {
+  flex: none;
+  width: 0.65rem;
+  height: 0.65rem;
+  margin-top: 0.4rem;
+  border-radius: 50%;
+  background: var(--go);
+}
+
+.offline-unavailable .offline-dot,
+.offline-checking .offline-dot {
+  background: var(--watch);
+}
+
+.offline-body {
+  padding-bottom: 0.8rem;
+  min-width: 0;
+}
+
+.offline-link {
+  margin: 0 0 0.5rem;
+  overflow-wrap: anywhere;
+}
+
+.offline-link a {
+  color: var(--pine);
+  font-weight: 600;
+}
+
+.offline-body h3 {
+  font-size: 1rem;
+  margin: 0.4rem 0 0.3rem;
+}
+
+.offline-body ol,
+.offline-body ul {
+  margin: 0 0 0.6rem;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
 .more-details {
   margin-top: 2rem;
   padding-top: 1.2rem;

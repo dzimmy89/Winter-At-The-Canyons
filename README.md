@@ -20,6 +20,15 @@ The drive is the home screen: pick a day, then follow the timeline from departur
 - `#drive` — Leave Wed Nov 11 after work at 5:30 PM ET (no day starts before 6 AM) and get the keys at E17 by 2 PM on Sun Nov 15. Southern route around the snow: I-10 to Daphne, Kerrville, and Marana, US-93 past Hoover Dam to St. George, then I-15 up Utah with Provo Canyon on Sunday morning. Overnights are low-crime smaller towns or quiet suburbs, and big cities are drive-throughs. A stop about every 4 hours. Only Sunday morning reaches snow country, with a 7:30 AM UDOT check in St. George, which is also the hold. Hilton Honors + 150,000 points.
 - `#florida` — Secure Investments Realty is hired. Tanya Chappell is the contact. Written lease Nov 15, 2026 – May 16, 2027 so the Florida tax exemption holds.
 
+## On your phone, with no signal
+
+The app installs on a phone and works offline. The build writes `sw.js`, a service worker that saves every file (days, leg maps, notes, fonts) on the first visit, plus `manifest.webmanifest` and icons in `public/`.
+
+- iPhone: open the hosted link in Safari, Share, Add to Home Screen. Android: Chrome, ⋮, Install app.
+- Open it once with signal, then test in Airplane Mode. The status card at the top of the drive says whether it is saved.
+- The Navigate buttons open Google Maps, which needs signal unless you save Google Maps offline maps for each day first.
+- `.github/workflows/pages.yml` publishes `dist/` to GitHub Pages on every push to `main` (turn on Settings → Pages → Source: GitHub Actions once). The app link is https://dzimmy89.github.io/Winter-At-The-Canyons/.
+
 ## Hosting
 
 - Google Cloud project: `winter-exp-teocalli`

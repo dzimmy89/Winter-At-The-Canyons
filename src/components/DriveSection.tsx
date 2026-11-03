@@ -16,6 +16,7 @@ import { DriveGuide } from "./DriveGuide";
 import { buildDayGuide, dayDrivingMinutes, formatMinutes, guideStopMinutes } from "../lib/guide";
 import { RouteTownsIndex } from "./PlaceNotes";
 import { ExpenseTable } from "./ExpenseTable";
+import { OfflineCard } from "./OfflineCard";
 import { RiskCallout } from "./RiskCallout";
 
 export interface DriveTownRow {
@@ -41,6 +42,8 @@ const tripChecklist = [
   { id: "trip-c8", label: "Fill the tank in Quincy on Wednesday, the Atchafalaya and Katy on Thursday, Fort Stockton, Mesilla and Deming on Friday, Wickenburg and Kingman on Saturday, and in St. George Saturday night" },
   { id: "trip-c6", label: "Cats do not stay in a closed car" },
   { id: "trip-c9", label: "Call the Daphne desk to hold the room for a 10:45 PM arrival, and ask Daphne and Kerrville for grab-and-go breakfasts, since Thursday leaves at 6:30 AM and Friday at 6:00 AM" },
+  { id: "trip-c11", label: "Add this app to your phone's Home Screen, open it once with signal, then test it in Airplane Mode" },
+  { id: "trip-c12", label: "In Google Maps, save offline maps covering each day's drive, so Navigate works with no signal" },
   { id: "trip-c10", label: "Pack the car Tuesday night, so leaving work Wednesday at 5:30 PM is just cats, litter and cooler" },
 ];
 
@@ -101,6 +104,8 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
           </div>
         </dl>
       </header>
+
+      <OfflineCard />
 
       <DayTimes days={row.plan.days} />
 
