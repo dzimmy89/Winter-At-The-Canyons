@@ -89,6 +89,11 @@ export function dayDrivingMinutes(day: DriveDay): number {
   return day.legs.reduce((sum, leg) => sum + guideFor(leg).minutes, 0);
 }
 
+// Minutes spent at the stops on the road, not counting the evening after check-in.
+export function guideStopMinutes(guide: DayGuide): number {
+  return guide.timeline.reduce((sum, item) => (item.kind === "stop" ? sum + item.stop.minutes : sum), 0);
+}
+
 export function mapsDayUrl(guide: DayGuide): string {
   const params = new URLSearchParams({ api: "1", origin: guide.start, destination: guide.end, travelmode: "driving" });
   if (guide.roadStops.length > 0) {

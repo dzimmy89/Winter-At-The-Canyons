@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { mapsDirectionsUrl } from "../data/driveGuide";
 import type { DriveDay, DriveStopEvent, SnowRisk } from "../data/types";
 import { isStayHotel, type DrivePlan } from "../lib/drive";
-import { buildDayGuide, dayDrivingMinutes, formatMinutes, mapsDayUrl, type TimelineItem } from "../lib/guide";
+import { buildDayGuide, dayDrivingMinutes, formatMinutes, guideStopMinutes, mapsDayUrl, type TimelineItem } from "../lib/guide";
 import { assertNever, formatPoints, formatUsd } from "../lib/money";
 import { useChecklistState } from "../hooks/useChecklistState";
 import { LegMap } from "./LegMap";
@@ -111,7 +111,9 @@ export function DriveGuide({ plan }: { plan: DrivePlan }) {
             </div>
             <div>
               <dt>Stops</dt>
-              <dd>{roadStops} on the road</dd>
+              <dd>
+                {roadStops} on the road · {formatMinutes(guideStopMinutes(guide))}
+              </dd>
             </div>
           </dl>
           <p className="muted tight">

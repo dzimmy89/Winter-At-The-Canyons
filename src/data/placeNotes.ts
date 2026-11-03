@@ -104,19 +104,20 @@ export const stopStories: Record<string, StopStory> = {
     townId: "mesilla",
   },
   "fri-dinner": {
-    hook: "A railroad town under the Florida Mountains.",
+    hook: "A railroad town at the edge of the old silver country.",
     what: [
-      "Deming has Mexican restaurants and diners along Pine Street and Cedar Street, and chains near the hotel at exit 85. Order green chile anything; this is the edge of Hatch chile country.",
-      "On a clear night step outside. The high desert sky here is very dark.",
+      "Lordsburg has a few Mexican cafés and diners on Motel Drive and Main Street, and fast food by the interstate. Pick up dinner and eat in the room with the cats.",
+      "The ghost town of Shakespeare, a silver-mining camp from the 1870s, sits two miles south of town. It opens only on some weekends, so it is a story for the road this time.",
     ],
   },
-  "sat-texas-canyon": {
-    hook: "Giant granite boulders stacked beside the interstate like a toddler's blocks.",
+  "sat-picacho": {
+    hook: "A volcanic spike in the desert, and the westernmost battle of the Civil War.",
     what: [
-      "Texas Canyon is a field of rounded granite boulders in the Little Dragoon Mountains, some the size of houses, balanced on top of each other. They weathered into these shapes underground, then the soil around them washed away.",
-      "The rest area sits right in the boulders. The Dragoon Mountains to the south were home to the Chiricahua Apache leader Cochise.",
+      "Picacho Peak rises about 1,500 feet straight out of the flat desert between Tucson and Phoenix. It is the eroded remnant of old lava flows, and travelers have used it as a landmark for centuries, from the Spanish to the Butterfield stagecoaches.",
+      "In April 1862 Union cavalry from California ran into Confederate scouts at Picacho Pass. The skirmish is counted as the westernmost battle of the Civil War. A small monument stands near the park entrance.",
+      "Around the visitor center, saguaros and palo verde trees cover the slopes. A short walk near the parking lot is plenty.",
     ],
-    cats: "Restrooms and a short loop through the rocks a few steps from the parking spaces.",
+    cats: "The parking lot is close to the paths. One person walks while the other stays with the carriers, then swap.",
   },
   "sat-wickenburg": {
     hook: "A gold-rush town with a tree that served as its jail.",
@@ -127,22 +128,21 @@ export const stopStories: Record<string, StopStory> = {
     cats: "Park downtown near the Jail Tree. Lunch from a café on the main street, a short walk, then fill the tank on the way out.",
     townId: "wickenburg",
   },
-  "sat-dinner": {
-    hook: "Route 66's hometown for one evening.",
+  "sat-hoover": {
+    hook: "Lunch at the car after looking straight down on Hoover Dam from 900 feet up.",
     what: [
-      "Kingman has plenty of chains near the hotel, and old Route 66 diners downtown on Andy Devine Avenue if you want the classic version. Fill the tank tonight so Sunday is just the drive.",
-      "Before bed, read the UDOT forecast for I-15 over the summit north of Beaver and for Provo Canyon, and text the landlord your planned 4:00 PM arrival.",
+      "Hoover Dam was finished in 1936. It stands 726 feet tall, plugs Black Canyon on the Colorado River and holds back Lake Mead. Thousands of men built it in the Depression, working through summers over 110 degrees.",
+      "The Mike O'Callaghan–Pat Tillman Memorial Bridge opened in 2010 to carry US-93 over the canyon. A path with stairs and ramps leads from the parking lot onto a walkway on the side facing the dam, with the classic view of the dam's face, the intake towers and the river far below. The state line between Arizona and Nevada runs across the middle.",
+      "The bridge parking lot is free. Driving down to the dam itself adds time and a parking fee, so this stop stays on the bridge.",
     ],
+    cats: "One person walks out to the middle of the bridge while the other stays with the carriers, then swap. Picnic lunch at the car. November middays are mild, usually in the 60s.",
+    townId: "boulder-city",
   },
-  "sun-pioneer-park": {
-    hook: "Red sandstone above Utah's Dixie, the DIXIE letters on the rock, and the second snow check.",
+  "sat-dinner": {
+    hook: "A real dinner on the last night of the road.",
     what: [
-      "Pioneer Park sits on the red bluff right above downtown St. George. Red Navajo sandstone boulders, small slot canyons and a view over the whole valley. In the late-morning sun the rock glows red against the blue sky.",
-      "The big rock called the Sugarloaf has DIXIE painted on it in white letters. Settlers sent here in 1861 to grow cotton named the area Utah's Dixie. Steps cut into the rock lead up to it.",
-      "From here you can see the white St. George Temple, finished in 1877, the oldest temple still in use by the Latter-day Saints.",
+      "St. George has plenty of restaurants near the convention center and along St. George Boulevard downtown, from Mexican and barbecue to sit-down steak houses. Takeout back to the room works well with the cats after a long day.",
     ],
-    cats: "Parking right at the rocks. Ten minutes, then down to exit 8 for fuel and the UDOT check.",
-    townId: "st-george",
   },
   "sun-fillmore": {
     hook: "The capitol of a state that did not exist yet.",
@@ -150,7 +150,7 @@ export const stopStories: Record<string, StopStory> = {
       "In 1851 Brigham Young picked Fillmore, near the center of the territory, as Utah's capital. The red sandstone Territorial Statehouse was built for it, and the legislature met here in December 1855.",
       "Fillmore was too remote, and the government moved back to Salt Lake City in 1858. Only the south wing was ever finished. It is now the oldest surviving government building in Utah and a small state park museum.",
     ],
-    cats: "The museum's Sunday hours vary, so plan on lunch on the lawn outside. Five minutes from the exit.",
+    cats: "The museum's Sunday hours vary, so plan on the outside and the lawn. Five minutes from the exit.",
     townId: "fillmore",
   },
   "sun-arrive": {
@@ -292,23 +292,24 @@ export const townProfiles: Record<string, TownProfile> = {
     ],
     goodToKnow: ["A small, walkable historic village. On a Friday afternoon it is quiet, with a few shops and cafés open."],
   },
-  deming: {
-    id: "deming",
-    name: "Deming, New Mexico",
-    tagline: "A high-desert railroad and farm town where the second transcontinental railroad met.",
+  lordsburg: {
+    id: "lordsburg",
+    name: "Lordsburg, New Mexico",
+    tagline: "A small railroad and ranching town in the bootheel, near two ghost towns.",
     facts: [
-      { label: "Population", value: "About 14,000" },
-      { label: "Elevation", value: "About 4,300 ft" },
-      { label: "County", value: "Luna County seat" },
-      { label: "Known for", value: "Railroad history, chile fields, the Great American Duck Race" },
+      { label: "Population", value: "About 2,300" },
+      { label: "Elevation", value: "About 4,250 ft" },
+      { label: "County", value: "Hidalgo County seat" },
+      { label: "Known for", value: "Shakespeare ghost town, Steins, the Southern Pacific" },
     ],
     about: [
-      "Deming grew up in 1881 where the Southern Pacific and the Santa Fe railroads met, completing the second rail line across the country. The Deming Luna Mimbres Museum downtown has railroad history and a big collection of Mimbres pottery.",
-      "The Florida Mountains rise to the southeast, and Rockhound State Park, where visitors are allowed to collect rocks, sits at their foot. Every August the town holds the Great American Duck Race.",
+      "Lordsburg was founded in 1880 when the Southern Pacific railroad came through, and it became the supply town for silver and copper mines in the hills around it. Shakespeare, two miles south, is one of the best-kept ghost towns in New Mexico.",
+      "Today it is a quiet stop on I-10 between Las Cruces and Tucson, with ranch country stretching to the Arizona line.",
     ],
     goodToKnow: [
-      "A small, quiet town on I-10. The hotel is at exit 85 on the east side, with gas and restaurants nearby.",
-      "At 4,300 feet, November nights drop near freezing. Bring the cats and their water inside.",
+      "A very small, remote town. Parts of downtown are worn and empty, so stay around the hotel and the interstate exits in the evening.",
+      "You arrive right around sunset. Park near the lit entrance and bring the cats in first.",
+      "At 4,250 feet, November nights drop near freezing. Bring the cats and their water inside.",
     ],
   },
   wickenburg: {
@@ -330,23 +331,23 @@ export const townProfiles: Record<string, TownProfile> = {
       "A small, friendly town that is used to travelers.",
     ],
   },
-  kingman: {
-    id: "kingman",
-    name: "Kingman, Arizona",
-    tagline: "The heart of Route 66 in Arizona, on a high desert plateau.",
+  "boulder-city": {
+    id: "boulder-city",
+    name: "Boulder City and Hoover Dam, Nevada",
+    tagline: "The town built to house the dam builders, and the dam itself.",
     facts: [
-      { label: "Population", value: "About 33,000" },
-      { label: "Elevation", value: "About 3,300 ft" },
-      { label: "County", value: "Mohave County seat" },
-      { label: "Known for", value: "Route 66, Locomotive Park, the Hualapai Mountains" },
+      { label: "Dam finished", value: "1936" },
+      { label: "Dam height", value: "726 ft" },
+      { label: "Bridge opened", value: "2010" },
+      { label: "Time zone", value: "Pacific, an hour behind Arizona" },
     ],
     about: [
-      "Kingman began as a railroad town in the 1880s, named for the surveyor Lewis Kingman. Route 66 made it famous. The longest unbroken stretch of the old highway still left anywhere runs through it.",
-      "The 1907 Powerhouse downtown holds the visitor center and the Arizona Route 66 Museum. Across the street, Locomotive Park displays a 1920s Santa Fe steam engine. The Hualapai Mountains rise to 8,000 feet just southeast of town.",
+      "Boulder City was built by the federal government in 1931 to house the workers building Hoover Dam. It is still one of only two towns in Nevada where gambling is not allowed.",
+      "The dam created Lake Mead, the largest reservoir in the country when full, and still makes power for Nevada, Arizona and California.",
     ],
     goodToKnow: [
-      "The hotel is in the newer part of town near shopping. Stay around there in the evening rather than wandering.",
-      "Sunday leaves at 7:00 AM, so fill the tank tonight and lay everything out before bed.",
+      "Nevada is on Pacific time, so the clock reads an hour earlier here than in Arizona. Utah puts the hour back tonight.",
+      "Wind can gust hard on the bridge. Hold onto hats and phones.",
     ],
   },
   "st-george": {
@@ -364,7 +365,7 @@ export const townProfiles: Record<string, TownProfile> = {
       "Today it is one of the fastest-growing cities in Utah, warm in winter and ringed by red cliffs. Zion National Park is about an hour east.",
     ],
     goodToKnow: [
-      "Sunday's fuel stop and the snow-hold town. If UDOT shows snow on I-15 north of Cedar City, you wait here at 2,800 feet, and the Hilton Garden Inn near exit 6 is the backup bed.",
+      "Saturday's overnight, and the snow-hold town. If UDOT shows snow on I-15 at 7:30 AM Sunday, you keep the room and wait here at 2,800 feet.",
       "A clean, safe, growing city. Exit 8 has gas stations open early.",
     ],
   },
@@ -434,30 +435,30 @@ export const hotelProfiles: Record<string, HotelProfile> = {
       "Lay out the carriers and the cooler before bed.",
     ],
   },
-  deming: {
-    id: "deming",
-    name: "Hampton Inn Deming",
-    address: "3751 E Cedar St, Deming, NM 88030 (I-10 exit 85)",
+  lordsburg: {
+    id: "lordsburg",
+    name: "Hampton Inn Lordsburg",
+    address: "412 W Wabash St, Lordsburg, NM 88045 (off I-10 exit 22)",
     about: [
-      "At the east edge of town by the interstate. Free hot breakfast and free parking.",
-      "Cats and dogs, 2 total, up to about 24 lb each, $50 per stay.",
+      "A Hampton just off the interstate on the west side of town. Free hot breakfast and free parking.",
+      "Cats and dogs, 2 total, up to 25 lb each, $75 per stay. Check-in 3 PM to 1 AM, checkout 11 AM.",
     ],
     tips: [
-      "Saturday leaves at 7:00 AM, so you can eat the hot breakfast.",
-      "It gets cold overnight at 4,300 feet. Bring everything the cats need inside.",
+      "Saturday leaves at 6:00 AM. Ask for a grab-and-go breakfast at check-in.",
+      "Fill the tank tonight. The stations by the interstate are the easy ones.",
     ],
   },
-  kingman: {
-    id: "kingman",
-    name: "Home2 Suites by Hilton Kingman",
-    address: "1121 Sunrise Ave, Kingman, AZ 86401",
+  st_george: {
+    id: "st_george",
+    name: "Hilton Garden Inn St. George",
+    address: "1731 S Convention Center Dr, St. George, UT 84790 (near I-15 exit 6)",
     about: [
-      "Studio suites with a kitchenette, more room for the cats to stretch out. Free breakfast and free parking.",
-      "Dogs and cats, 2 total, 25 lb each. $75 per stay plus a $125 deposit.",
+      "Saturday's night, and the snow-hold bed. If Sunday's 7:30 AM UDOT check shows snow, ice or a closure on I-15 north of Cedar City, you keep the room another night.",
+      "Dogs and cats, 2 total, $75 for 1 to 4 nights, so a second night costs no more pet fee. A desk and free Wi-Fi in every room.",
     ],
     tips: [
-      "Check UDOT for I-15 and Provo Canyon in the room at 6:30 AM, before you load the car.",
-      "Text the landlord your planned 4:00 PM arrival tonight.",
+      "Check the road at 7:30 AM in the room before you load the car.",
+      "If you hold, call the landlord before 8:00 AM to move the key time, then tell the front desk you are staying.",
     ],
   },
 };
@@ -466,8 +467,8 @@ export const hotelProfiles: Record<string, HotelProfile> = {
 export const hotelTown: Record<string, string> = {
   crestview: "crestview",
   seguin: "seguin",
-  deming: "deming",
-  kingman: "kingman",
+  lordsburg: "lordsburg",
+  st_george: "st-george",
   dest: "kimball-junction",
 };
 
@@ -480,9 +481,9 @@ export const routeTownOrder: string[] = [
   "junction",
   "fort-stockton",
   "mesilla",
-  "deming",
+  "lordsburg",
   "wickenburg",
-  "kingman",
+  "boulder-city",
   "st-george",
   "fillmore",
   "kimball-junction",

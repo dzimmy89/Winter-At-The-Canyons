@@ -105,68 +105,68 @@ export const legGuides: Record<string, LegGuide> = {
       "Exit 140 (NM-28, Avenida de Mesilla). South about 2 miles to the plaza in Old Mesilla.",
     ],
   },
-  "fri-deming": {
-    minutes: 55,
+  "fri-lordsburg": {
+    minutes: 110,
     directions: [
       "Back to I-10 West at exit 140, past Las Cruces.",
-      "About 55 miles of open desert.",
-      "Exit 85 at the east edge of Deming. The Hampton Inn is on East Cedar Street. Tap Navigate for the last turns.",
+      "About 55 miles of open desert to Deming (exit 85). Fuel here if the tank is under half.",
+      "Another hour west across the desert, toward the sunset.",
+      "Exit 22 into Lordsburg. The Hampton Inn is on West Wabash Street. Tap Navigate for the last turns.",
     ],
   },
-  "sat-new-mexico": {
-    minutes: 135,
-    endStopId: "sat-texas-canyon",
+  "sat-picacho": {
+    minutes: 175,
+    endStopId: "sat-picacho",
     directions: [
-      "I-10 West from exit 85.",
-      "Lordsburg: watch the blowing-dust signs from here to the Arizona line.",
-      "Into Arizona past San Simon and Willcox.",
-      "Texas Canyon rest area near mile 320, right off I-10. Follow the Rest Area sign.",
+      "I-10 West from Lordsburg in the dark. Watch the blowing-dust signs from here to the Arizona line.",
+      "Into Arizona past San Simon and Willcox as the sun comes up, then the Texas Canyon boulders.",
+      "Down through Benson.",
+      "Tucson: stay on I-10 through the city.",
+      "Exit 219 (Picacho Peak). The state park entrance is right at the exit.",
     ],
   },
   "sat-phoenix": {
-    minutes: 220,
+    minutes: 125,
     endStopId: "sat-wickenburg",
     directions: [
-      "I-10 West through Benson.",
-      "Tucson: stay on I-10 through the city.",
-      "Picacho Peak, the volcanic spike, rises on the left near exit 219.",
+      "Back to I-10 West toward Phoenix, past Casa Grande.",
       "Near Chandler, take Loop 202 West (the South Mountain Freeway). It skips downtown and rejoins I-10 West on the west side.",
       "I-10 West to Loop 303 North (exit 124).",
       "Loop 303 North to US-60 (Grand Avenue), then US-60 West about 30 miles into Wickenburg.",
     ],
   },
   "sat-us93": {
-    minutes: 120,
+    minutes: 190,
+    endStopId: "sat-hoover",
     directions: [
       "US-93 North out of Wickenburg toward Kingman.",
       "Joshua Forest Scenic Road: about 20 miles of Joshua trees on both sides, then the Burro Creek bridge and Wikieup.",
-      "US-93 joins I-40 West into Kingman.",
-      "Take the Stockton Hill Road exit. The Home2 Suites is on Sunrise Avenue. Tap Navigate for the last turns.",
+      "US-93 joins I-40 West through Kingman for a few miles, then leaves it northbound toward Las Vegas. Fuel in Kingman if the tank is under half.",
+      "Cross the Colorado River on the Memorial Bridge into Nevada. Clocks go back an hour to Pacific time.",
+      "Exit 2 (Hoover Dam) right after the bridge. Follow the dam road about 2 miles to the Memorial Bridge parking lot. There may be a quick security check.",
     ],
   },
-  "sun-gorge": {
-    minutes: 205,
-    endStopId: "sun-pioneer-park",
+  "sat-gorge": {
+    minutes: 140,
     directions: [
-      "Check UDOT in the room at 6:30 AM. Then I-40 East a mile to US-93 North toward Las Vegas.",
-      "US-93 North across the desert to the Hoover Dam bridge over the Colorado River into Nevada. Clocks go back an hour to Pacific time.",
-      "I-11 North toward Henderson, then I-215 West around the south side of Las Vegas to I-15 North.",
-      "I-15 North past Mesquite, then the Virgin River Gorge: about 29 miles of tight canyon. No stopping.",
-      "Into Utah. Clocks go forward an hour. Exit 8 (St. George Boulevard), east to 1000 East, then Red Hills Parkway to Pioneer Park.",
+      "Back up the dam road to I-11 North toward Henderson.",
+      "I-215 West around the south side of Las Vegas to I-15 North, then out to Mesquite.",
+      "Virgin River Gorge: about 29 miles of tight canyon, around sunset. Headlights on, no stopping.",
+      "Into Utah. Clocks go forward an hour. Exit 6 (Bluff Street) for the Hilton Garden Inn. Tap Navigate for the last turns.",
     ],
   },
   "sun-i15-summit": {
     minutes: 150,
     endStopId: "sun-fillmore",
     directions: [
-      "Back to I-15 North at exit 8. Only go if the UDOT check said go.",
+      "From the hotel to I-15 North at exit 6. Only go if the 7:30 AM UDOT check said go.",
       "Cedar City at about 50 minutes, then Beaver.",
       "The 6,600-foot summit before Cove Fort. Watch the UDOT signs for traction-law notices.",
       "Exit 167 into Fillmore. The Territorial Statehouse is on Main Street in the middle of town.",
     ],
   },
   "sun-provo-canyon": {
-    minutes: 140,
+    minutes: 150,
     directions: [
       "Back to I-15 North.",
       "Scipio and Nephi, then down into Utah Valley past Provo.",
@@ -189,11 +189,11 @@ export const stopPlaces: Record<string, string> = {
   "fri-junction": "South Llano River State Park, Junction, TX",
   "fri-fort-stockton": "Paisano Pete, Fort Stockton, TX",
   "fri-mesilla": "Mesilla Plaza, Mesilla, NM",
-  "fri-dinner": "Deming, NM",
-  "sat-texas-canyon": "Texas Canyon Rest Area, I-10, Dragoon, AZ",
+  "fri-dinner": "Lordsburg, NM",
+  "sat-picacho": "Picacho Peak State Park, Picacho, AZ",
   "sat-wickenburg": "Jail Tree, Wickenburg, AZ",
-  "sat-dinner": "Kingman, AZ",
-  "sun-pioneer-park": "Pioneer Park, Red Hills Parkway, St. George, UT",
+  "sat-hoover": "Mike O'Callaghan-Pat Tillman Memorial Bridge parking, Boulder City, NV",
+  "sat-dinner": "St. George, UT",
   "sun-fillmore": "Territorial Statehouse State Park Museum, Fillmore, UT",
   "sun-arrive": "900 Bitner Road, Park City, UT 84098",
 };
@@ -202,8 +202,8 @@ export const stopPlaces: Record<string, string> = {
 export const hotelAddresses: Record<string, string> = {
   crestview: "Hampton Inn Crestview South I-10, 112 John King Rd, Crestview, FL 32539",
   seguin: "Hampton Inn Seguin, 1130 Larkin Ave, Seguin, TX 78155",
-  deming: "Hampton Inn Deming, 3751 E Cedar St, Deming, NM 88030",
-  kingman: "Home2 Suites by Hilton Kingman, 1121 Sunrise Ave, Kingman, AZ 86401",
+  lordsburg: "Hampton Inn Lordsburg, 412 W Wabash St, Lordsburg, NM 88045",
+  st_george: "Hilton Garden Inn St. George, 1731 S Convention Center Dr, St. George, UT 84790",
 };
 
 export function mapsDirectionsUrl(destination: string, origin?: string): string {

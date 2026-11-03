@@ -604,6 +604,28 @@ td {
   border-bottom: 1px solid var(--line);
 }
 
+.time-table {
+  overflow-x: auto;
+  margin: 0 0 1.25rem;
+}
+
+.time-table th,
+.time-table td {
+  white-space: nowrap;
+  padding: 0.4rem 0.45rem;
+}
+
+.time-table td:last-child {
+  white-space: normal;
+  min-width: 6.5rem;
+}
+
+.time-table tfoot th,
+.time-table tfoot td {
+  font-weight: 600;
+  border-bottom: 0;
+}
+
 .warn-line {
   color: var(--warn);
 }

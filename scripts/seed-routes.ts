@@ -7,10 +7,10 @@ const town = townById.park_city;
 
 const route: RouteRecord = {
   townId: "park_city",
-  miles: 2771,
-  hours: 42,
+  miles: 2777,
+  hours: 42.2,
   corridor: "parks_west",
-  summary: `Wed 5:30 PM I-75 N / I-10 W to Crestview → Thu I-10 W / I-12 W Seguin → Fri I-10 W Deming → Sat I-10 / US-93 Kingman → Sun US-93 / I-15 / Provo Canyon → ${destination.label} about 4 PM`,
+  summary: `Wed 5:30 PM I-75 N / I-10 W to Crestview → Thu I-10 W / I-12 W Seguin → Fri I-10 W Lordsburg → Sat I-10 / US-93 / I-15 St. George → Sun I-15 / Provo Canyon → ${destination.label} by 2 PM`,
   winterNotes: town.winterNotes,
   retrievedAt,
   provider: "planning_estimate",

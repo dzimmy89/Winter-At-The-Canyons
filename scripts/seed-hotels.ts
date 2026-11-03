@@ -6,9 +6,6 @@ const retrievedAt = "2026-11-02T14:30:00.000Z";
 const hamptonSecondaryAward =
   "Award Travel Finder, verified June 7, 2026: observed Hampton sweet spot 15,000–30,000 points/night. Hilton publishes no chart. This is the ceiling, not a live quote for this night.";
 
-const home2Award =
-  "Award Travel Finder, verified June 7, 2026: Home2 Suites sits in the same 15,000–30,000 points/night band as Hampton in small markets. Hilton publishes no chart. This is the ceiling, not a live quote for this night.";
-
 const hgiAward =
   "Planning estimate, not verified: Hilton Garden Inn award nights in smaller markets usually price near the top of the Hampton band. Check the live points price when you book.";
 
@@ -58,48 +55,26 @@ const properties: HotelNight[] = [
     workspace: "Not needed, because Friday is a driving day.",
   },
   {
-    id: "deming",
+    id: "lordsburg",
     brand: "Hampton",
-    propertyName: "Hampton Inn Deming",
-    city: "Deming",
+    propertyName: "Hampton Inn Lordsburg",
+    city: "Lordsburg",
     state: "NM",
     nights: 1,
     petPolicyQuote:
-      "Expedia listing, retrieved 2026-10-25: Cats and dogs allowed, 2 total, 11 kg (about 24 lbs) each. USD 50 per accommodation, per stay. 3751 E Cedar St.",
-    catsAllowed: true,
-    maxPets: 2,
-    petFeeUsd: 50,
-    petFeeRefundable: false,
-    weightLimitLbs: 24,
-    sourceUrl: "https://www.hilton.com/en/hotels/lrudmhx-hampton-deming-nm/",
-    retrievedAt: "2026-10-25T14:30:00.000Z",
-    callToConfirmTwoCats: true,
-    awardPointsPerNight: 30000,
-    awardPointsQuote: hamptonSecondaryAward,
-    parkingUsd: 0,
-    workspace: "Not needed, because Saturday is a driving day.",
-  },
-  {
-    id: "kingman",
-    brand: "Home2 Suites",
-    propertyName: "Home2 Suites by Hilton Kingman",
-    city: "Kingman",
-    state: "AZ",
-    nights: 1,
-    petPolicyQuote:
-      "Travelocity listing, retrieved 2026-11-02: Dogs and cats only, 2 max, 25 lbs each. USD 75 per stay plus a USD 125 deposit. Free breakfast. 1121 Sunrise Ave.",
+      "Expedia listing, retrieved 2026-11-03: Cats and dogs allowed, 2 total, up to 25 lbs each. USD 75 per accommodation, per stay. Check-in 3 PM to 1 AM, checkout 11 AM. 412 W Wabash St.",
     catsAllowed: true,
     maxPets: 2,
     petFeeUsd: 75,
     petFeeRefundable: false,
     weightLimitLbs: 25,
-    sourceUrl: "https://www.travelocity.com/Kingman-Hotels-Home2-Suites-By-Hilton-Kingman.h21767828.Hotel-Information",
-    retrievedAt,
+    sourceUrl: "https://www.expedia.com/Lordsburg-Hotels-Hampton-Inn-Lordsburg.h3402448.Hotel-Information",
+    retrievedAt: "2026-11-03T01:40:00.000Z",
     callToConfirmTwoCats: true,
     awardPointsPerNight: 30000,
-    awardPointsQuote: home2Award,
+    awardPointsQuote: hamptonSecondaryAward,
     parkingUsd: 0,
-    workspace: "Not needed, because Sunday is a driving day. Breakfast is usually open by 6:30 AM, before a 7:00 AM start.",
+    workspace: "Not needed, because Saturday is a driving day. Breakfast may open after a 6:00 AM start, so ask for a grab-and-go bag.",
   },
   {
     id: "st_george",
@@ -122,7 +97,7 @@ const properties: HotelNight[] = [
     awardPointsQuote: hgiAward,
     parkingUsd: 0,
     workspace:
-      "The snow hold only, not booked. If Sunday's UDOT checks say snow on I-15 north of Cedar City, wait here and book a night if it does not clear.",
+      "Saturday's night, and the snow hold. If Sunday's 7:30 AM UDOT check says snow on I-15 north of Cedar City, keep the room; the pet fee covers up to 4 nights.",
   },
 ];
 

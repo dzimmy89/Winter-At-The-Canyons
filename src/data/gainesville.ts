@@ -252,7 +252,7 @@ export const gainesvilleTimeline: TimelinePhase[] = [
     window: "Nov 11 – Nov 15, 2026",
     title: "Leave before the tenant moves in",
     deliverables: [
-      "You leave Gainesville Wednesday, November 11, after work at 5:30 PM, and reach E17 about 4:00 PM on Sunday, November 15, for the keys",
+      "You leave Gainesville Wednesday, November 11, after work at 5:30 PM, and reach E17 by 2:00 PM on Sunday, November 15, for the keys",
       "The manager does the Nov 15 walkthrough if you are already on the road",
       "Welcome binder: GRU cap, HOA rules, manager’s phone, your Utah address",
       "Tenant renters insurance required; your DP-3 is already in force",
