@@ -17,7 +17,7 @@ The drive is the home screen: pick a day, then follow the timeline from departur
 
 - `#map` — click Gainesville, a park Hilton, a corridor segment, or E17
 - `#hunt` — signed Park City lease (prior PCLodge page is background only)
-- `#drive` — Leave Wed Nov 11 after work at 5:30 PM ET (no day starts before 6 AM) and get the keys at E17 by 2 PM on Sun Nov 15. Southern route around the snow: I-10 to Daphne, Kerrville, and Marana, US-93 past Hoover Dam to St. George, then I-15 up Utah with Provo Canyon on Sunday morning. Overnights are low-crime smaller towns or quiet suburbs, and big cities are drive-throughs. A stop every 2 to 4 hours. Only Sunday morning reaches snow country, with a 7:30 AM UDOT check in St. George, which is also the hold. Hilton Honors + 150,000 points.
+- `#drive` — Leave Wed Nov 11 after work at 5:30 PM ET (no day starts before 6 AM) and get the keys at E17 by 2 PM on Sun Nov 15. Southern route around the snow: I-10 to Daphne, Kerrville, and Marana, US-93 past Hoover Dam to St. George, then I-15 up Utah with Provo Canyon on Sunday morning. Overnights are low-crime smaller towns or quiet suburbs, and big cities are drive-throughs. A stop about every 4 hours. Only Sunday morning reaches snow country, with a 7:30 AM UDOT check in St. George, which is also the hold. Hilton Honors + 150,000 points.
 - `#florida` — Secure Investments Realty is hired. Tanya Chappell is the contact. Written lease Nov 15, 2026 – May 16, 2027 so the Florida tax exemption holds.
 
 ## Hosting

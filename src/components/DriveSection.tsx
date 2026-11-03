@@ -38,7 +38,7 @@ const tripChecklist = [
   { id: "trip-c4", label: "Litter, pads, carriers, and a hotel towel kit packed" },
   { id: "trip-c5", label: "Sunday 7:30 AM in the St. George hotel: Provo Canyon if I-15 and US-189 are bare or wet. Parleys if only Provo Canyon is bad. Call the landlord and keep the room if I-15 north of Cedar City has snow" },
   { id: "trip-c7", label: "Confirm the 2:00 PM Sunday key meeting with the landlord, and agree a backup time in case Utah has snow" },
-  { id: "trip-c8", label: "Fill the tank in Quincy on Wednesday, Baytown and Luling on Thursday, Fort Stockton, Mesilla and Deming on Friday, Wickenburg and Kingman on Saturday, and in St. George Saturday night" },
+  { id: "trip-c8", label: "Fill the tank in Quincy on Wednesday, the Atchafalaya and Katy on Thursday, Fort Stockton, Mesilla and Deming on Friday, Wickenburg and Kingman on Saturday, and in St. George Saturday night" },
   { id: "trip-c6", label: "Cats do not stay in a closed car" },
   { id: "trip-c9", label: "Call the Daphne desk to hold the room for a 10:45 PM arrival, and ask Daphne and Kerrville for grab-and-go breakfasts, since Thursday leaves at 6:30 AM and Friday at 6:00 AM" },
   { id: "trip-c10", label: "Pack the car Tuesday night, so leaving work Wednesday at 5:30 PM is just cats, litter and cooler" },
@@ -55,7 +55,7 @@ const tripRisks = [
   },
   {
     title: "Five days and a deadline",
-    body: "Wednesday starts after work at 5:30 PM with almost 6 hours in the dark to Daphne. Thursday is about 11.5 hours of driving from 6:30 AM, through Houston before its rush and San Antonio in the evening one. Friday is the long one, almost 12 hours from 6:00 AM, mostly at 75 to 80 mph. Saturday is an easier 8 hours from 7:30 AM, and Sunday only 5 hours from 8:00 AM. The plan reaches E17 about 1:15 PM, 45 minutes before the 2:00 PM keys. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
+    body: "Wednesday starts after work at 5:30 PM with almost 6 hours in the dark to Daphne. Thursday is about 11.5 hours of driving from 6:30 AM, through Houston before its rush and San Antonio in the evening one. Friday is the long one, almost 12 hours from 6:00 AM, mostly at 75 to 80 mph. Saturday is an easier 8 hours from 7:30 AM, and Sunday only 5 hours from 8:00 AM. Stops come about every 4 hours. The plan reaches E17 about 1:15 PM, 45 minutes before the 2:00 PM keys. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
   },
   {
     title: "Snow is only a Sunday-morning question",
@@ -79,8 +79,8 @@ export function DriveSection({ row, tierId, onTier, map }: Props) {
         <p className="eyebrow">The drive · {leaveGainesville.replace(", 2026", "")} to {arriveParkCity.replace(", 2026", "")}</p>
         <h1>Gainesville to Park City</h1>
         <p className="lede">
-          Built around your schedule: leave Wednesday after work at 5:30 PM, never start a day before 6:00 AM, and meet the landlord at E17 by 2:00 PM Sunday. The long way around the snow, with a stop every 2 to 4 hours and each night at a cat-friendly Hilton in a
-          smaller town. Pick a day, then follow it top to bottom.
+          Built around your schedule: leave Wednesday after work at 5:30 PM, never start a day before 6:00 AM, and meet the landlord at E17 by 2:00 PM Sunday. The long way around the snow, with a stop about every 4 hours and each night at a cat-friendly Hilton in a
+          safe smaller town. Pick a day, then follow it top to bottom.
         </p>
         <dl className="trip-strip">
           <div>

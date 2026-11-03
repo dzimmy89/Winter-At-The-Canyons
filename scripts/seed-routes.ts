@@ -7,8 +7,8 @@ const town = townById.park_city;
 
 const route: RouteRecord = {
   townId: "park_city",
-  miles: 2784,
-  hours: 42,
+  miles: 2778,
+  hours: 41.7,
   corridor: "parks_west",
   summary: `Wed 5:30 PM I-75 N / I-10 W to Daphne → Thu I-10 W / I-12 W Kerrville → Fri I-10 W Marana → Sat I-10 / US-93 / I-15 St. George → Sun I-15 / Provo Canyon → ${destination.label} by 2 PM`,
   winterNotes: town.winterNotes,

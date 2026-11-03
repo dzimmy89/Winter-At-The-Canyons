@@ -51,28 +51,19 @@ export const stopStories: Record<string, StopStory> = {
     ],
     cats: "Picnic tables by the parking lot. Eat brunch in sight of the car.",
   },
-  "thu-baytown": {
+  "thu-katy": {
     hook: "The Texas gas station that is a destination in itself.",
     what: [
-      "Buc-ee's started in Lake Jackson, Texas, in 1982 and grew into giant travel centers known for dozens of pumps, spotless restrooms, and a cartoon beaver on everything. The Baytown store opened in 2014.",
+      "Buc-ee's started in Lake Jackson, Texas, in 1982 and grew into giant travel centers known for dozens of pumps, spotless restrooms, and a cartoon beaver on everything.",
       "Inside: brisket sandwiches chopped at a counter in the middle of the store, a wall of jerky, fudge, kolaches, Beaver Nuggets (sweet corn puffs), and every kind of Texas souvenir. The billboards start counting down miles ahead.",
+      "Katy itself grew up as a rice-farming railroad town and is now a big, prosperous suburb on Houston's west side. Its old downtown is a few miles north.",
     ],
     cats: "The lot is huge. Park at the far edge near the pumps. One person goes in while the other stays with the car, then swap.",
-  },
-  "thu-luling": {
-    hook: "An oil-boom town where the pumpjacks wear costumes.",
-    what: [
-      "Luling was a rough cattle-trail railroad town in the 1870s. In 1922 Edgar B. Davis, after years of dry holes, struck oil just outside town, and the Luling field turned it into an oil town almost overnight.",
-      "Pumpjacks still nod all over town, and many are painted as cartoon characters, from a grasshopper to a cow jumping over the moon. The Central Texas Oil Patch Museum sits in an old storefront on Davis Street.",
-      "City Market, a block away, is one of the classic old Texas barbecue halls: brisket and sausage on butcher paper, ordered in a smoky back room. It keeps short hours, so take it as a bonus if it is open.",
-    ],
-    cats: "Park on Davis Street with the car in sight. One person walks a block of pumpjacks while the other stays, then swap.",
-    townId: "luling",
   },
   "thu-dinner": {
     hook: "A Hill Country river town for the night.",
     what: [
-      "Kerrville has Tex-Mex, barbecue and chains along Sidney Baker Street near the hotel, and more downtown by the river. Brisket from Luling, warmed up in the room, also counts.",
+      "Kerrville has Tex-Mex, barbecue and chains along Sidney Baker Street near the hotel, and more downtown by the river.",
       "Pick up dinner and eat in the room with the cats. Friday leaves at 6:00 AM.",
     ],
   },
@@ -95,14 +86,6 @@ export const stopStories: Record<string, StopStory> = {
     cats: "Park on a side street off the plaza. Lunch to go on a plaza bench in sight of the car, and a walk around the plaza one person at a time.",
     townId: "mesilla",
   },
-  "fri-texas-canyon": {
-    hook: "Giant granite boulders stacked beside the interstate like a toddler's blocks.",
-    what: [
-      "Texas Canyon is a field of rounded granite boulders in the Little Dragoon Mountains, some the size of houses, balanced on top of each other. They weathered into these shapes underground, then the soil around them washed away.",
-      "The rest area sits right in the boulders, and at this hour the low sun turns them orange. The Dragoon Mountains to the south were home to the Chiricahua Apache leader Cochise.",
-    ],
-    cats: "Restrooms and a short loop through the rocks a few steps from the parking spaces.",
-  },
   "fri-dinner": {
     hook: "A sit-down dinner after the longest day.",
     what: [
@@ -110,24 +93,14 @@ export const stopStories: Record<string, StopStory> = {
       "Saturday leaves at 7:30 AM, so there is time for a real night's sleep and the hotel breakfast.",
     ],
   },
-  "sat-wickenburg": {
-    hook: "A gold-rush town with a tree that served as its jail.",
+  "sat-kingman": {
+    hook: "Lunch on the longest stretch of Route 66 still left.",
     what: [
-      "Henry Wickenburg found gold at the Vulture Mine in 1863, and the town grew up beside the Hassayampa River. Legend says anyone who drinks from the Hassayampa never tells the truth again.",
-      "The town had no jail for years, so prisoners were chained to a big mesquite. The Jail Tree still stands downtown on Tegner Street. Later Wickenburg became the dude-ranch capital of Arizona, and the main street still looks the part.",
+      "Kingman grew up on the Santa Fe railroad in the 1880s and then on Route 66, which runs right through downtown as Andy Devine Avenue, named for the gravel-voiced actor who grew up here.",
+      "The 1907 Powerhouse, which once made electricity for the mines, now holds the visitor center and the Arizona Route 66 Museum. Across the street in Locomotive Park sits a 1920s Santa Fe steam engine. Old diners and motel signs line the avenue.",
     ],
-    cats: "Park downtown near the Jail Tree. Brunch from a café on the main street, a short walk, then fill the tank on the way out.",
-    townId: "wickenburg",
-  },
-  "sat-hoover": {
-    hook: "A late lunch at the car after looking straight down on Hoover Dam from 900 feet up.",
-    what: [
-      "Hoover Dam was finished in 1936. It stands 726 feet tall, plugs Black Canyon on the Colorado River and holds back Lake Mead. Thousands of men built it in the Depression, working through summers over 110 degrees.",
-      "The Mike O'Callaghan–Pat Tillman Memorial Bridge opened in 2010 to carry US-93 over the canyon. A path with stairs and ramps leads from the parking lot onto a walkway on the side facing the dam, with the classic view of the dam's face, the intake towers and the river far below. The state line between Arizona and Nevada runs across the middle.",
-      "The bridge parking lot is free. Driving down to the dam itself adds time and a parking fee, so this stop stays on the bridge.",
-    ],
-    cats: "One person walks out to the middle of the bridge while the other stays with the carriers, then swap. Picnic lunch at the car. November middays are mild, usually in the 60s.",
-    townId: "boulder-city",
+    cats: "Park by the Powerhouse with the car in sight. Lunch to go from a diner, and one person walks to the steam engine at a time. November middays are mild here, usually in the 60s.",
+    townId: "kingman",
   },
   "sat-dinner": {
     hook: "A real dinner on the last night of the road.",
@@ -193,25 +166,6 @@ export const townProfiles: Record<string, TownProfile> = {
       "One of the safest stops of the trip. The hotel is on US-98 a minute from I-10 exit 35, with gas and food around it.",
       "You arrive late, about 10:40 PM Central. Park near the lit entrance and bring the cats in first.",
       "Thursday starts on the Jubilee Parkway causeway across the top of the bay, right as the sun comes up behind you.",
-    ],
-  },
-  luling: {
-    id: "luling",
-    name: "Luling, Texas",
-    tagline: "An old oil and cattle town where the pumpjacks are painted like cartoons.",
-    facts: [
-      { label: "Population", value: "About 5,500" },
-      { label: "Elevation", value: "About 420 ft" },
-      { label: "County", value: "Caldwell County" },
-      { label: "Known for", value: "The 1922 oil strike, City Market barbecue, the Watermelon Thump" },
-    ],
-    about: [
-      "Luling began in 1874 at the end of a railroad line, and for a while trail drivers called it one of the toughest towns in Texas. Edgar B. Davis's oil strike in 1922 changed everything, and oil money built the brick downtown on Davis Street.",
-      "Every June the Watermelon Thump fills the streets with seed-spitting contests. The rest of the year it is a small, quiet county town with some of the best-known barbecue in Texas.",
-    ],
-    goodToKnow: [
-      "About 6 miles north of I-10 on US-183, so this stop costs about 12 extra minutes of driving.",
-      "Fill the tank here or at the big Buc-ee's at the I-10 exit. San Antonio's rush is next.",
     ],
   },
   kerrville: {
@@ -290,42 +244,23 @@ export const townProfiles: Record<string, TownProfile> = {
       "The desert cools fast after sunset. Expect the 40s by morning.",
     ],
   },
-  wickenburg: {
-    id: "wickenburg",
-    name: "Wickenburg, Arizona",
-    tagline: "An old gold town that became the dude-ranch capital of Arizona.",
+  kingman: {
+    id: "kingman",
+    name: "Kingman, Arizona",
+    tagline: "The heart of Route 66 in Arizona, on a high desert plateau.",
     facts: [
-      { label: "Population", value: "About 7,500" },
-      { label: "Elevation", value: "About 2,100 ft" },
-      { label: "Founded", value: "1863, after the Vulture Mine strike" },
-      { label: "Known for", value: "The Jail Tree, dude ranches, Western art" },
+      { label: "Population", value: "About 33,000" },
+      { label: "Elevation", value: "About 3,300 ft" },
+      { label: "County", value: "Mohave County seat" },
+      { label: "Known for", value: "Route 66, Locomotive Park, the Hualapai Mountains" },
     ],
     about: [
-      "The Vulture Mine was one of the richest gold mines in Arizona. Wickenburg grew up as its supply town on the Hassayampa River, one of the few places with water between Phoenix and the Colorado River.",
-      "In the 1920s and 1930s guest ranches made it a winter escape for city people. The Desert Caballeros Western Museum downtown has one of the better collections of Western art in the state.",
+      "Kingman began as a railroad town in the 1880s, named for the surveyor Lewis Kingman. Route 66 made it famous, and the longest unbroken stretch of the old highway still left anywhere runs through it.",
+      "The 1907 Powerhouse downtown holds the visitor center and the Arizona Route 66 Museum. The Hualapai Mountains rise to 8,000 feet just southeast of town.",
     ],
     goodToKnow: [
-      "Fill the tank here. US-93 north has only Wikieup before Kingman.",
-      "A small, friendly town that is used to travelers.",
-    ],
-  },
-  "boulder-city": {
-    id: "boulder-city",
-    name: "Boulder City and Hoover Dam, Nevada",
-    tagline: "The town built to house the dam builders, and the dam itself.",
-    facts: [
-      { label: "Dam finished", value: "1936" },
-      { label: "Dam height", value: "726 ft" },
-      { label: "Bridge opened", value: "2010" },
-      { label: "Time zone", value: "Pacific, an hour behind Arizona" },
-    ],
-    about: [
-      "Boulder City was built by the federal government in 1931 to house the workers building Hoover Dam. It is still one of only two towns in Nevada where gambling is not allowed.",
-      "The dam created Lake Mead, the largest reservoir in the country when full, and still makes power for Nevada, Arizona and California.",
-    ],
-    goodToKnow: [
-      "Nevada is on Pacific time, so the clock reads an hour earlier here than in Arizona. Utah puts the hour back tonight.",
-      "Wind can gust hard on the bridge. Hold onto hats and phones.",
+      "A daytime lunch stop only. Downtown is a few blocks from I-40 exit 48, and US-93 north to Las Vegas leaves from the same exit.",
+      "Fill the tank here. US-93 to Las Vegas has few services.",
     ],
   },
   "st-george": {
@@ -454,13 +389,11 @@ export const hotelTown: Record<string, string> = {
 export const routeTownOrder: string[] = [
   "quincy",
   "daphne",
-  "luling",
   "kerrville",
   "fort-stockton",
   "mesilla",
   "marana",
-  "wickenburg",
-  "boulder-city",
+  "kingman",
   "st-george",
   "fillmore",
   "kimball-junction",
