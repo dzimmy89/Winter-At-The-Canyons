@@ -10,13 +10,13 @@ const rows = [
     href: "#drive",
     kicker: "Drive",
     title: `Leave ${leaveGainesville}. Arrive E17 ${arriveParkCity}.`,
-    body: "Wednesday at 6:30 AM to Broussard, Thursday at 6:00 AM to Fort Stockton, Friday at 8:00 AM to Marana, Saturday at 7:00 AM to St. George, all smaller towns or quiet suburbs. Sunday leaves St. George at 8:00 AM and reaches E17 about 1:15 PM, before the 2:00 PM key meeting.",
+    body: "Wednesday after work at 5:30 PM to Crestview, Thursday at 6:00 AM to Seguin, Friday at 6:00 AM to Deming, Saturday at 7:00 AM to Kingman, all smaller towns. Sunday leaves Kingman at 7:00 AM and reaches E17 about 4:10 PM, so move the key meeting to about 4 PM.",
   },
   {
     href: "#drive",
     kicker: "Snow",
     title: "Bare or wet pavement is a go. Snow is a hold.",
-    body: "Only Sunday morning reaches snow country: the 6,600-foot I-15 summit and Provo Canyon. If UDOT shows snow at the 7:30 AM St. George check, keep the hotel room, call the landlord and move the key time.",
+    body: "Only Sunday reaches snow country: the 6,600-foot I-15 summit and Provo Canyon. Check UDOT at 6:30 AM in Kingman and again in St. George. If it shows snow, wait in St. George, call the landlord and move the key time.",
   },
   {
     href: "#lease",
@@ -36,7 +36,7 @@ const rows = [
     href: "#house",
     kicker: "This week",
     title: "Tanya Chappell runs the Nov 15 walkthrough.",
-    body: "You leave Wednesday, November 11, at 6:30 AM. From Utah, Secure Investments runs 4922. You do not.",
+    body: "You leave Wednesday, November 11, after work at 5:30 PM. From Utah, Secure Investments runs 4922. You do not.",
   },
 ] as const;
 
@@ -46,7 +46,7 @@ export function NowBoard() {
       <p className="eyebrow">Now</p>
       <h1>Four jobs. One season.</h1>
       <p className="lede">
-        You leave Gainesville on Wednesday, November 11, at 6:30 AM, and get the keys to 900 Bitner Road, Apartment E17, by 2:00 PM on Sunday, November 15.
+        You leave Gainesville on Wednesday, November 11, after work at 5:30 PM, and get the keys to 900 Bitner Road, Apartment E17, about 4:00 PM on Sunday, November 15.
       </p>
       <ol className="now-list">
         {rows.map((row) => (

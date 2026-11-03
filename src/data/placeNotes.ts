@@ -32,17 +32,17 @@ export interface HotelProfile {
 }
 
 export const stopStories: Record<string, StopStory> = {
-  "wed-defuniak": {
-    hook: "A lake so round it looks drawn with a compass, in a Victorian town that used to be a winter college.",
+  "wed-quincy": {
+    hook: "The small Florida town that got rich on Coca-Cola stock.",
     what: [
-      "Lake DeFuniak is a spring-fed lake about a mile around, and is often called one of the roundest natural lakes in the world. Circle Drive follows the shore past big Victorian houses with wraparound porches.",
-      "From 1885 into the 1920s this was the Florida Chautauqua, a winter camp of lectures, concerts and classes that drew visitors by train from the North. The columned Hall of Brotherhood still stands on the lake.",
-      "The small wooden Walton-DeFuniak Library on the shore opened in 1887. It calls itself the oldest library in Florida still running in its original building.",
+      "In the early 1900s a Quincy banker, Mark Munroe, urged his neighbors to buy shares in a young soft-drink company from Atlanta. Many did and held on, and Quincy became known as the town with more Coca-Cola millionaires per head than anywhere else.",
+      "Before that it was shade-tobacco country. Gadsden County farmers grew the thin leaves used to wrap cigars under acres of cheesecloth. The courthouse square, about four miles north of the exit, is lined with brick storefronts from those years.",
+      "You come through in the dark, so this stop is dinner and fuel at the exit, with the story for the road.",
     ],
-    cats: "Park on Circle Drive with the lake in view. One person walks the shore while the other stays with the carriers, then swap.",
-    townId: "defuniak",
+    cats: "A well-lit gas station lot at the exit. One person runs in while the other stays with the carriers.",
+    townId: "quincy",
   },
-  "wed-davis-bayou": {
+  "thu-davis-bayou": {
     hook: "A quiet piece of the Gulf Islands National Seashore, with live oaks, marsh and a boardwalk over the bayou.",
     what: [
       "Davis Bayou is the mainland part of Gulf Islands National Seashore. Spanish moss hangs from the live oaks, and a short boardwalk and fishing pier look out over salt marsh where herons, egrets and the odd alligator sit in the grass.",
@@ -51,58 +51,66 @@ export const stopStories: Record<string, StopStory> = {
     cats: "The boardwalk is short and shaded. In November it is cool enough to leave the windows cracked while one person walks it.",
     townId: "ocean-springs",
   },
-  "wed-dinner": {
-    hook: "Your first night in Cajun country.",
+  "thu-atchafalaya": {
+    hook: "A welcome center on stilts in the middle of the country's largest river swamp, halfway across an 18-mile bridge.",
     what: [
-      "Broussard sits on the south edge of Lafayette, the capital of Acadiana. Boudin, crawfish étouffée, gumbo and po'boys are on menus all along East Main Street and US-90, and plenty of places do takeout to eat in the room with the cats.",
+      "The Atchafalaya Basin is the largest river swamp in the United States, cypress and tupelo forest flooded by the Atchafalaya River. I-10 crosses it on the Atchafalaya Basin Bridge, about 18 miles long, which opened in 1973.",
+      "The welcome center at exit 121 sits right in the swamp. Inside are exhibits on the basin's wildlife and Cajun life on the water. Outside, a short trail runs under the cypress.",
+      "This is where Cajun country starts. Lafayette, just ahead, is the capital of Acadiana.",
+    ],
+    cats: "Picnic tables by the parking lot. Eat lunch in sight of the car.",
+  },
+  "thu-baytown": {
+    hook: "The Texas gas station that is a destination in itself.",
+    what: [
+      "Buc-ee's started in Lake Jackson, Texas, in 1982 and grew into giant travel centers known for dozens of pumps, spotless restrooms, and a cartoon beaver on everything. The Baytown store opened in 2014.",
+      "Inside: brisket sandwiches chopped at a counter in the middle of the store, a wall of jerky, fudge, kolaches, Beaver Nuggets (sweet corn puffs), and every kind of Texas souvenir. The billboards start counting down miles ahead.",
+    ],
+    cats: "The lot is huge. Park at the far edge near the pumps. One person goes in while the other stays with the car, then swap.",
+  },
+  "thu-dinner": {
+    hook: "A pecan town on the Guadalupe River.",
+    what: [
+      "Seguin has Tex-Mex, barbecue and chains near the hotel and along I-10. The courthouse square downtown has a five-foot pecan statue, which the town calls the world's largest pecan.",
+      "Pick up dinner and eat in the room with the cats. Friday leaves at 6:00 AM.",
     ],
   },
-  "thu-blue-elbow": {
-    hook: "A boardwalk into a cypress swamp, the first thing you see in Texas.",
-    what: [
-      "The Texas Travel Information Center in Orange sits right after the Sabine River bridge. Behind it a boardwalk of about 600 feet runs out into Blue Elbow Swamp, a bend of the Sabine full of bald cypress and tupelo with knees poking out of the black water.",
-      "Herons, egrets and kingfishers work the swamp, and in November the mosquitoes are mostly gone. Inside are clean restrooms, free Texas highway maps, and staff who can tell you about road work ahead.",
-    ],
-    cats: "The parking lot is a few steps from the boardwalk. One person walks out while the other stays with the carriers, then swap.",
-    townId: "orange",
-  },
-  "thu-high-hill": {
-    hook: "A plain brick church in the cotton fields, painted inside like a cathedral.",
-    what: [
-      "Czech and German farmers settled this part of Texas in the 1800s and built a handful of country churches that look plain outside and are covered in paint inside. Together they are known as the Painted Churches of Texas.",
-      "St. Mary's at High Hill is the grandest. It is a red-brick Gothic church with a 111-foot steeple, finished in 1906. In 1912 two San Antonio artists painted the inside: soft-colored vaulted ceilings with angels, stained glass, a hand-carved altar, and wooden pillars painted to look like marble.",
-      "It is still a working parish church. The door is usually open in daylight. If it is locked or a service is on, the outside and the churchyard are still worth the stop.",
-    ],
-    cats: "A quiet country lot with room to park in the shade. Take turns going inside.",
-    townId: "schulenburg",
-  },
-  "thu-junction": {
+  "fri-junction": {
     hook: "A picnic under the pecans where two clear Hill Country rivers meet.",
     what: [
       "Junction sits where the North and South Llano rivers join. The town calls itself the Land of Living Waters.",
       "South Llano River State Park is five minutes south of I-10. It has a shaded pecan bottom along a spring-fed river that runs clear over limestone. Wild turkeys roost in the bottomland in winter, so part of the park closes to protect them. The picnic areas stay open.",
     ],
-    cats: "A small day-use fee per adult. Pick a picnic table near the parking lot.",
+    cats: "A small day-use fee per adult. Early on a weekday the park is nearly empty. Pick a spot near the parking lot.",
     townId: "junction",
   },
-  "thu-dinner": {
-    hook: "A frontier fort town and an 11-foot roadrunner.",
+  "fri-fort-stockton": {
+    hook: "Lunch with an 11-foot roadrunner in a frontier fort town.",
     what: [
-      "Paisano Pete, Fort Stockton's 11-foot roadrunner statue from 1980, is a few minutes from the hotel if there is still light for a photo. Dinner is a short drive away: Tex-Mex and steak houses on Dickinson Boulevard, and chains along the I-10 frontage road.",
-      "Fill the tank tonight. Friday's first stretch to Mesilla has long gaps between towns.",
+      "Paisano Pete, an 11-foot-tall, 22-foot-long roadrunner statue from 1980, is two minutes from the exit. He is the town's mascot and a well-loved roadside photo stop.",
+      "Fort Stockton grew up around Comanche Springs, once one of the biggest springs in Texas and a watering stop on the Comanche Trail and later the San Antonio–El Paso road. Historic Fort Stockton, a few blocks away, was an Army post from 1859, staffed for years by Buffalo Soldiers.",
     ],
+    cats: "Lunch to go from a café or the exit, eaten in sight of the car. Paisano Pete makes a good photo with the cat carriers.",
+    townId: "fort-stockton",
   },
   "fri-mesilla": {
     hook: "An adobe plaza where Billy the Kid was sentenced and the Gadsden Purchase made the town American.",
     what: [
       "Mesilla was Mexican until the Gadsden Purchase took effect in 1854, and the American flag was raised on this plaza. Billy the Kid was tried and sentenced here in 1881.",
       "The plaza is ringed by adobe buildings and shaded benches, with the twin towers of the Basilica of San Albino on the north side. It is one of the best-kept old plazas in the Southwest.",
-      "Green chile is everywhere. Lunch is green chile: enchiladas or a burrito from a café near the plaza.",
+      "Green chile is everywhere. Green chile is everywhere. A snack from a café near the plaza, or a bag of roasted chile to take along.",
     ],
-    cats: "Park on a side street off the plaza. Lunch on a bench in sight of the car.",
+    cats: "Park on a side street off the plaza. A walk around the plaza, one person at a time, with the car in sight.",
     townId: "mesilla",
   },
-  "fri-texas-canyon": {
+  "fri-dinner": {
+    hook: "A railroad town under the Florida Mountains.",
+    what: [
+      "Deming has Mexican restaurants and diners along Pine Street and Cedar Street, and chains near the hotel at exit 85. Order green chile anything; this is the edge of Hatch chile country.",
+      "On a clear night step outside. The high desert sky here is very dark.",
+    ],
+  },
+  "sat-texas-canyon": {
     hook: "Giant granite boulders stacked beside the interstate like a toddler's blocks.",
     what: [
       "Texas Canyon is a field of rounded granite boulders in the Little Dragoon Mountains, some the size of houses, balanced on top of each other. They weathered into these shapes underground, then the soil around them washed away.",
@@ -110,46 +118,31 @@ export const stopStories: Record<string, StopStory> = {
     ],
     cats: "Restrooms and a short loop through the rocks a few steps from the parking spaces.",
   },
-  "fri-dinner": {
-    hook: "A desert-suburb evening with the Tortolita Mountains out the window.",
-    what: [
-      "The hotel is in Marana Center, a shopping area with sit-down and takeout restaurants within walking distance. The sun sets about 5:30 PM, and the sky over the Tucson Mountains to the south turns pink and orange.",
-    ],
-  },
   "sat-wickenburg": {
     hook: "A gold-rush town with a tree that served as its jail.",
     what: [
       "Henry Wickenburg found gold at the Vulture Mine in 1863, and the town grew up beside the Hassayampa River. Legend says anyone who drinks from the Hassayampa never tells the truth again.",
       "The town had no jail for years, so prisoners were chained to a big mesquite. The Jail Tree still stands downtown on Tegner Street. Later Wickenburg became the dude-ranch capital of Arizona, and the main street still looks the part.",
     ],
-    cats: "Park downtown near the Jail Tree for a short walk, then fill the tank on the way out.",
+    cats: "Park downtown near the Jail Tree. Lunch from a café on the main street, a short walk, then fill the tank on the way out.",
     townId: "wickenburg",
   },
-  "sat-hoover": {
-    hook: "Lunch at the car after looking straight down on Hoover Dam from 900 feet up.",
+  "sat-dinner": {
+    hook: "Route 66's hometown for one evening.",
     what: [
-      "Hoover Dam was finished in 1936. It stands 726 feet tall, plugs Black Canyon on the Colorado River and holds back Lake Mead. Thousands of men built it in the Depression, working through summers over 110 degrees.",
-      "The Mike O'Callaghan–Pat Tillman Memorial Bridge opened in 2010 to carry US-93 over the canyon. A path with stairs and ramps leads from the parking lot onto a walkway on the side facing the dam, with the classic view of the dam's face, the intake towers and the river far below. The state line between Arizona and Nevada runs across the middle.",
-      "The bridge parking lot is free. Driving down to the dam itself adds time and a parking fee, so this stop stays on the bridge.",
+      "Kingman has plenty of chains near the hotel, and old Route 66 diners downtown on Andy Devine Avenue if you want the classic version. Fill the tank tonight so Sunday is just the drive.",
+      "Before bed, read the UDOT forecast for I-15 over the summit north of Beaver and for Provo Canyon, and text the landlord your planned 4:00 PM arrival.",
     ],
-    cats: "One person walks out to the middle of the bridge while the other stays with the carriers, then swap. Picnic lunch at the car. November middays are mild, usually in the 60s.",
-    townId: "boulder-city",
   },
-  "sat-pioneer-park": {
-    hook: "Red sandstone above Utah's Dixie in the late-afternoon light, with the DIXIE letters painted on the rock.",
+  "sun-pioneer-park": {
+    hook: "Red sandstone above Utah's Dixie, the DIXIE letters on the rock, and the second snow check.",
     what: [
-      "Pioneer Park sits on the red bluff right above downtown St. George. Red Navajo sandstone boulders, small slot canyons and a view over the whole valley. An hour before sunset the cliffs glow orange.",
+      "Pioneer Park sits on the red bluff right above downtown St. George. Red Navajo sandstone boulders, small slot canyons and a view over the whole valley. In the late-morning sun the rock glows red against the blue sky.",
       "The big rock called the Sugarloaf has DIXIE painted on it in white letters. Settlers sent here in 1861 to grow cotton named the area Utah's Dixie. Steps cut into the rock lead up to it.",
       "From here you can see the white St. George Temple, finished in 1877, the oldest temple still in use by the Latter-day Saints.",
     ],
-    cats: "Settle the cats in the room first. The park is ten minutes from the hotel with parking right at the rocks.",
+    cats: "Parking right at the rocks. Ten minutes, then down to exit 8 for fuel and the UDOT check.",
     townId: "st-george",
-  },
-  "sat-dinner": {
-    hook: "A real dinner on the last night of the road.",
-    what: [
-      "St. George has plenty of restaurants near the convention center and along St. George Boulevard downtown, from Mexican and barbecue to sit-down steak houses. Takeout back to the room works well with the cats after a long day.",
-    ],
   },
   "sun-fillmore": {
     hook: "The capitol of a state that did not exist yet.",
@@ -157,7 +150,7 @@ export const stopStories: Record<string, StopStory> = {
       "In 1851 Brigham Young picked Fillmore, near the center of the territory, as Utah's capital. The red sandstone Territorial Statehouse was built for it, and the legislature met here in December 1855.",
       "Fillmore was too remote, and the government moved back to Salt Lake City in 1858. Only the south wing was ever finished. It is now the oldest surviving government building in Utah and a small state park museum.",
     ],
-    cats: "The museum's Sunday hours vary, so plan on the outside and the lawn. Five minutes from the exit.",
+    cats: "The museum's Sunday hours vary, so plan on lunch on the lawn outside. Five minutes from the exit.",
     townId: "fillmore",
   },
   "sun-arrive": {
@@ -171,23 +164,41 @@ export const stopStories: Record<string, StopStory> = {
 };
 
 export const townProfiles: Record<string, TownProfile> = {
-  defuniak: {
-    id: "defuniak",
-    name: "DeFuniak Springs, Florida",
-    tagline: "A round lake, a Chautauqua hall and a main street of brick storefronts in the Panhandle.",
+  quincy: {
+    id: "quincy",
+    name: "Quincy, Florida",
+    tagline: "A courthouse-square town in the red hills west of Tallahassee.",
     facts: [
-      { label: "Population", value: "About 7,000" },
+      { label: "Population", value: "About 8,000" },
       { label: "Elevation", value: "About 250 ft" },
-      { label: "County", value: "Walton County seat" },
-      { label: "Known for", value: "Lake DeFuniak, the Florida Chautauqua" },
+      { label: "County", value: "Gadsden County seat" },
+      { label: "Known for", value: "Coca-Cola stock, shade tobacco" },
     ],
     about: [
-      "The railroad founded the town in the 1880s and named it for Fred DeFuniak, a Louisville and Nashville Railroad official. The Florida Chautauqua made it a winter resort of lectures and concerts for northern visitors for about 40 years.",
-      "Today it is a quiet county seat. The historic district around the lake is full of restored Victorian houses, and the downtown has antique shops and cafés along Baldwin Avenue.",
+      "Quincy was founded in 1828 and grew rich on shade tobacco, grown under cloth for cigar wrappers. Then came the Coca-Cola shares that made a lot of local families wealthy.",
+      "The historic district around the 1913 Gadsden County Courthouse has brick storefronts and old houses with deep porches.",
     ],
     goodToKnow: [
-      "A small, quiet town, and you are there in daylight on a weekday morning.",
-      "Gas and fast food are at the I-10 exit 85 interchange, two miles south of the lake.",
+      "You only use the I-10 exit, which has gas and fast food. Quincy is still on Eastern time; Central starts about 20 miles west.",
+    ],
+  },
+  crestview: {
+    id: "crestview",
+    name: "Crestview, Florida",
+    tagline: "The hub city of the western Panhandle, on a ridge above the Blackwater forests.",
+    facts: [
+      { label: "Population", value: "About 27,000" },
+      { label: "Elevation", value: "About 235 ft" },
+      { label: "County", value: "Okaloosa County seat" },
+      { label: "Known for", value: "Eglin Air Force Base, Blackwater River State Forest" },
+    ],
+    about: [
+      "Crestview grew up on the railroad in the 1880s, on one of the highest ridges in Florida. Today it is a quiet, mostly residential city where many Eglin Air Force Base families live.",
+      "Blackwater River State Forest, one of the largest state forests in Florida, starts just west of town.",
+    ],
+    goodToKnow: [
+      "A safe, ordinary small city. The hotel is right at I-10 exit 56 with gas and fast food around it.",
+      "You arrive late, about 9:30 PM Central. Park near the lit entrance and bring the cats in first.",
     ],
   },
   "ocean-springs": {
@@ -208,56 +219,24 @@ export const townProfiles: Record<string, TownProfile> = {
       "The visitor center hours are posted on the park's website. The boardwalk and grounds do not depend on them.",
     ],
   },
-  broussard: {
-    id: "broussard",
-    name: "Broussard, Louisiana",
-    tagline: "A quiet small city on the south edge of Lafayette, in the heart of Cajun country.",
+  seguin: {
+    id: "seguin",
+    name: "Seguin, Texas",
+    tagline: "A river and pecan town just east of San Antonio.",
     facts: [
-      { label: "Population", value: "About 13,000" },
-      { label: "Elevation", value: "About 25 ft" },
-      { label: "Parish", value: "Lafayette and St. Martin" },
-      { label: "Known for", value: "Cajun food, Acadiana" },
+      { label: "Population", value: "About 30,000" },
+      { label: "Elevation", value: "About 520 ft" },
+      { label: "County", value: "Guadalupe County seat" },
+      { label: "Known for", value: "Pecans, the Guadalupe River" },
     ],
     about: [
-      "Broussard grew up as a sugar-cane and railroad town and took its name from the Broussard family, one of the old Acadian families of the area. It is now a growing, mostly residential city a few miles from Lafayette.",
-      "Acadiana is the part of Louisiana settled by the Acadians, French colonists forced out of Canada by the British in the 1750s. Cajun French, zydeco and Cajun cooking all come from here.",
+      "Founded in 1838 and named for Juan Seguín, a Tejano hero of the Texas Revolution, Seguin is one of the older towns in Texas. Pecan orchards line the Guadalupe River, and the town keeps a giant pecan statue on its courthouse square.",
+      "Max Starcke Park runs along the river with big cypress and pecan trees. It is a calm, small-city place to sleep that keeps you out of San Antonio.",
     ],
     goodToKnow: [
-      "A safe, suburban stop. The hotel is on the main road with restaurants and gas around it, and you arrive in daylight.",
-      "Thursday leaves at 6:00 AM, so lay out the carriers and the cooler before bed.",
-    ],
-  },
-  orange: {
-    id: "orange",
-    name: "Orange, Texas",
-    tagline: "The easternmost city in Texas, on the Sabine River at the Louisiana line.",
-    facts: [
-      { label: "Population", value: "About 19,000" },
-      { label: "Elevation", value: "About 10 ft" },
-      { label: "County", value: "Orange County seat" },
-      { label: "Known for", value: "Shipbuilding, Shangri La Botanical Gardens" },
-    ],
-    about: [
-      "Orange was a lumber town in the 1800s and a shipbuilding center in World War II, when its yards launched hundreds of Navy ships. Its old lumber families left the Stark Museum of Art and the Shangri La Botanical Gardens downtown.",
-    ],
-    goodToKnow: ["You only use the travel center at the state line. It is right off I-10, open early, and busy with travelers."],
-  },
-  schulenburg: {
-    id: "schulenburg",
-    name: "Schulenburg, Texas",
-    tagline: "A Czech and German farm town halfway between Houston and San Antonio.",
-    facts: [
-      { label: "Population", value: "About 2,900" },
-      { label: "Elevation", value: "About 350 ft" },
-      { label: "Known for", value: "The Painted Churches, kolaches" },
-    ],
-    about: [
-      "German and Czech settlers founded Schulenburg in the 1870s when the railroad came through. It still celebrates both. The bakeries sell kolaches, the sweet and savory Czech pastries Texans eat for breakfast.",
-      "Its visitor center hands out maps to the Painted Churches of Texas. High Hill, Ammannsville, Dubina and Praha are all within about 15 minutes.",
-    ],
-    goodToKnow: [
-      "A small, friendly farm town right on I-10, with gas and food at exit 674.",
-      "Grab kolaches for the road here. It is the best snack stop of the trip.",
+      "A safe, quiet town. The hotel is near I-10 with restaurants and gas around it.",
+      "You arrive about an hour after dark. Park near the lit entrance and bring the cats in first.",
+      "Friday's 6:00 AM start puts you through San Antonio by 6:30, ahead of the rush.",
     ],
   },
   junction: {
@@ -294,9 +273,8 @@ export const townProfiles: Record<string, TownProfile> = {
       "Today it is a ranching and oil town and the main service stop between San Antonio and El Paso.",
     ],
     goodToKnow: [
-      "Thursday's overnight. A small, quiet town and the main stop on the 300 empty miles between San Antonio and El Paso. The hotel is on the I-10 frontage road with other hotels and gas stations next to it.",
-      "At 3,000 feet, November nights get cold. Bring the cats and their water inside.",
-      "Fill the tank tonight. Gas is sparse between here and Van Horn.",
+      "Friday's lunch stop. Food and gas are at exit 257, and Paisano Pete is two minutes away.",
+      "Fill the tank here. Gas is sparse between here and Van Horn.",
     ],
   },
   mesilla: {
@@ -312,7 +290,26 @@ export const townProfiles: Record<string, TownProfile> = {
       "Mesilla was settled in the 1840s by families who wanted to stay in Mexico after the Mexican-American War. It became American a few years later with the Gadsden Purchase. It was a stop on the Butterfield Overland Mail, and briefly the Confederate capital of Arizona Territory in 1861.",
       "The plaza is a National Historic Landmark district. Adobe shops, restaurants and the Basilica of San Albino surround it, and the Mesilla Valley's chile and pecan farms start at the edge of town.",
     ],
-    goodToKnow: ["A small, walkable historic village. On a Friday late morning it is quiet, with the cafés open for lunch."],
+    goodToKnow: ["A small, walkable historic village. On a Friday afternoon it is quiet, with a few shops and cafés open."],
+  },
+  deming: {
+    id: "deming",
+    name: "Deming, New Mexico",
+    tagline: "A high-desert railroad and farm town where the second transcontinental railroad met.",
+    facts: [
+      { label: "Population", value: "About 14,000" },
+      { label: "Elevation", value: "About 4,300 ft" },
+      { label: "County", value: "Luna County seat" },
+      { label: "Known for", value: "Railroad history, chile fields, the Great American Duck Race" },
+    ],
+    about: [
+      "Deming grew up in 1881 where the Southern Pacific and the Santa Fe railroads met, completing the second rail line across the country. The Deming Luna Mimbres Museum downtown has railroad history and a big collection of Mimbres pottery.",
+      "The Florida Mountains rise to the southeast, and Rockhound State Park, where visitors are allowed to collect rocks, sits at their foot. Every August the town holds the Great American Duck Race.",
+    ],
+    goodToKnow: [
+      "A small, quiet town on I-10. The hotel is at exit 85 on the east side, with gas and restaurants nearby.",
+      "At 4,300 feet, November nights drop near freezing. Bring the cats and their water inside.",
+    ],
   },
   wickenburg: {
     id: "wickenburg",
@@ -333,42 +330,23 @@ export const townProfiles: Record<string, TownProfile> = {
       "A small, friendly town that is used to travelers.",
     ],
   },
-  marana: {
-    id: "marana",
-    name: "Marana, Arizona",
-    tagline: "A farm town turned quiet suburb on the northwest edge of Tucson.",
+  kingman: {
+    id: "kingman",
+    name: "Kingman, Arizona",
+    tagline: "The heart of Route 66 in Arizona, on a high desert plateau.",
     facts: [
-      { label: "Population", value: "About 52,000" },
-      { label: "Elevation", value: "About 2,000 ft" },
-      { label: "County", value: "Pima County" },
-      { label: "Known for", value: "Cotton farms, the Tortolita Mountains, saguaros" },
+      { label: "Population", value: "About 33,000" },
+      { label: "Elevation", value: "About 3,300 ft" },
+      { label: "County", value: "Mohave County seat" },
+      { label: "Known for", value: "Route 66, Locomotive Park, the Hualapai Mountains" },
     ],
     about: [
-      "Marana was cotton and farm country along the Santa Cruz River for most of the 1900s and became a town in 1977. Today it is a fast-growing, mostly residential suburb on I-10, which lets you stay out of Tucson itself.",
-      "Saguaro National Park's western half and the Arizona-Sonora Desert Museum are about 30 minutes south, in the Tucson Mountains.",
+      "Kingman began as a railroad town in the 1880s, named for the surveyor Lewis Kingman. Route 66 made it famous. The longest unbroken stretch of the old highway still left anywhere runs through it.",
+      "The 1907 Powerhouse downtown holds the visitor center and the Arizona Route 66 Museum. Across the street, Locomotive Park displays a 1920s Santa Fe steam engine. The Hualapai Mountains rise to 8,000 feet just southeast of town.",
     ],
     goodToKnow: [
-      "A safe, newer suburb. The hotel is in a shopping center right off I-10 with restaurants in walking distance.",
-      "The desert cools fast after sunset. Expect the 40s by morning.",
-    ],
-  },
-  "boulder-city": {
-    id: "boulder-city",
-    name: "Boulder City and Hoover Dam, Nevada",
-    tagline: "The town built to house the dam builders, and the dam itself.",
-    facts: [
-      { label: "Dam finished", value: "1936" },
-      { label: "Dam height", value: "726 ft" },
-      { label: "Bridge opened", value: "2010" },
-      { label: "Time zone", value: "Pacific, an hour behind Arizona" },
-    ],
-    about: [
-      "Boulder City was built by the federal government in 1931 to house the workers building Hoover Dam. It is still one of only two towns in Nevada where gambling is not allowed.",
-      "The dam created Lake Mead, the largest reservoir in the country when full, and still makes power for Nevada, Arizona and California.",
-    ],
-    goodToKnow: [
-      "Nevada is on Pacific time, so the clock reads an hour earlier here than in Arizona. Utah puts the hour back tonight.",
-      "Wind can gust hard on the bridge. Hold onto hats and phones.",
+      "The hotel is in the newer part of town near shopping. Stay around there in the evening rather than wandering.",
+      "Sunday leaves at 7:00 AM, so fill the tank tonight and lay everything out before bed.",
     ],
   },
   "st-george": {
@@ -386,7 +364,7 @@ export const townProfiles: Record<string, TownProfile> = {
       "Today it is one of the fastest-growing cities in Utah, warm in winter and ringed by red cliffs. Zion National Park is about an hour east.",
     ],
     goodToKnow: [
-      "Saturday's overnight, and the snow-hold town. If UDOT shows snow on I-15 at 7:30 AM Sunday, you keep the room and wait here at 2,800 feet.",
+      "Sunday's fuel stop and the snow-hold town. If UDOT shows snow on I-15 north of Cedar City, you wait here at 2,800 feet, and the Hilton Garden Inn near exit 6 is the backup bed.",
       "A clean, safe, growing city. Exit 8 has gas stations open early.",
     ],
   },
@@ -429,79 +407,82 @@ export const townProfiles: Record<string, TownProfile> = {
 
 // Overnight hotels. Policies come from the listings in hotels.json; the rest is practical.
 export const hotelProfiles: Record<string, HotelProfile> = {
-  broussard: {
-    id: "broussard",
-    name: "Hampton Inn Broussard-Lafayette Area",
-    address: "2280 E Main St, Broussard, LA 70518",
+  crestview: {
+    id: "crestview",
+    name: "Hampton Inn Crestview South I-10",
+    address: "112 John King Rd, Crestview, FL 32539 (I-10 exit 56)",
     about: [
-      "A Hampton on the main road through Broussard, a few minutes off US-90. Free hot breakfast and free parking.",
-      "Cats and dogs, 2 total, up to 75 lb, $75 per stay. Check-in 3 PM to 1 AM, checkout 11 AM.",
+      "Right at the interstate exit, so there are no town streets to find in the dark. Free hot breakfast and free parking.",
+      "Cats and dogs, 2 total, $75 per stay. Pets cannot be left alone in the room.",
     ],
     tips: [
+      "You check in about 9:30 PM Central. Call ahead the day before so the room is held for a late arrival.",
       "Ask for a ground-floor room near a side door for the carriers and litter box.",
-      "Breakfast may start after your 6:00 AM departure. Ask the front desk for a grab-and-go bag at check-in.",
+      "Breakfast may open after your 6:00 AM start. Ask for a grab-and-go bag at check-in.",
     ],
   },
-  fort_stockton: {
-    id: "fort_stockton",
-    name: "Hampton Inn Fort Stockton",
-    address: "2271 W I-10, Fort Stockton, TX 79735",
+  seguin: {
+    id: "seguin",
+    name: "Hampton Inn Seguin",
+    address: "1130 Larkin Ave, Seguin, TX 78155",
     about: [
-      "On the I-10 frontage road on the west side of town, so Friday morning is straight onto the interstate. Free hot breakfast and free parking.",
-      "One listing says 2 pets up to 34 lb with a $75 fee and a $150 cleaning fee. Another says only 1 pet. Call the hotel to confirm two cats before you book.",
+      "A Hampton near I-10 on the north side of town, with restaurants and gas close by. Free hot breakfast and free parking.",
+      "Cats and dogs, 2 total, $75 per room per day.",
     ],
     tips: [
-      "Friday leaves at a relaxed 8:00 AM Central, so you can eat the hot breakfast.",
-      "It gets cold overnight at 3,000 feet. Bring everything the cats need inside.",
+      "Friday leaves at 6:00 AM. Ask for a grab-and-go breakfast at check-in.",
+      "Lay out the carriers and the cooler before bed.",
     ],
   },
-  marana: {
-    id: "marana",
-    name: "Hampton Inn & Suites Tucson Marana",
-    address: "6300 W Marana Center Blvd, Tucson, AZ 85742",
+  deming: {
+    id: "deming",
+    name: "Hampton Inn Deming",
+    address: "3751 E Cedar St, Deming, NM 88030 (I-10 exit 85)",
     about: [
-      "A newer Hampton in the Marana Center shopping area just off I-10, with restaurants in walking distance. Free hot breakfast and free parking.",
-      "Pets allowed, 2 per room, $75 per stay. Check-in from 3 PM.",
-    ],
-    tips: ["Saturday leaves at 7:00 AM. Breakfast opens early enough to eat before you go."],
-  },
-  st_george: {
-    id: "st_george",
-    name: "Hilton Garden Inn St. George",
-    address: "1731 S Convention Center Dr, St. George, UT 84790 (near I-15 exit 6)",
-    about: [
-      "Saturday's night, and the snow-hold bed. If Sunday's 7:30 AM UDOT check shows snow, ice or a closure on I-15 north of Cedar City, you keep the room another night.",
-      "Dogs and cats, 2 total, $75 for 1 to 4 nights, so a second night costs no more pet fee. A desk and free Wi-Fi in every room.",
+      "At the east edge of town by the interstate. Free hot breakfast and free parking.",
+      "Cats and dogs, 2 total, up to about 24 lb each, $50 per stay.",
     ],
     tips: [
-      "Check the road at 7:30 AM in the room before you load the car.",
-      "If you hold, call the landlord before 8:00 AM to move the key time, then tell the front desk you are staying.",
+      "Saturday leaves at 7:00 AM, so you can eat the hot breakfast.",
+      "It gets cold overnight at 4,300 feet. Bring everything the cats need inside.",
+    ],
+  },
+  kingman: {
+    id: "kingman",
+    name: "Home2 Suites by Hilton Kingman",
+    address: "1121 Sunrise Ave, Kingman, AZ 86401",
+    about: [
+      "Studio suites with a kitchenette, more room for the cats to stretch out. Free breakfast and free parking.",
+      "Dogs and cats, 2 total, 25 lb each. $75 per stay plus a $125 deposit.",
+    ],
+    tips: [
+      "Check UDOT for I-15 and Provo Canyon in the room at 6:30 AM, before you load the car.",
+      "Text the landlord your planned 4:00 PM arrival tonight.",
     ],
   },
 };
 
 // Town profile for each night's stop, by hotel id. The arrival has no hotel.
 export const hotelTown: Record<string, string> = {
-  broussard: "broussard",
-  fort_stockton: "fort-stockton",
-  marana: "marana",
-  st_george: "st-george",
+  crestview: "crestview",
+  seguin: "seguin",
+  deming: "deming",
+  kingman: "kingman",
   dest: "kimball-junction",
 };
 
 // Every town on the route that is a stop or a night, in driving order.
 export const routeTownOrder: string[] = [
-  "defuniak",
+  "quincy",
+  "crestview",
   "ocean-springs",
-  "broussard",
-  "orange",
-  "schulenburg",
+  "seguin",
   "junction",
   "fort-stockton",
   "mesilla",
-  "marana",
+  "deming",
   "wickenburg",
-  "boulder-city",
+  "kingman",
   "st-george",
   "fillmore",
   "kimball-junction",

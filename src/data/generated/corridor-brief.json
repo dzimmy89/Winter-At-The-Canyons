@@ -6,7 +6,7 @@
     {
       "url": "https://udottraffic.utah.gov",
       "title": "UDOT Traffic",
-      "description": "Sunday's gate, at 7:30 AM in St. George. I-15 from Cedar City to Nephi, including the 6,600-foot summit between Beaver and Cove Fort, and US-189 through Provo Canyon. Go on only when both show bare or wet pavement. Otherwise wait in St. George and call the landlord.",
+      "description": "Sunday's gate, at 6:30 AM in the Kingman room and again at Pioneer Park in St. George. I-15 from Cedar City to Nephi, including the 6,600-foot summit between Beaver and Cove Fort, and US-189 through Provo Canyon. Go on only when both show bare or wet pavement. Otherwise wait in St. George and call the landlord.",
       "relevance": "high"
     },
     {
@@ -18,25 +18,25 @@
     {
       "url": "https://www.az511.gov",
       "title": "AZ 511",
-      "description": "Saturday's gate, and Friday afternoon's. I-10 from the New Mexico line to Tucson for blowing dust on Friday, and US-93 from Wickenburg through Kingman to Hoover Dam for wind on Saturday.",
+      "description": "Saturday's gate. I-10 from the New Mexico line to Phoenix for blowing dust, and US-93 from Wickenburg to Kingman. Sunday morning, US-93 from Kingman to Hoover Dam.",
       "relevance": "high"
     },
     {
       "url": "https://drivetexas.org",
       "title": "DriveTexas",
-      "description": "Thursday's gate. I-10 from Orange through Houston and San Antonio to Fort Stockton. West Texas ice is rare and melts by late morning.",
+      "description": "Thursday afternoon's and Friday's gate. I-10 from Orange through Houston and San Antonio to El Paso. West Texas ice is rare and melts by late morning.",
       "relevance": "medium"
     },
     {
       "url": "https://www.nmroads.com",
       "title": "NMRoads",
-      "description": "Friday's gate. I-10 from El Paso across New Mexico for blowing-dust closures between Deming and Lordsburg.",
+      "description": "Friday afternoon's and Saturday morning's gate. I-10 from El Paso across New Mexico for blowing-dust closures between Deming and Lordsburg.",
       "relevance": "medium"
     },
     {
       "url": "https://www.weather.gov",
       "title": "National Weather Service",
-      "description": "Wednesday's gate, and Saturday night's Utah forecast. Fog, ice storm, or winter storm warnings on I-10 and I-12 along the Gulf Coast, and any winter storm warning for I-15 in Utah on Sunday morning.",
+      "description": "Wednesday's and Thursday's gate, and Saturday night's Utah forecast. Fog, ice storm, or winter storm warnings on I-10 and I-12 along the Gulf Coast, and any winter storm warning for I-15 in Utah on Sunday.",
       "relevance": "medium"
     }
   ]
