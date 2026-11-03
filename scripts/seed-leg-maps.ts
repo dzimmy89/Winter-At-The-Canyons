@@ -88,7 +88,6 @@ const stops = {
   mesilla: [-106.7955, 32.2733] as LngLat,
   texasCanyon: [-110.0585, 32.0445] as LngLat,
   kingman: [-114.0545, 35.1885] as LngLat,
-  fillmore: [-112.33, 38.98] as LngLat,
   orem: [-111.72, 40.3] as LngLat,
 };
 
@@ -382,26 +381,16 @@ const legs: LegSpec[] = [
     towns: ["Boulder City", "Henderson", "Las Vegas", "Mesquite", "St. George"],
   },
   {
-    id: "sun-i15-summit",
+    id: "sun-provo-canyon",
     startLabel: "St. George",
     start: hotels.stGeorge,
-    endLabel: "Fillmore",
-    end: stops.fillmore,
+    endLabel: "Apartment E17",
+    end: e17,
     via: [
       [-113.06, 37.68],
       [-112.64, 38.28],
       [-112.585, 38.6],
-    ],
-    prefer: ["I15"],
-    towns: ["St. George", "Cedar City", "Beaver", "Cove Fort"],
-  },
-  {
-    id: "sun-provo-canyon",
-    startLabel: "Fillmore",
-    start: stops.fillmore,
-    endLabel: "Apartment E17",
-    end: e17,
-    via: [
+      [-112.33, 38.98],
       [-112.1, 39.24],
       [-111.84, 39.71],
       stops.orem,
@@ -410,7 +399,7 @@ const legs: LegSpec[] = [
       [-111.48, 40.68],
     ],
     prefer: ["I15", "US189", "US40", "I80"],
-    towns: ["Fillmore", "Nephi", "Provo", "Heber City", "Park City"],
+    towns: ["St. George", "Cedar City", "Beaver", "Fillmore", "Nephi", "Provo", "Heber City", "Park City"],
   },
 ];
 
@@ -445,7 +434,7 @@ const days: { id: string; legs: string[]; startLabel: string; endLabel: string; 
   },
   {
     id: "day-5",
-    legs: ["sun-i15-summit", "sun-provo-canyon"],
+    legs: ["sun-provo-canyon"],
     startLabel: "St. George",
     endLabel: "E17",
     towns: ["Cedar City", "Beaver", "Nephi", "Provo", "Park City"],

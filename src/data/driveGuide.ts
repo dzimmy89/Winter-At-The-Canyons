@@ -122,21 +122,13 @@ export const legGuides: Record<string, LegGuide> = {
       "Into Utah. Clocks go forward an hour. Exit 6 (Bluff Street) for the Hilton Garden Inn. Tap Navigate for the last turns.",
     ],
   },
-  "sun-i15-summit": {
-    minutes: 150,
-    endStopId: "sun-fillmore",
+  "sun-provo-canyon": {
+    minutes: 300,
     directions: [
-      "From the hotel to I-15 North at exit 6. Only go if the 7:30 AM UDOT check said go.",
+      "From the hotel to I-15 North at exit 6. Only go if the 6:30 AM UDOT check said go.",
       "Cedar City at about 50 minutes, then Beaver.",
       "The 6,600-foot summit before Cove Fort. Watch the UDOT signs for traction-law notices.",
-      "Exit 167 into Fillmore. The Territorial Statehouse is on Main Street in the middle of town.",
-    ],
-  },
-  "sun-provo-canyon": {
-    minutes: 150,
-    directions: [
-      "Back to I-15 North.",
-      "Scipio and Nephi, then down into Utah Valley past Provo.",
+      "Fillmore (exit 167) at about 2.5 hours, with gas at the exit if anyone needs a break. Then Scipio and Nephi, and down into Utah Valley past Provo.",
       "Exit 272 (800 North, Orem). East on 800 North, which becomes US-189 into Provo Canyon.",
       "US-189 North up the canyon, past Bridal Veil Falls and Deer Creek Reservoir, into Heber.",
       "US-189 joins US-40 in Heber. Continue north on US-40 toward Park City.",
@@ -157,7 +149,6 @@ export const stopPlaces: Record<string, string> = {
   "fri-dinner": "Tucson Premium Outlets, Marana, AZ",
   "sat-kingman": "Powerhouse Visitor Center, 120 W Andy Devine Ave, Kingman, AZ",
   "sat-dinner": "St. George, UT",
-  "sun-fillmore": "Territorial Statehouse State Park Museum, Fillmore, UT",
   "sun-arrive": "900 Bitner Road, Park City, UT 84098",
 };
 

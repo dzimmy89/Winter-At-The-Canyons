@@ -108,15 +108,6 @@ export const stopStories: Record<string, StopStory> = {
       "St. George has plenty of restaurants near the convention center and along St. George Boulevard downtown, from Mexican and barbecue to sit-down steak houses. Takeout back to the room works well with the cats after a long day.",
     ],
   },
-  "sun-fillmore": {
-    hook: "The capitol of a state that did not exist yet.",
-    what: [
-      "In 1851 Brigham Young picked Fillmore, near the center of the territory, as Utah's capital. The red sandstone Territorial Statehouse was built for it, and the legislature met here in December 1855.",
-      "Fillmore was too remote, and the government moved back to Salt Lake City in 1858. Only the south wing was ever finished. It is now the oldest surviving government building in Utah and a small state park museum.",
-    ],
-    cats: "The museum's Sunday hours vary, so plan on the outside and the lawn. Five minutes from the exit.",
-    townId: "fillmore",
-  },
   "sun-arrive": {
     hook: "Home. Olympic ski jumps on one side, a wetland preserve on the other.",
     what: [
@@ -278,25 +269,9 @@ export const townProfiles: Record<string, TownProfile> = {
       "Today it is one of the fastest-growing cities in Utah, warm in winter and ringed by red cliffs. Zion National Park is about an hour east.",
     ],
     goodToKnow: [
-      "Saturday's overnight, and the snow-hold town. If UDOT shows snow on I-15 at 7:30 AM Sunday, you keep the room and wait here at 2,800 feet.",
+      "Saturday's overnight, and the snow-hold town. If UDOT shows snow on I-15 at 6:30 AM Sunday, you keep the room and wait here at 2,800 feet.",
       "A clean, safe, growing city. Exit 8 has gas stations open early.",
     ],
-  },
-  fillmore: {
-    id: "fillmore",
-    name: "Fillmore, Utah",
-    tagline: "A farm town that was Utah's first capital.",
-    facts: [
-      { label: "Population", value: "About 2,600" },
-      { label: "Elevation", value: "About 5,100 ft" },
-      { label: "County", value: "Millard County seat" },
-      { label: "Named for", value: "President Millard Fillmore" },
-    ],
-    about: [
-      "The town and the county are both named for Millard Fillmore, the president who made Brigham Young the territory's first governor. It was meant to be the capital of the state of Deseret.",
-      "Now it is a quiet farm and ranch town in the Pahvant Valley, with alfalfa fields running out to the mountains.",
-    ],
-    goodToKnow: ["Past the summit, so if the road was fine to here, the rest of I-15 is lower and easier."],
   },
   "kimball-junction": {
     id: "kimball-junction",
@@ -366,12 +341,12 @@ export const hotelProfiles: Record<string, HotelProfile> = {
     name: "Hilton Garden Inn St. George",
     address: "1731 S Convention Center Dr, St. George, UT 84790 (near I-15 exit 6)",
     about: [
-      "Saturday's night, and the snow-hold bed. If Sunday's 7:30 AM UDOT check shows snow, ice or a closure on I-15 north of Cedar City, you keep the room another night.",
+      "Saturday's night, and the snow-hold bed. If Sunday's 6:30 AM UDOT check shows snow, ice or a closure on I-15 north of Cedar City, you keep the room another night.",
       "Dogs and cats, 2 total, $75 for 1 to 4 nights, so a second night costs no more pet fee. A desk and free Wi-Fi in every room.",
     ],
     tips: [
-      "Check the road at 7:30 AM in the room before you load the car.",
-      "If you hold, call the landlord before 8:00 AM to move the key time, then tell the front desk you are staying.",
+      "Check the road at 6:30 AM in the room before you load the car, and ask the desk for breakfast to go.",
+      "If you hold, you can wait until 9:00 AM and still make the keys. If it has not cleared by then, call the landlord to move the key time and tell the front desk you are staying.",
     ],
   },
 };
@@ -395,6 +370,5 @@ export const routeTownOrder: string[] = [
   "marana",
   "kingman",
   "st-george",
-  "fillmore",
   "kimball-junction",
 ];

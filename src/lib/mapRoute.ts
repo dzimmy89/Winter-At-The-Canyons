@@ -30,7 +30,7 @@ export function segmentForLeg(fromId: string, toId: string): RouteSegment {
     return {
       id: "sunday",
       title: "Sunday · St. George to E17, keys by 2 PM",
-      body: "Check UDOT in the hotel room at 7:30 AM and leave at 8:00 AM. I-15 over the 6,600-foot summit in the morning, Utah's first capitol in Fillmore, and Provo Canyon to Kimball Junction about 1:15 PM. If I-15 has snow, keep the room and call the landlord. The pin is 900 Bitner Road, Apartment E17.",
+      body: "Check UDOT in the hotel room at 6:30 AM and leave at 7:00 AM. One straight run with no planned stops: I-15 over the 6,600-foot summit in the morning and Provo Canyon to Kimball Junction about noon. If I-15 has snow, keep the room and call the landlord. The pin is 900 Bitner Road, Apartment E17.",
     };
   }
   if (toId === "st_george") {

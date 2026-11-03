@@ -10,13 +10,13 @@ const rows = [
     href: "#drive",
     kicker: "Drive",
     title: `Leave ${leaveGainesville}. Arrive E17 ${arriveParkCity}.`,
-    body: "Wednesday after work at 5:30 PM to Daphne, Thursday at 6:30 AM to Kerrville, Friday at 6:00 AM to Marana, Saturday at 7:30 AM to St. George, all safe smaller towns or quiet suburbs. Sunday leaves St. George at 8:00 AM and reaches E17 about 1:15 PM, before the 2:00 PM key meeting.",
+    body: "Wednesday after work at 5:30 PM to Daphne, Thursday at 6:30 AM to Kerrville, Friday at 6:00 AM to Marana, Saturday at 7:30 AM to St. George, all safe smaller towns or quiet suburbs. Sunday leaves St. George at 7:00 AM and reaches E17 about noon, 2 hours before the 2:00 PM key meeting.",
   },
   {
     href: "#drive",
     kicker: "Snow",
     title: "Bare or wet pavement is a go. Snow is a hold.",
-    body: "Only Sunday morning reaches snow country: the 6,600-foot I-15 summit and Provo Canyon. If UDOT shows snow at the 7:30 AM St. George check, keep the hotel room, call the landlord and move the key time.",
+    body: "Only Sunday morning reaches snow country: the 6,600-foot I-15 summit and Provo Canyon. If UDOT shows snow at the 6:30 AM St. George check, keep the hotel room, call the landlord and move the key time.",
   },
   {
     href: "#lease",

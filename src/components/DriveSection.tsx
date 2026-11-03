@@ -36,7 +36,7 @@ const tripChecklist = [
   { id: "trip-c2", label: "M+S or 3PMSF tires are on the car before Wednesday" },
   { id: "trip-c3", label: "Read the snow gate the night before each day, and again before the key turns" },
   { id: "trip-c4", label: "Litter, pads, carriers, and a hotel towel kit packed" },
-  { id: "trip-c5", label: "Sunday 7:30 AM in the St. George hotel: Provo Canyon if I-15 and US-189 are bare or wet. Parleys if only Provo Canyon is bad. Call the landlord and keep the room if I-15 north of Cedar City has snow" },
+  { id: "trip-c5", label: "Sunday 6:30 AM in the St. George hotel: Provo Canyon if I-15 and US-189 are bare or wet. Parleys if only Provo Canyon is bad. Call the landlord and keep the room if I-15 north of Cedar City has snow" },
   { id: "trip-c7", label: "Confirm the 2:00 PM Sunday key meeting with the landlord, and agree a backup time in case Utah has snow" },
   { id: "trip-c8", label: "Fill the tank in Quincy on Wednesday, the Atchafalaya and Katy on Thursday, Fort Stockton, Mesilla and Deming on Friday, Wickenburg and Kingman on Saturday, and in St. George Saturday night" },
   { id: "trip-c6", label: "Cats do not stay in a closed car" },
@@ -55,11 +55,11 @@ const tripRisks = [
   },
   {
     title: "Five days and a deadline",
-    body: "Wednesday starts after work at 5:30 PM with almost 6 hours in the dark to Daphne. Thursday is about 11.5 hours of driving from 6:30 AM, through Houston before its rush and San Antonio in the evening one. Friday is the long one, almost 12 hours from 6:00 AM, mostly at 75 to 80 mph. Saturday is an easier 8 hours from 7:30 AM, and Sunday only 5 hours from 8:00 AM. Stops come about every 4 hours. The plan reaches E17 about 1:15 PM, 45 minutes before the 2:00 PM keys. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
+    body: "Wednesday starts after work at 5:30 PM with almost 6 hours in the dark to Daphne. Thursday is about 11.5 hours of driving from 6:30 AM, through Houston before its rush and San Antonio in the evening one. Friday is the long one, almost 12 hours from 6:00 AM, mostly at 75 to 80 mph. Saturday is an easier 8 hours from 7:30 AM, and Sunday is 5 hours from 7:00 AM with no planned stops. Road stops are only where the tank needs fuel, about every 4 hours. The plan reaches E17 about noon, 2 hours before the 2:00 PM keys. If a day runs late, drop a rest stop, not sleep, and tell the landlord early.",
   },
   {
     title: "Snow is only a Sunday-morning question",
-    body: "Wednesday through Saturday stay under 5,000 feet across the Gulf Coast and the desert. Sunday climbs I-15 from St. George to 6,600 feet north of Beaver around 9:45 AM in daylight and ends near 6,500 feet at E17. Falling snow, snow-packed pavement, a traction law, or a closure at the 7:30 AM check is a no-go. Then keep the room in St. George at 2,800 feet and call the landlord to move the key time. The plan has no spare day, so a Saturday-night storm forecast for Utah is the moment to warn them.",
+    body: "Wednesday through Saturday stay under 5,000 feet across the Gulf Coast and the desert. Sunday climbs I-15 from St. George to 6,600 feet north of Beaver around 8:35 AM in daylight and ends near 6,500 feet at E17. Falling snow, snow-packed pavement, a traction law, or a closure at the 7:30 AM check is a no-go. Then keep the room in St. George at 2,800 feet and call the landlord to move the key time. The plan has no spare day, so a Saturday-night storm forecast for Utah is the moment to warn them.",
   },
   {
     title: "Dust, deer, and gas",

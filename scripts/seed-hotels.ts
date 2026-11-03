@@ -97,7 +97,7 @@ const properties: HotelNight[] = [
     awardPointsQuote: hgiAward,
     parkingUsd: 0,
     workspace:
-      "Saturday's night, and the snow hold. If Sunday's 7:30 AM UDOT check says snow on I-15 north of Cedar City, keep the room; the pet fee covers up to 4 nights.",
+      "Saturday's night, and the snow hold. If Sunday's 6:30 AM UDOT check says snow on I-15 north of Cedar City, keep the room; the pet fee covers up to 4 nights.",
   },
 ];
 
