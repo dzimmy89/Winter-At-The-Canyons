@@ -26,30 +26,37 @@ export function featuresEqual(a: MapFeature | null, b: MapFeature | null): boole
 }
 
 export function segmentForLeg(fromId: string, toId: string): RouteSegment {
-  if (toId === "dest" || fromId === "wheat_ridge") {
+  if (toId === "dest" || fromId === "st_george") {
     return {
       id: "sunday",
-      title: "Sunday · clear corridor to E17",
-      body: "The planned road is I-25 north and I-80 west. Breaks are Vedauwoo, Fort Fred Steele, and the Echo Canyon rest area. Sherman Summit is the snow check. Eisenhower and Vail stay off the clock unless Wyoming has snow and those passes are bare. If both roads have snow, stay at the Wheat Ridge Hampton. The pin is 900 Bitner Road, Apartment E17.",
+      title: "Sunday · St. George to E17, keys by 2 PM",
+      body: "Check UDOT in the hotel room at 6:30 AM and leave at 7:00 AM. One straight run with no planned stops: I-15 over the 6,600-foot summit in the morning and Provo Canyon to Kimball Junction about noon. If I-15 has snow, keep the room and call the landlord. The pin is 900 Bitner Road, Apartment E17.",
     };
   }
-  if (toId === "wheat_ridge") {
+  if (toId === "st_george") {
     return {
-      id: "i70-denver",
-      title: "I-70 W · Topeka to Wheat Ridge",
-      body: "Leave Topeka only if I-70 from Salina through Denver is bare or wet. E-470 is not the route. Wheat Ridge is east of the tunnel so Sunday can turn north onto I-25.",
+      id: "saturday",
+      title: "Saturday · Marana to St. George",
+      body: "Leave at 7:30 AM after the long day. Past Picacho Peak, around Phoenix on the loops, the Joshua trees on US-93, lunch on Route 66 in Kingman, the bridge beside Hoover Dam, and the Virgin River Gorge in daylight to St. George about 4:10 PM.",
     };
   }
-  if (toId === "topeka") {
+  if (toId === "marana") {
     return {
-      id: "cookeville-topeka",
-      title: "I-40 / I-24 / I-70 · Cookeville to Topeka",
-      body: "13.0 hours, the driving cap. Nashville and Kansas City are pass-throughs. The Gateway Arch is not a stop.",
+      id: "friday",
+      title: "Friday · Kerrville to Marana",
+      body: "Leave at 6:00 AM. The longest day, almost 12 hours at mostly 75 to 80 mph: breakfast with the giant roadrunner in Fort Stockton, Van Horn and El Paso, lunch on the plaza in Old Mesilla, the Texas Canyon boulders near sunset, and Marana about 5:55 PM.",
+    };
+  }
+  if (toId === "kerrville") {
+    return {
+      id: "thursday",
+      title: "Thursday · Daphne to Kerrville",
+      body: "Leave at 6:30 AM over Mobile Bay at sunrise. Brunch in the Atchafalaya swamp, Houston before its rush, a late lunch at Buc-ee's in Katy, and Kerrville in the Hill Country about 6:50 PM.",
     };
   }
   return {
-    id: "i75",
-    title: "I-75 N / I-40 W · Gainesville to Cookeville",
-    body: "Leave 4922 Thursday, November 12, at 5:00 AM EST. Clear Atlanta before stopping again. Cookeville is east of Nashville. The Smokies are not on this road.",
+    id: "wednesday",
+    title: "Wednesday · Gainesville to Daphne",
+    body: "Leave 4922 Wednesday, November 11, after work at 5:30 PM EST. I-75 and I-10 in the dark, dinner and fuel at Quincy, and the Hilton Garden Inn at Daphne on Mobile Bay about 10:40 PM CST. Sea level, no snow.",
   };
 }

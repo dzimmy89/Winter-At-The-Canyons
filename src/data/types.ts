@@ -36,7 +36,9 @@ export type DriveCapHours = 8 | 10 | 13;
 
 export type DriveStopKind = "rest" | "meal";
 
-export type SundayCorridorId = "i70" | "i80" | "hold";
+export type SundayCorridorId = "provo_canyon" | "parleys" | "hold";
+
+export type SnowRisk = "none" | "low" | "watch";
 
 export type BudgetTierId = "conservative" | "realistic" | "upscale";
 
@@ -106,6 +108,8 @@ export interface HotelNight {
   awardPointsPerNight: number | null;
   awardPointsQuote: string;
   parkingUsd: number | null;
+  // What the hotel offers for a workday, and whether the plan needs it.
+  workspace?: string;
 }
 
 export interface DriveStopEvent {
@@ -135,6 +139,29 @@ export interface SundayCorridor {
   driveHours: number | null;
 }
 
+export interface DriveLeg {
+  id: string;
+  road: string;
+  from: string;
+  to: string;
+  miles: number;
+  topElevationFt: number;
+  snowRisk: SnowRisk;
+  note: string;
+}
+
+export interface RouteOption {
+  id: "southern" | "northern";
+  label: string;
+  miles: number;
+  nights: number;
+  highestFt: number;
+  highestWhere: string;
+  milesAbove6000: number;
+  verdict: string;
+  chosen: boolean;
+}
+
 export interface DriveDay {
   day: number;
   date: string;
@@ -154,9 +181,18 @@ export interface DriveDay {
   foodUsd: number;
   contingencyUsd: number;
   winterNotes: string;
+  legs: DriveLeg[];
   stops: DriveStopEvent[];
   snowGate: SnowGate;
   corridors?: SundayCorridor[];
+  // Set on a day that starts with a workday, at home or in the hotel.
+  work?: WorkBlock;
+}
+
+export interface WorkBlock {
+  where: string;
+  hours: string;
+  notes: string[];
 }
 
 export interface ListingsSnapshot {

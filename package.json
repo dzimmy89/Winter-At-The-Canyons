@@ -11,6 +11,7 @@
     "seed": "tsx scripts/seed-listings.ts && tsx scripts/seed-hotels.ts && tsx scripts/seed-routes.ts && tsx scripts/seed-status.ts",
     "refresh:hotels": "tsx scripts/refresh-hotels.ts",
     "refresh:routes": "tsx scripts/refresh-routes.ts",
+    "seed:maps": "tsx scripts/seed-leg-maps.ts",
     "research:corridor": "tsx scripts/research-corridor.ts"
   },
   "dependencies": {

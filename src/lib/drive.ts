@@ -3,12 +3,15 @@ import type {
   BudgetTierId,
   DriveCapHours,
   DriveDay,
+  DriveLeg,
   DriveStopEvent,
   HotelNight,
+  RouteOption,
   RouteRecord,
   SnowGate,
   SundayCorridor,
   TownId,
+  WorkBlock,
 } from "../data/types";
 
 export interface DriveStop {
@@ -59,7 +62,7 @@ export const mpg = 23;
 export const HILTON_HONORS_POINTS_BANK = 150_000;
 export const DESTINATION_TOWN_ID: TownId = "park_city";
 export const DRIVE_CAP: DriveCapHours = 13;
-export const leaveGainesville = "Thu Nov 12, 2026";
+export const leaveGainesville = "Wed Nov 11, 2026";
 export const arriveParkCity = "Sun Nov 15, 2026";
 
 const realisticFoodPerDay = 110;
@@ -109,7 +112,7 @@ const tiers: TierRates[] = [
   },
 ];
 
-type HubId = "cookeville" | "topeka" | "wheat_ridge";
+type HubId = "daphne" | "kerrville" | "marana" | "st_george";
 
 interface Hub {
   id: HubId;
@@ -121,33 +124,72 @@ interface Hub {
   lng: number;
 }
 
+// Overnights are smaller towns or quiet suburbs on purpose, picked for low crime.
+// Big cities on the route are interstate pass-throughs.
 const hubs: Hub[] = [
   {
-    id: "cookeville",
-    label: "Cookeville, TN",
-    shortLabel: "Cookeville",
-    city: "Cookeville",
-    state: "TN",
-    lat: 36.1628,
-    lng: -85.5016,
+    id: "daphne",
+    label: "Daphne, AL",
+    shortLabel: "Daphne",
+    city: "Daphne",
+    state: "AL",
+    lat: 30.6035,
+    lng: -87.9036,
   },
   {
-    id: "topeka",
-    label: "Topeka, KS",
-    shortLabel: "Topeka",
-    city: "Topeka",
-    state: "KS",
-    lat: 39.0149,
-    lng: -95.752,
+    id: "kerrville",
+    label: "Kerrville, TX",
+    shortLabel: "Kerrville",
+    city: "Kerrville",
+    state: "TX",
+    lat: 30.0474,
+    lng: -99.1403,
   },
   {
-    id: "wheat_ridge",
-    label: "Wheat Ridge, CO",
-    shortLabel: "Wheat Ridge",
-    city: "Wheat Ridge",
-    state: "CO",
-    lat: 39.771,
-    lng: -105.1521,
+    id: "marana",
+    label: "Marana, AZ",
+    shortLabel: "Marana",
+    city: "Marana",
+    state: "AZ",
+    lat: 32.39,
+    lng: -111.13,
+  },
+  {
+    id: "st_george",
+    label: "St. George, UT",
+    shortLabel: "St. George",
+    city: "St. George",
+    state: "UT",
+    lat: 37.0965,
+    lng: -113.5684,
+  },
+];
+
+// Why the southern corridor: both options side by side. Elevations are rounded highway figures.
+export const routeOptions: RouteOption[] = [
+  {
+    id: "southern",
+    label: "Southern: I-10 to Tucson, US-93 past Hoover Dam, I-15 up Utah",
+    miles: 2778,
+    nights: 4,
+    highestFt: 6600,
+    highestWhere: "I-15 summit between Beaver and Cove Fort, on Sunday morning",
+    milesAbove6000: 40,
+    verdict:
+      "The plan. About 475 more miles, but Wednesday through Saturday stay under 5,000 feet in the driest part of the country in November. Only Sunday morning reaches snow country, and you check the road from the hotel in St. George at 2,800 feet before you leave. Every night is in a smaller town or a quiet suburb.",
+    chosen: true,
+  },
+  {
+    id: "northern",
+    label: "Northern: I-24 and I-70 across Kansas, I-25 and I-80 across Wyoming",
+    miles: 2303,
+    nights: 3,
+    highestFt: 8640,
+    highestWhere: "Sherman Summit on I-80, with Elk Mountain and the Continental Divide after it",
+    milesAbove6000: 430,
+    verdict:
+      "Retired. Shorter, but it crosses the Kansas and Colorado plains and spends about 430 miles above 6,000 feet on I-80 in Wyoming, which WYDOT closes for wind and blowing snow more than any other road on either route.",
+    chosen: false,
   },
 ];
 
@@ -164,7 +206,11 @@ interface DayDraft {
   driveHours: number;
   routeSummary: string;
   hubId: HubId | null;
+  // Nights booked at this hub, when a workday needs the room for a second night.
+  hotelNights?: number;
+  work?: WorkBlock;
   winterNotes: string;
+  legs: DriveLeg[];
   stops: DriveStopEvent[];
   snowGate: SnowGate;
   corridors?: SundayCorridor[];
@@ -174,226 +220,341 @@ const weatherGate: SnowGate = {
   checkAt: "The night before, and again before departure",
   sourceName: "National Weather Service",
   sourceUrl: "https://www.weather.gov",
-  go: "The next interstate is outside a winter storm warning, or that segment is bare or wet pavement.",
-  hold: "Wait until the segment is bare or wet, or take a parallel interstate that still reaches the same Hampton. Do not add a day past Sunday to dodge rain.",
+  go: "No winter storm, ice storm, or dense fog warning on the next stretch of I-10.",
+  hold: "Wait at the hotel until the warning lifts. These are low, warm days, so a hold is hours, not a night.",
 };
 
 const dayDrafts: DayDraft[] = [
   {
-    date: "2026-11-12",
-    dateLabel: "Thu Nov 12",
+    date: "2026-11-11",
+    dateLabel: "Wed Nov 11",
     fromLabel: "Gainesville, FL",
-    toLabel: "Cookeville, TN",
-    departClock: "5:00 AM EST",
-    arriveClock: "4:50 PM EST",
-    latestSafeDepart: "5:00 AM EST",
-    timeZone: "EST",
-    miles: 535,
-    driveHours: 10.2,
+    toLabel: "Daphne, AL",
+    departClock: "5:30 PM EST",
+    arriveClock: "10:40 PM CST",
+    latestSafeDepart: "6:30 PM EST",
+    timeZone: "EST to CST",
+    miles: 386,
+    driveHours: 5.7,
     routeSummary:
-      "I-75 N through Atlanta, then I-40 W. Pull off at Reed Bingham (exit 39), High Falls (exit 198), and Ozone Falls (exit 329). No Smokies detour.",
-    hubId: "cookeville",
+      "After work. I-75 N to Lake City, then I-10 W across the Big Bend and the Panhandle, past Pensacola and into Alabama to Daphne on Mobile Bay. One stop: dinner and fuel at Quincy. Tallahassee and Pensacola are drive-throughs. The car is packed the night before, so this is just cats, litter and the cooler.",
+    hubId: "daphne",
     winterNotes:
-      "About 1,000 feet. Snow is unlikely. M+S or 3PMSF tires are on the car before this departure. Newfound Gap is not on this road.",
+      "Sea level and dark the whole way: sunset in Gainesville is about 5:35 PM EST, right as you leave. I-10 across the Panhandle is wide and well lit at the exits, but long and empty between them, so keep the tank above half. Clocks go back an hour at the Apalachicola River, near exit 158. You reach Daphne about 10:40 PM Central (11:40 PM by your Florida body clock), so this is the late night of the trip. In exchange, Thursday starts 90 miles farther west and can leave at 6:30. The hotel is on US-98 a minute south of I-10 exit 35.",
     snowGate: {
       ...weatherGate,
-      checkAt: "Wed Nov 11 night, and again before 5:00 AM EST",
+      checkAt: "Wed Nov 11 afternoon, before you leave work",
+      go: "No dense fog or severe storm warning on I-10 from Lake City to Mobile Bay.",
+      hold: "Leave up to an hour later. It only moves bedtime, and Thursday can still leave at 6:30 AM.",
     },
+    legs: [
+      {
+        id: "wed-big-bend",
+        road: "I-75 N, I-10 W",
+        from: "4922 NW 81st Ave",
+        to: "Quincy (exit 181)",
+        miles: 172,
+        topElevationFt: 300,
+        snowRisk: "none",
+        note: "I-75 N 45 miles to Lake City, then I-10 W, the road for most of the trip. Live Oak, Madison, then Tallahassee on the interstate with no exits.",
+      },
+      {
+        id: "wed-panhandle",
+        road: "I-10 W",
+        from: "Quincy",
+        to: "Daphne, AL (exit 35)",
+        miles: 214,
+        topElevationFt: 300,
+        snowRisk: "none",
+        note: "Over the Apalachicola River into Central time, past Marianna, DeFuniak Springs and Crestview, over Escambia Bay at Pensacola, across the Perdido River into Alabama, to exit 35 at Daphne.",
+      },
+    ],
     stops: [
       {
-        id: "thu-reed-bingham",
-        kind: "rest",
-        place: "Reed Bingham State Park",
-        road: "I-75 N exit 39, then 6 miles west on GA-37. Same road back.",
-        purpose:
-          "About 3 hours out. Cypress lake and a short boardwalk. Leash the cats, 15 minutes at the water, then back to the interstate. Fuel at the exit.",
-        minutes: 30,
-        clock: "8:15 AM EST",
-        realisticUsd: 0,
-      },
-      {
-        id: "thu-high-falls",
+        id: "wed-quincy",
         kind: "meal",
-        place: "High Falls State Park",
-        road: "I-75 N exit 198, then 1.8 miles east. Eat at the exit first.",
+        place: "Quincy, Florida",
+        road: "I-10 W exit 181 (FL-267). Gas and food at the exit; the historic courthouse square is about 4 miles north",
         purpose:
-          "About 3 hours after Reed Bingham, before Atlanta. Drive-through lunch, then the short walk to the waterfall overlook. Leash. Georgia parking fee is about $5. Do not stop inside I-285.",
-        minutes: 35,
-        clock: "11:30 AM EST",
-        realisticUsd: 32,
+          "About 2.5 hours out, in the dark. Dinner and fuel. Quincy is the little town that got rich on early Coca-Cola stock, and its story is better than its exit, so this one is mostly for the tank and a stretch.",
+        minutes: 30,
+        clock: "8:05 PM EST",
+        realisticUsd: 30,
       },
       {
-        id: "thu-ozone",
-        kind: "rest",
-        place: "Ozone Falls",
-        road: "I-40 W exit 329, then about 4.5 miles east on US-70. Same road back.",
+        id: "wed-snacks",
+        kind: "meal",
+        place: "In the car",
+        road: "I-75 N / I-10 W",
+        purpose: "Coffee for the drive, packed snacks and water. The second half is 3 hours, so keep a thermos handy.",
+        minutes: 0,
+        clock: "During the drive",
+        realisticUsd: 8,
+      },
+    ],
+  },
+  {
+    date: "2026-11-12",
+    dateLabel: "Thu Nov 12",
+    fromLabel: "Daphne, AL",
+    toLabel: "Kerrville, TX",
+    departClock: "6:30 AM CST",
+    arriveClock: "6:50 PM CST",
+    latestSafeDepart: "7:00 AM CST",
+    timeZone: "CST",
+    miles: 737,
+    driveHours: 11.3,
+    routeSummary:
+      "I-10 W across Mobile Bay at sunrise and through the Wallace Tunnel, along the Mississippi coast, I-12 around New Orleans to the Atchafalaya swamp for brunch, past Lafayette and Beaumont and straight through Houston to a late lunch at Buc-ee's in Katy, then San Antonio and up into the Hill Country to Kerrville. Two stops, about 4 hours apart. Mobile, Baton Rouge, Lafayette, Houston and San Antonio are drive-throughs.",
+    hubId: "kerrville",
+    winterNotes:
+      "Sea level to 1,700 feet, so snow is not a factor. Sunrise is about 6:15 AM, just before you leave. You cross Houston about 2:00 PM, ahead of its rush. San Antonio comes about 5:30 PM, in its evening rush, so the plan allows 15 extra minutes there. The last hour, up I-10 into the Hill Country, is after sunset (about 5:35 PM), and deer are out at dusk around Boerne and Comfort. Kerrville is a quiet Hill Country town on the Guadalupe River, and the hotel is right at I-10 exit 508.",
+    snowGate: {
+      ...weatherGate,
+      checkAt: "Wed Nov 11 night, and again before 6:30 AM CST",
+      go: "No dense fog, ice storm or severe storm warning on I-10 or I-12 from Mobile to San Antonio.",
+      hold: "Fog on the coast usually lifts by 8:00 AM. Leave up to 30 minutes later and shorten brunch.",
+    },
+    legs: [
+      {
+        id: "thu-louisiana",
+        road: "I-10 W, I-12 W, I-10 W",
+        from: "Daphne",
+        to: "Atchafalaya Welcome Center (exit 121)",
+        miles: 242,
+        topElevationFt: 300,
+        snowRisk: "none",
+        note: "The Jubilee Parkway causeway over Mobile Bay at first light, the Wallace Tunnel under the Mobile River, and the Mississippi coast. I-12 at Slidell keeps New Orleans 30 miles south. Baton Rouge's Mississippi River bridge, then onto the 18-mile Atchafalaya Basin Bridge to the welcome center halfway across.",
+      },
+      {
+        id: "thu-texas-line",
+        road: "I-10 W",
+        from: "Atchafalaya",
+        to: "Buc-ee's, Katy, TX",
+        miles: 262,
+        topElevationFt: 150,
+        snowRisk: "none",
+        note: "Lafayette, Lake Charles and the Calcasieu River bridge, the Sabine River into Texas at Orange, Beaumont and the rice country past Winnie, then straight through Houston on the Katy Freeway, with no exits inside the city, to the west edge of Katy.",
+      },
+      {
+        id: "thu-hill-country",
+        road: "I-10 W",
+        from: "Katy",
+        to: "Kerrville",
+        miles: 233,
+        topElevationFt: 1700,
+        snowRisk: "none",
+        note: "Sealy, Columbus and Schulenburg, over the Brazos and Colorado rivers, past Seguin and straight through San Antonio, then northwest into the Hill Country past Boerne and Comfort, in the dark, to Kerrville.",
+      },
+    ],
+    stops: [
+      {
+        id: "thu-atchafalaya",
+        kind: "meal",
+        place: "Atchafalaya Welcome Center",
+        road: "I-10 W exit 121 at Butte La Rose, in the middle of the basin bridge",
         purpose:
-          "About 3 hours after High Falls. A 110-foot falls. Walk only to the top overlook, a few minutes, leashed. Skip the steep path to the pool.",
-        minutes: 25,
-        clock: "3:20 PM EST",
-        realisticUsd: 0,
+          "About 3 hours 35 minutes out. A Louisiana welcome center in the middle of America's largest river swamp, with a short nature walk among the cypress. Brunch from the cooler at the picnic tables. Free.",
+        minutes: 35,
+        clock: "10:05 AM CST",
+        realisticUsd: 20,
+      },
+      {
+        id: "thu-katy",
+        kind: "meal",
+        place: "Buc-ee's, Katy",
+        road: "I-10 W at the west edge of Katy, about exit 741. The beaver billboards count down to it",
+        purpose:
+          "About 4 hours 5 minutes later, just past Houston. The Texas road-trip institution: dozens of gas pumps, famously clean restrooms, brisket sandwiches carved at the counter, and a wall of jerky. A late lunch and fuel.",
+        minutes: 30,
+        clock: "2:45 PM CST",
+        realisticUsd: 30,
       },
       {
         id: "thu-snacks",
         kind: "meal",
         place: "In the car",
-        road: "I-75 N / I-40 W",
-        purpose: "Packed snacks and water.",
+        road: "I-10 W",
+        purpose: "Coffee and something to go from the Daphne hotel, packed snacks and water.",
         minutes: 0,
         clock: "During the drive",
-        realisticUsd: 12,
+        realisticUsd: 10,
       },
       {
         id: "thu-dinner",
         kind: "meal",
-        place: "Cookeville",
-        road: "1025 Interstate Drive, after check-in",
-        purpose: "Dinner pickup. Cats stay with a person.",
-        minutes: 20,
-        clock: "6:00 PM EST",
-        realisticUsd: 45,
+        place: "Kerrville",
+        road: "Near the hotel on Sidney Baker Street, after check-in",
+        purpose: "Dinner pickup and an early night. Friday leaves at 6:00 AM.",
+        minutes: 30,
+        clock: "7:15 PM CST",
+        realisticUsd: 35,
       },
     ],
   },
   {
     date: "2026-11-13",
     dateLabel: "Fri Nov 13",
-    fromLabel: "Cookeville, TN",
-    toLabel: "Topeka, KS",
-    departClock: "3:00 AM EST",
-    arriveClock: "4:10 PM CST",
-    latestSafeDepart: "3:30 AM EST",
-    timeZone: "EST to CST",
-    miles: 699,
-    driveHours: 13,
+    fromLabel: "Kerrville, TX",
+    toLabel: "Marana, AZ",
+    departClock: "6:00 AM CST",
+    arriveClock: "5:55 PM MST",
+    latestSafeDepart: "6:15 AM CST",
+    timeZone: "CST to MST",
+    miles: 825,
+    driveHours: 11.8,
     routeSummary:
-      "I-40 W through Nashville onto I-24 W, then I-57 N, I-64 W, and I-70 W. Pull off at Kentucky Dam (exit 27), Cahokia Mounds, and Rocheport (exit 115). Nashville and Kansas City stay on the highway.",
-    hubId: "topeka",
+      "The long day, mostly at 75 to 80 mph. I-10 W over the Edwards Plateau past Junction, Sonora and Ozona to breakfast in Fort Stockton, through Van Horn and El Paso to lunch on the plaza in Old Mesilla, across southern New Mexico into Arizona past Lordsburg and Willcox into Arizona, and through Tucson to Marana. Two stops, about 4 hours apart. El Paso, Las Cruces and Tucson are drive-throughs.",
+    hubId: "marana",
     winterNotes:
-      "This is the 13.0 h cap. Topeka is about 900 feet. The Kansas Turnpike is the last stretch of I-70 into the city. No Gateway Arch stop. No Kansas City exit.",
+      "Climbs from 1,700 feet to about 4,600, dry in November. Snow and ice are rare and melt by midday. Deer are thick on I-10 between Kerrville and Junction before dawn, so the first hour is the time to watch. Clocks go back an hour at the Hudspeth County line west of Van Horn. Blowing dust can close I-10 between Lordsburg and San Simon on windy afternoons. Sunset comes near Benson (about 5:25 PM MST), so the last half hour through Tucson to Marana is in the dark. Marana is a quiet suburb on Tucson's northwest edge, and the hotel is right at I-10 exit 240.",
     snowGate: {
-      ...weatherGate,
-      checkAt: "Thu Nov 12 night, and again before 3:00 AM EST",
+      checkAt: "Thu Nov 12 night, and again before 6:00 AM CST",
+      sourceName: "DriveTexas",
+      sourceUrl: "https://drivetexas.org",
+      go: "I-10 from Kerrville to El Paso is open with no ice or closure. In the afternoon, check NMRoads for a dust closure near Lordsburg.",
+      hold: "West Texas ice melts by late morning. Wait in Kerrville and shorten the Mesilla lunch. For a dust closure, wait in Deming or Lordsburg until it lifts.",
     },
+    legs: [
+      {
+        id: "fri-west-texas",
+        road: "I-10 W",
+        from: "Kerrville",
+        to: "Fort Stockton (exit 257)",
+        miles: 251,
+        topElevationFt: 2700,
+        snowRisk: "low",
+        note: "Up onto the Edwards Plateau in the dark past Junction, then Sonora and Ozona as the sun comes up. The limit is 80 mph and towns are 60 to 100 miles apart.",
+      },
+      {
+        id: "fri-el-paso",
+        road: "I-10 W",
+        from: "Fort Stockton",
+        to: "Old Mesilla (exit 140)",
+        miles: 281,
+        topElevationFt: 4600,
+        snowRisk: "low",
+        note: "Past Balmorhea with the Davis Mountains to the south, and Van Horn. Mountain time starts at the Hudspeth County line. Stay on I-10 straight through El Paso, no exits, then into New Mexico.",
+      },
+      {
+        id: "fri-marana",
+        road: "I-10 W",
+        from: "Old Mesilla",
+        to: "Marana (exit 240)",
+        miles: 293,
+        topElevationFt: 4975,
+        snowRisk: "low",
+        note: "West across the open Chihuahuan Desert past Deming and Lordsburg, into Arizona at San Simon, past Willcox and through the Texas Canyon boulders, down through Benson at sunset, then straight through Tucson on I-10 to Marana on the northwest side.",
+      },
+    ],
     stops: [
       {
-        id: "fri-kentucky-dam",
-        kind: "rest",
-        place: "Kentucky Dam",
-        road: "I-24 W exit 27 at Gilbertsville, a few minutes to the dam overlook.",
-        purpose:
-          "About 3.5 hours out, after Nashville. Lake and dam overlook, fuel, litter. Leash. No Davidson County exit on the way there.",
-        minutes: 20,
-        clock: "5:30 AM CST",
-        realisticUsd: 0,
-      },
-      {
-        id: "fri-cahokia",
+        id: "fri-fort-stockton",
         kind: "meal",
-        place: "Cahokia Mounds",
-        road: "I-255 exit 24, Collinsville Road, about 2 miles to the site. Eat at the exit.",
+        place: "Fort Stockton",
+        road: "I-10 W exit 257, gas at the ramp. Paisano Pete is two minutes off the exit on Dickinson Boulevard",
         purpose:
-          "About 4 hours after the dam, on the Illinois side of the river. Drive-through lunch, then 20 minutes at Monk's Mound. Leash. The Arch and downtown St. Louis stay on the highway.",
-        minutes: 35,
-        clock: "9:45 AM CST",
-        realisticUsd: 34,
+          "About 3 hours 30 minutes out. Breakfast, fuel, and a photo with Paisano Pete, the town's 11-foot roadrunner. The next good services are in Van Horn.",
+        minutes: 30,
+        clock: "9:30 AM CST",
+        realisticUsd: 25,
       },
       {
-        id: "fri-rocheport",
-        kind: "rest",
-        place: "Rocheport and the Katy Trail",
-        road: "I-70 W exit 115, then 2 miles north on Route BB.",
+        id: "fri-mesilla",
+        kind: "meal",
+        place: "Old Mesilla plaza",
+        road: "I-10 W exit 140, then about 2 miles south to the plaza",
         purpose:
-          "About 3 hours after Cahokia. Missouri River bluff and the trail at the edge of town. Twenty minutes, leash, then back to exit 115. No Kansas City exit later.",
-        minutes: 25,
-        clock: "1:00 PM CST",
-        realisticUsd: 0,
+          "About 3 hours 55 minutes later, after El Paso. A tiny historic town of adobe shops and the San Albino basilica around an 1850s plaza. Lunch with green chile and a walk around the plaza.",
+        minutes: 40,
+        clock: "12:55 PM MST",
+        realisticUsd: 35,
       },
       {
         id: "fri-snacks",
         kind: "meal",
         place: "In the car",
-        road: "I-40 / I-24 / I-70",
-        purpose: "Packed snacks and water.",
+        road: "I-10 W",
+        purpose: "Coffee from the Kerrville hotel, packed snacks and plenty of water. Services are far apart west of Junction.",
         minutes: 0,
         clock: "During the drive",
-        realisticUsd: 12,
+        realisticUsd: 10,
       },
       {
         id: "fri-dinner",
         kind: "meal",
-        place: "Topeka",
-        road: "1515 SW Arrowhead Rd, after check-in",
-        purpose: "Dinner pickup.",
-        minutes: 20,
-        clock: "6:00 PM CST",
-        realisticUsd: 48,
+        place: "Marana",
+        road: "Marana Center, walking distance from the hotel",
+        purpose: "Dinner near the hotel and a real night's sleep. Saturday leaves at a gentler 7:30 AM.",
+        minutes: 40,
+        clock: "6:20 PM MST",
+        realisticUsd: 40,
       },
     ],
   },
   {
     date: "2026-11-14",
     dateLabel: "Sat Nov 14",
-    fromLabel: "Topeka, KS",
-    toLabel: "Wheat Ridge, CO",
-    departClock: "6:30 AM CST",
-    arriveClock: "4:00 PM MST",
-    latestSafeDepart: "7:00 AM CST",
-    timeZone: "CST to MST",
-    miles: 547,
-    driveHours: 9.4,
+    fromLabel: "Marana, AZ",
+    toLabel: "St. George, UT",
+    departClock: "7:30 AM MST",
+    arriveClock: "4:10 PM MST",
+    latestSafeDepart: "8:15 AM MST",
+    timeZone: "MST, with Nevada an hour behind on Pacific time",
+    miles: 514,
+    driveHours: 8,
     routeSummary:
-      "I-70 W across the Smoky Hills and the high plains, then through Denver. Pull off at Wilson Lake (exit 206), the Goodland easel (exit 19), and Clear Creek in Golden. E-470 is not the route.",
-    hubId: "wheat_ridge",
+      "The easier day after the long one. I-10 W past Picacho Peak, around Phoenix on Loop 202 and Loop 303, US-60 through Wickenburg, US-93 north through the Joshua tree country to lunch on Route 66 in Kingman, then over the Colorado River on the bridge beside Hoover Dam, I-11, I-215 and I-15 past Las Vegas and through the Virgin River Gorge in daylight to St. George. One stop, about halfway. Phoenix and Las Vegas are drive-throughs.",
+    hubId: "st_george",
     winterNotes:
-      "First day that can meet snow, on the western Kansas and eastern Colorado plains. Leave only if I-70 from Salina through Denver is bare or wet. Stop in Wheat Ridge, east of the tunnel, so Sunday can turn north onto I-25 instead of west into Eisenhower. If snow is falling or the pavement is snow-packed west of Hays, stop at the Salina Hampton instead. A Salina night means Sunday cannot reach E17 under the 13 h cap.",
+      "Desert all day, 1,000 to 4,000 feet. Snow is very rare on this route. Wind can close US-93 at Hoover Dam for an hour or two. Nevada is on Pacific time, an hour behind Arizona and Utah. The Virgin River Gorge comes around 3:30 PM, in full daylight, about 90 minutes before sunset (about 5:10 PM in St. George). St. George sits at 2,800 feet in Utah's warm southwest corner, and you arrive with time to rest before Sunday.",
     snowGate: {
-      checkAt: "Fri Nov 13 night, and again before 6:30 AM CST",
-      sourceName: "COtrip",
-      sourceUrl: "https://www.cotrip.org",
-      go: "I-70 from Salina through Denver is bare or wet pavement.",
-      hold: "If snow is falling or the pavement is snow-packed west of Hays, stop at the Hampton Inn Salina, 401 West Schilling Road. Do not drive into it.",
+      checkAt: "Fri Nov 13 night, and again before 7:30 AM MST",
+      sourceName: "AZ 511",
+      sourceUrl: "https://www.az511.gov",
+      go: "US-93 from Wickenburg to Hoover Dam has no wind closure, and I-15 through the Virgin River Gorge is open.",
+      hold: "Wait in Kingman for a wind closure at the dam. Saturday has about 45 minutes of slack before the gorge would run into dusk, so shorten lunch if it runs later.",
     },
+    legs: [
+      {
+        id: "sat-us93",
+        road: "I-10 W, Loop 202 W, Loop 303 N, US-60 W, US-93 N, I-40 W",
+        from: "Marana",
+        to: "Kingman (I-40 exit 48)",
+        miles: 289,
+        topElevationFt: 4000,
+        snowRisk: "low",
+        note: "Past the volcanic spike of Picacho Peak and Casa Grande. Loop 202 (South Mountain Freeway) and Loop 303 keep you out of downtown Phoenix. US-60 through Wickenburg, then US-93 north on the Joshua Forest Scenic Road, over Burro Creek and past Wikieup to I-40 and Kingman.",
+      },
+      {
+        id: "sat-gorge",
+        road: "US-93 N, I-11 N, I-215 W, I-15 N",
+        from: "Kingman",
+        to: "St. George",
+        miles: 225,
+        topElevationFt: 3700,
+        snowRisk: "none",
+        note: "US-93 north across the desert and over the Colorado River on the Memorial Bridge, with Hoover Dam just upstream. Around the south side of Las Vegas, then I-15 north past Mesquite and through the Virgin River Gorge, 29 miles of tight canyon, into Utah. Clocks go forward an hour.",
+      },
+    ],
     stops: [
       {
-        id: "sat-wilson",
-        kind: "rest",
-        place: "Wilson Lake",
-        road: "I-70 W exit 206, then about 5 miles north on K-232. Same road back.",
-        purpose:
-          "About 3 hours out. Limestone cliffs on the reservoir. Twenty minutes at the first overlook, leash, then back to I-70. Fuel at the exit. The Salina Hampton, passed earlier, is the snow hold, not this stop.",
-        minutes: 30,
-        clock: "9:30 AM CST",
-        realisticUsd: 0,
-      },
-      {
-        id: "sat-goodland",
+        id: "sat-kingman",
         kind: "meal",
-        place: "Goodland easel",
-        road: "I-70 W exit 19, about a mile north. The easel stands outdoors.",
+        place: "Route 66 in downtown Kingman",
+        road: "I-40 W exit 48 (Beale Street), then a few blocks to the Powerhouse on Andy Devine Avenue. US-93 north leaves from the same exit",
         purpose:
-          "About 3 hours after Wilson Lake. Drive-through lunch at the exit, then a 15-minute look at the giant easel on the high plains. The Burlington carousel is closed in November.",
-        minutes: 30,
-        clock: "1:00 PM CST",
-        realisticUsd: 32,
-      },
-      {
-        id: "sat-clear-creek",
-        kind: "rest",
-        place: "Clear Creek Whitewater Park",
-        road: "I-70 W into Golden, a couple of minutes off the highway at the creek.",
-        purpose:
-          "About 3 hours after Goodland, and the last break before the hotel. Watch the creek for 15 minutes. Leash. Then Wheat Ridge.",
-        minutes: 20,
-        clock: "3:15 PM MST",
-        realisticUsd: 0,
+          "About 4 hours 30 minutes out. The heart of Route 66 in Arizona: the 1907 Powerhouse with the Route 66 museum, a Santa Fe steam engine in Locomotive Park across the street, and old diners. Lunch and fuel.",
+        minutes: 40,
+        clock: "12:00 PM MST",
+        realisticUsd: 35,
       },
       {
         id: "sat-snacks",
         kind: "meal",
         place: "In the car",
-        road: "I-70 W",
-        purpose: "Packed snacks and water.",
+        road: "I-10 W / US-93 N / I-15 N",
+        purpose: "Coffee from the Marana hotel, packed snacks and plenty of water.",
         minutes: 0,
         clock: "During the drive",
         realisticUsd: 10,
@@ -401,10 +562,11 @@ const dayDrafts: DayDraft[] = [
       {
         id: "sat-dinner",
         kind: "meal",
-        place: "Wheat Ridge",
-        road: "4025 Clear Creek Drive, after check-in",
-        purpose: "Dinner pickup.",
-        minutes: 20,
+        place: "St. George",
+        road: "Near 1731 S Convention Center Dr",
+        purpose:
+          "A real sit-down dinner and fill the tank, since Sunday has no planned stops. Read tomorrow's forecast for I-15 and Provo Canyon, and text the landlord your planned noon arrival.",
+        minutes: 60,
         clock: "5:30 PM MST",
         realisticUsd: 45,
       },
@@ -413,112 +575,81 @@ const dayDrafts: DayDraft[] = [
   {
     date: "2026-11-15",
     dateLabel: "Sun Nov 15",
-    fromLabel: "Wheat Ridge, CO",
+    fromLabel: "St. George, UT",
     toLabel: "900 Bitner Road, Apartment E17",
-    departClock: "4:30 AM MST",
-    arriveClock: "4:30 PM MST",
-    latestSafeDepart: "5:00 AM MST",
+    departClock: "7:00 AM MST",
+    arriveClock: "12:00 PM MST",
+    latestSafeDepart: "7:45 AM MST",
     timeZone: "MST",
-    miles: 522,
-    driveHours: 11,
+    miles: 316,
+    driveHours: 5,
     routeSummary:
-      "I-25 N to Cheyenne, then I-80 W. Pull off at Vedauwoo (exit 329), Fort Fred Steele (exit 228), and the Echo Canyon rest area (mile 170). Sherman Summit is the snow check between Vedauwoo and Laramie.",
+      "Keys by 2:00 PM, with about 2 hours to spare. One straight run with no planned stops: I-15 N past Cedar City over the 6,600-foot summit in daylight, down into Utah Valley, US-189 up Provo Canyon and US-40 to I-80 at Kimball Junction. The tank is filled in St. George the night before.",
     hubId: null,
     winterNotes:
-      "The planned road stays under Sherman Summit instead of Eisenhower at 11,158 feet, Vail Pass at 10,662 feet, and Soldier Summit near 7,500 feet. Elk Mountain and Parleys Summit can still ice. Bare or wet pavement is a go. Falling snow, snow-packed pavement, a passenger chain law, or a closure is a no-go. 4WD does not change that. If Wyoming has snow and I-70 is bare, use the passes. If both have snow, stay at Wheat Ridge. That second night is cash.",
+      "The only day in snow country. You check UDOT at the hotel at 6:30 AM, in St. George at 2,800 feet, before you commit. Sunrise is about 6:55 AM. I-15 climbs to a 6,600-foot summit between Beaver and Cove Fort, which you reach around 8:35 AM, well after sunrise, and E17 sits near 6,500 feet. Bare or wet pavement is a go. Falling snow, snow-packed pavement, a traction law, or a closure means you stay another night at the Hilton Garden Inn and move the key time. The plan arrives about noon, 2 hours before the 2:00 PM limit, so even a short late-morning hold still makes the keys.",
     snowGate: {
-      checkAt: "Sat Nov 14 night, and again at 4:00 AM MST",
-      sourceName: "WYDOT",
-      sourceUrl: "https://www.wyoroad.info",
-      go: "Take I-25 north and I-80 west when Sherman Summit and Elk Mountain are bare or wet. Use I-70 only when Wyoming has snow and COtrip shows Morrison through Vail bare or wet.",
-      hold: "If both I-80 and I-70 show snow, a chain law, or a closure, stay a second night at the Wheat Ridge Hampton. Keys slip past Sunday.",
+      checkAt: "Sat Nov 14 night (forecast), and UDOT at 6:30 AM MST from the hotel in St. George",
+      sourceName: "UDOT Traffic",
+      sourceUrl: "https://udottraffic.utah.gov",
+      go: "I-15 from Cedar City to Nephi and US-189 through Provo Canyon are bare or wet, and no snow is forecast before noon.",
+      hold: "Wait in the room, since you can leave as late as 9:00 AM and still make 2:00 PM. If it is still bad at 9:00 AM, call the landlord and move the key time. Keep the room at the Hilton Garden Inn; I-15 usually clears by late morning. If it is a real storm, stay another night and finish Monday.",
     },
+    legs: [
+      {
+        id: "sun-provo-canyon",
+        road: "I-15 N, US-189 N, US-40 N, I-80 W",
+        from: "St. George",
+        to: "900 Bitner Road, Apartment E17",
+        miles: 316,
+        topElevationFt: 6600,
+        snowRisk: "watch",
+        note: "The snow check of the trip. Cedar City, Beaver and the 6,600-foot summit before Cove Fort in the morning, then Fillmore, Scipio and Nephi, down into Utah Valley and off I-15 at Orem (exit 272). Up Provo Canyon past Deer Creek Reservoir to Heber, north on US-40 past Jordanelle to I-80, then west to Kimball Junction (exit 145).",
+      },
+    ],
     corridors: [
       {
-        id: "i80",
-        label: "I-25 north and I-80 west",
-        when: "WYDOT bare or wet across Sherman Summit and Elk Mountain. This is the planned road because it stays at 8,640 feet instead of the Colorado passes above 10,000.",
-        miles: 522,
-        driveHours: 11,
+        id: "provo_canyon",
+        label: "I-15 to Orem, US-189 Provo Canyon, US-40, I-80 to Kimball Junction",
+        when: "UDOT shows I-15 and US-189 bare or wet at the 6:30 AM check. This is the planned road. It skips Salt Lake City and Parleys Summit, and tops out about 6,500 feet at the end.",
+        miles: 316,
+        driveHours: 5,
       },
       {
-        id: "i70",
-        label: "I-70 west",
-        when: "Wyoming has snow and COtrip is bare or wet from Morrison through Vail. Then US-6 only if UDOT shows Soldier Summit bare or wet.",
-        miles: 503,
-        driveHours: 10.6,
+        id: "parleys",
+        label: "I-15 through Salt Lake City, I-80 E up Parleys Canyon",
+        when: "Provo Canyon is closed, has a crash, or is snow-packed while Parleys shows bare or wet. Parleys is a six-lane interstate, plowed first, but it climbs to 7,120 feet. About 15 minutes longer.",
+        miles: 330,
+        driveHours: 5.2,
       },
       {
         id: "hold",
-        label: "Stay at Wheat Ridge",
-        when: "Both corridors show snow, a chain law, or a closure. The second night is cash.",
-        miles: 0,
-        driveHours: 0,
+        label: "Stay in St. George and move the key time",
+        when: "I-15 north of Cedar City shows falling snow, snow-packed pavement, a traction law, or a closure at the 6:30 AM check. Wait in the room until 9:00 AM, then call the landlord if it has not cleared.",
+        miles: null,
+        driveHours: null,
       },
     ],
     stops: [
       {
-        id: "sun-vedauwoo",
-        kind: "rest",
-        place: "Vedauwoo",
-        road: "I-80 W exit 329, about a mile north to the first rock parking area.",
-        purpose:
-          "About 3 hours out. Granite piles you can see from the highway. Fifteen minutes among the closest rocks, leash, then back to I-80. Six miles later, look at the pavement at the Sherman Summit rest area, exit 323, and keep going if it is bare or wet.",
-        minutes: 25,
-        clock: "7:30 AM MST",
-        realisticUsd: 0,
-      },
-      {
-        id: "sun-laramie",
-        kind: "meal",
-        place: "Laramie",
-        road: "I-80 W, 16 miles after the summit.",
-        purpose: "Drive-through lunch on the same break as Vedauwoo. Fuel. Elk Mountain is the next snow look.",
-        minutes: 20,
-        clock: "8:15 AM MST",
-        realisticUsd: 34,
-      },
-      {
-        id: "sun-fort-steele",
-        kind: "rest",
-        place: "Fort Fred Steele",
-        road: "I-80 W exit 228. The ruins are 1.25 miles north of the rest area.",
-        purpose:
-          "About 3 hours after Laramie. Walk the outdoor fort grounds for 20 minutes. The visitor center is seasonal and likely closed in November. Leash. Fuel at the rest area.",
-        minutes: 25,
-        clock: "11:15 AM MST",
-        realisticUsd: 0,
-      },
-      {
-        id: "sun-echo",
-        kind: "rest",
-        place: "Echo Canyon rest area",
-        road: "I-80 W, mile marker 170. The rest area is on the highway.",
-        purpose:
-          "About 3 hours after the fort. Canyon walls, picnic table, litter. No side trip. Parleys Summit is the last climb after this.",
-        minutes: 15,
-        clock: "2:15 PM MST",
-        realisticUsd: 0,
-      },
-      {
         id: "sun-snacks",
         kind: "meal",
         place: "In the car",
-        road: "I-25 N / I-80 W",
-        purpose: "Packed snacks and water.",
+        road: "I-15 N",
+        purpose: "Breakfast to go from the St. George hotel, coffee, and packed snacks. No planned stops, so use the bathroom before you leave. If you need one, Fillmore (exit 167) is about halfway, with gas at the exit.",
         minutes: 0,
         clock: "During the drive",
         realisticUsd: 10,
       },
       {
-        id: "sun-dinner",
+        id: "sun-arrive",
         kind: "meal",
         place: "Kimball Junction",
-        road: "After the keys at 900 Bitner Road, Apartment E17",
-        purpose: "Dinner.",
+        road: "900 Bitner Road, Apartment E17",
+        purpose: "Meet the landlord by 2:00 PM for the keys, with time to spare. Cats in first, then lunch at Kimball Junction.",
         minutes: 30,
-        clock: "5:30 PM MST",
-        realisticUsd: 50,
+        clock: "12:00 PM MST",
+        realisticUsd: 30,
       },
     ],
   },
@@ -598,14 +729,14 @@ function missingCatHilton(hub: Hub): HotelNight {
   };
 }
 
-function pickHotel(properties: HotelNight[], hub: Hub): HotelNight {
+function pickHotel(properties: HotelNight[], hub: Hub, nights: number): HotelNight {
   const match =
     properties.find((h) => h.city.toLowerCase() === hub.city.toLowerCase() && h.state === hub.state) ??
     properties.find((h) => h.id === hub.id);
   if (!match || !isStayHotel(match)) {
     return missingCatHilton(hub);
   }
-  return { ...match, nights: 1 };
+  return { ...match, nights };
 }
 
 function hubById(id: HubId): Hub {
@@ -638,7 +769,7 @@ export function planDrive(
   const foodScale = foodPerDay / realisticFoodPerDay;
   const contingencyEach = contingencyTotal / dayDrafts.length;
   const days: DriveDay[] = dayDrafts.map((draft, index) => {
-    const hotel = draft.hubId ? pickHotel(hotels, hubById(draft.hubId)) : null;
+    const hotel = draft.hubId ? pickHotel(hotels, hubById(draft.hubId), draft.hotelNights ?? 1) : null;
     const realisticFood = draft.stops.reduce((sum, stop) => sum + stop.realisticUsd, 0);
     const day: DriveDay = {
       day: index + 1,
@@ -659,9 +790,11 @@ export function planDrive(
       foodUsd: Math.round(realisticFood * foodScale),
       contingencyUsd: Math.round(contingencyEach),
       winterNotes: draft.hubId ? draft.winterNotes : `${draft.winterNotes} ${town.winterNotes}`,
+      legs: draft.legs,
       stops: draft.stops,
       snowGate: draft.snowGate,
       corridors: draft.corridors,
+      work: draft.work,
     };
     if (day.driveHours > DRIVE_CAP) {
       throw new Error(`Day ${day.day} is ${day.driveHours} h, over the ${DRIVE_CAP} h cap`);
@@ -675,7 +808,7 @@ export function planDrive(
     destLabel: dest,
     cap: DRIVE_CAP,
     days,
-    nights: hubs.length,
+    nights: days.reduce((sum, day) => sum + (day.hotel?.nights ?? 0), 0),
     totalMiles,
     totalHours,
     corridor: route.corridor,
